@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title> Soy un simple adolescente - Matemáticas</title>
+    <link href="Style.css" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="./imagenes/snivy.png">
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Arvo&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Fuzzy+Bubbles&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Raleway:ital@1&display=swap');
+    </style>
+</head>
+
+<body class="Soy un simple adolescente">
+    <header class="header">
+        <nav class="nav-2">
+            <div class="text-img">
+                <a href="./SoyUnSimpleAdolescente.html"><img src="./imagenes/Teemo_Ok.png" 
+               Alt="Teemo feli logo" height="85" width="85"></a>
+            </div>
+            <div class="navbar">
+                <h2><a href="./Matematicas.html">Matemática</a></h2>
+                <h2><a href="">Física</a></h2>
+                <h2><a>Biología</a></h2>
+                <h2><a href="./Castellano.html">Castellano</a></h2>
+                <h2><a>Química</a></h2>
+            </div>   
+        </nav>
+    </header>
+
+    <main>
+        <div class="searcher-style">
+                <form id="datalist">
+                  <span class="nota">¿Qué tema desea buscar?</span>
+                    <input type="text" name="Topicos-mate" id=¨search¨ list="searcher" placeholder="Busca aquí..." autocomplete="off">
+                    
+                    <datalist id="searcher">
+                        <option value="Teorema de Pitágoras"><a href="#pitagoras"></a></option>
+                        <option value="Logaritmos"><a href="#logaritmos"></a></option>
+                        <option value="Identidades Trigonométricas"></option>
+                        <option value="Productos Notables"></option>
+                    </datalist>
+                </form>
+            </div>
+        <section id="pitagoras">
+            <div class="pitagoras">
+                <h2>Teorema de Pitágoras</h2>
+                <div class="flex">
+                    <div>
+                        <p >El <span class="textopitagoras">Teorema de Pitágoras</span> nos indica que todos los 
+                        triángulos cumple la propiedad de que la suma de sus catetos elevados al cuadrado, es igual a 
+                        la hipotenusa elevada al cuadrado.</p>
+                        <br>    
+                        <p>Es importante saber que la hipotenusa es el lado más largo del triángulo y siempre está 
+                        opuesto al ángulo recto. Por otro lado los catetos se pueden identificar como cateto adyacente 
+                        y cateto opuesto, de acuerdo a la posición del ángulo.El cateto adyacente vendría a ser el 
+                        cateto más cercano al ángulo recto, prácticamente es el lado que está junto al angulo dado. 
+                        Mientras que el cateto opuesto es el que está en frente del ángulo. </p>
+                        <br>
+                        <p><span class="nota">NOTA: </span>El <span class="italics">cateto adyacente</span> representa el coseno del ángulo, mientras que el <span class="italics">cateto opuesto</span> opuesto representa el seno del ángulo</p>
+                    </div>
+                
+                    <div class="img">
+                        
+                        <img class="space-img" src="https://www.neurochispas.com/wp-content/uploads/2021/05/como-aplicar-el-teorema-de-pitagoras.png"
+                        width="300" height="295" alt="Triángulo Rectángulo">   
+                    </div>
+                </div>
+                 <div id="pdf">
+                    <div class="iframe">
+                        <iframe src="./Apps/pdfjs/web/viewer.html?file=Hoja de trabajo 3-día 1.pdf" style="width:630px; height:575px;" 
+                         class="pdf"></iframe>
+                    </div>
+                        <div class="button">
+                        <br>
+                        <button><a href="./Apps/pdfjs/web/viewer.html?file=Hoja de trabajo 3-día 1.pdf" target="_blank">Abrir en otra ventana</a></button> 
+                    </div>    
+                </div>
+            </div>
+        </section>
+        <section id="logaritmos">
+            <div class="logaritmos">
+                <h2>Logaritmos</h2>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="redes">
+            <p>Javier González</p>
+            <a href="https://www.instagram.com/javig1000/" target="_blank"><img 
+            src="https://cdn-icons-png.flaticon.com/512/174/174855.png" alt="Instagram" height="55" ></a>
+            <a href="https://twitter.com/JavitoxD3" target="_blank"><img 
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Twitter-logo.svg/2491px-Twitter-logo.svg.png"
+            alt="Twitter" height="55" ></a>
+            <a href="https://www.youtube.com/channel/UCVkfPVJAieK1jgeW7NbxP0g" target="_blank"><img 
+                src="https://upload.wikimedia.org/wikipedia/commons/4/42/YouTube_icon_%282013-2017%29.png"
+                alt="Twitter" height="55" width="70"></a>
+        </div>        
+     <p>&copy; Copyright</p>
+    </footer>
+    <script src="jquery-3.6.1.js"></script>
+    <script src="Js.js"></script>
+</body>
+</html>
