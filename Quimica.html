@@ -1,0 +1,854 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">  
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title> Soy un simple adolescente - Química</title>
+    <link href="Style.css" rel="stylesheet" >
+    <link rel = “alternate” hreflang=“es” href=“https://soyunsimpleadolescente.com”  />
+    <link rel="icon" type="image/x-icon" href="./imagenes/diseño/quaxly.png">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous"/>
+    <script src="https://kit.fontawesome.com/35cdab4b8e.js" crossorigin="anonymous"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Arvo&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Fuzzy+Bubbles&display=swap');
+    </style>
+</head>
+
+<body class="Soy un simple adolescente">
+    <header class="header">
+        <nav class="nav-2">
+            <div class="text-img">
+                <a href="./SoyUnSimpleAdolescente.html"><img src="./imagenes/diseño/Teemo_Ok.png" 
+               Alt="Teemo feli logo" id="teemoImg"></a>
+            </div>
+            <div class="navbar">
+                <h2><a href="./Matematicas.html">Matemática</a></h2>
+                <h2><a href="./Física.html">Física</a></h2>
+             
+                <h2><a href="./Castellano.html">Castellano</a></h2>
+                <h2><a href="./Quimica.html">Química</a></h2>
+                <h2 class="sidebarButton"><i class="fa-solid fa-bars"></i></h2>
+            </div>   
+        </nav>
+    </header>
+
+    <main>
+        <div class="searcher-style">
+                <form id="datalist">
+                  <span class="nota">¿Qué tema desea buscar?</span>
+                    <input type="text" name="Topicos-mate" id=¨search¨ list="searcher" placeholder="Busca aquí..." autocomplete="off">
+                    
+                    <datalist id="searcher">
+                        <option value="Relaciones Estequiométricas"><a href="#RelacionesEstequiometricas"></a></option>
+                        <option value="Reactivo Limitante y en Exceso"><a href="#ReactivoLimitanteExceso"></a></option>
+                        <option value="Disoluciones"><a href="#Disoluciones"></a></option>
+                        <option value="Propiedades Coligativas"><a href="#PropiedadesColigativas"></a></option>
+                        <option value="Rápidez de reacción"><a href="#RápidezDeReaccion"></a></option>
+                        <option value="Equilibrio Químico"><a href="#EquilibrioQuimico"></a></option>
+                        <option value="Equilibrio ionico y pH"><a href="#EquilibrioIonicoPH"></a></option>
+                    </datalist>
+            </form>
+        </div>
+        <div id="progress">
+            <span id="progress-value"><i class="fa-solid fa-rocket fa-lg"></i></span>
+        </div>
+
+        <div class="sidebar">
+            <div>
+                <div class="sidebarButton">
+                    <i class="fa-solid fa-x fa-lg"></i>
+                </div>
+                <br>
+                <div class="center">
+                    <h2>Ruleta para estudiar</h2>
+                </div>
+                <br>
+                <div id="wheel">
+                    <canvas id="canvas" width="500" height="500"></canvas>
+                    <div class="center">
+                        <button onclick="spinWheel()" id="wheelCircularButton">Spin</button>
+
+                    </div>
+                    
+                    <input type="text" id="sectionName" placeholder="Añada nombre del tema">
+                    <button onclick="addSection()" class="wheelButton">Añadir tema</button>
+                </div>
+                
+            </div>
+        </div>
+        
+        <div class="cont">
+
+            <div class="winNotification">
+                <div class="center">
+                    <img src="./imagenes/diseño/Teemo_Ok.png" alt="Teemin">
+                </div>
+                <h2 class="text"></h2><br><br>
+                <button onclick="winNotification_Close()" >OK</button>
+            </div>
+        </div> 
+
+        <button class="contactInput" onclick="displayContact()"><i class="fa-solid fa-user fa-xl"></i></button> 
+
+        <div class="contacto">
+            <h2>Contáctanos</h2>
+            <p>Si tienes alguna duda con el contenido de la página nos puedes escribir a las siguientes direcciones:</p>
+            <div class="contactoflex">
+                <div>
+                    <h2>Luis Noriega</h2>
+                    
+                    <div class="contactogrid">
+                        <img src="./imagenes/diseño/whatsapp.png" alt="Número" height="35px" width="35px" class="one">
+                        <p class="two"><strong>+58 424-1297004</strong></p>
+                        <img src="./imagenes/diseño/correo.png" alt="Correo" height="20px" width="30px" class="three">
+                        <p class="four"><strong>lann.ve@gmail.com</strong></p>
+                    </div>
+                </div>
+                <div>
+                    <h2>Javier González</h2>
+                    <div class="contactogrid">
+                        <img src="./imagenes/diseño/whatsapp.png" alt="Número" height="35px" width="35px" class="one">
+                        <p class="two"><strong>+34 605956165</strong></p>
+                        <img src="./imagenes/diseño/correo.png" alt="Correo" height="20px" width="30px" class="three">
+                        <p class="four"><strong>javi.rm2005@gmail.com</strong></p>
+                    </div>
+                </div> 
+            </div>
+            <button onclick="closeContact()"><i class="fa-regular fa-x fa-xs"></i></button> 
+        </div>
+
+        <section id="RelacionesEstequiometricas" class="Química hidden4" >
+            <div class="standard">
+                <h2>Relaciones Estequiométricas</h2>
+                <p>Las relaciones estequiométricas determinan la cantidad de sustancias que participan en una reacción química,siendo el mol, la unidad de medida principal.
+                    Además, gracias a la estequiometría podemosd eterminar que un mol es equivalente al número de Avogadro (6,02x10<sup>23</sup>), es decir, 1 mol contiene
+                    <b>6,02x10<sup>23</sup></b> número de moléculas o átomos, pero también es equivalente a <b>22,4 litros</b>, que sería el volumen molar de cualquier gas en condiciones de presión y temperatura
+                    normales(20&#8451; y 1atm)
+                </p>
+            </div>
+            <div class="flex2">
+                <div class="img">
+                    <img loading="lazy"  class="img80-500" src="./imagenes/Química/Relaciones estequiométricas.jpg"
+                        alt="Relaciones estequiométricas"> 
+                </div>
+                <div  class="selec img">
+                    <img loading="lazy" class="space-img img80" src="./imagenes/Química/ecuacionmoles.JPG"
+                    alt="Moles químicas"> 
+                </div>
+            </div>
+            <div class="pdf" >
+                <div class="iframe">
+                    <iframe loading="lazy" src="./Apps/pdfjs/web/viewer.html?file=pdfs/Química/Estequiometria.pdf"  
+                    class="pdf"></iframe>
+                    
+                </div>
+                <br>
+                    <div class="button">
+                        <button><a href="./Apps/pdfjs/web/viewer.html?file=pdfs/Química/Estequiometria.pdf" target="_blank">Abrir en otra ventana</a></button> 
+                </div>    
+            </div>
+            <br>
+            <hr><br>   
+        </section>
+        <section id="ReactivoLimitanteExceso" class="Química hidden4">
+            <div class="standard">
+                <h2>Reactivo limitante y en exceso</h2>
+                <div class="flex">
+                    <div>
+                        
+                        <p>El <b>reactivo limitante</b> es aquel que se acaba en una reacción química, es decir, el que determina cuanto producto
+                            se va a obtener. Mientras que el <b>reactivo en exceso</b> es aquel al que le va sobrar cantidad una vez se haya completado la reacción química. </p>
+                    </div>
+                    <div class="img">
+                        <img loading="lazy" class="img80" src="https://cdn.kastatic.org/ka-perseus-images/6f6fc12e11ff082817e1bf54e183423ecbcbcebd.png"
+                          alt="Reactivo limitante y en exceso"> 
+                    </div>
+                </div>
+                <p><b>Para realizar ejercicios de reactivo limitante y en exceso, se pueden utilizar 3 métodos diferentes:</b> </p>
+                <h3 class="margin">1er método</h3>
+                <br><br>
+                <ol class="ulspace">
+                <li><p>Lo primero que se debe hacer, es balancear la ecuación química.</p></li>
+                <li><p>Luego se calcula la masa de los reaccionantes, el que tenga menor masa real que  teórica, será el reactivo limitante</p></li>
+                <li><p>Posteriormente, con el reactivo limitante, se hace una conversión para saber cuantos gramos tendrá el producto</p></li>
+                </ol>
+                <p><span class="nota">&nbsp&nbsp&nbsp&nbspNOTA:</span> Este método es útil, para determinar cuánta cantidad se obtiene del producto</p>
+                
+                <h3 class="margin">2do método</h3>
+                <br><br>
+                <ol class="ulspace">
+                <li><p>Lo primero que se debe hacer, es balancear la ecuación química.</p></li>
+                <li><p>Luego se calcula la masa del producto </p></li>
+                <li><p>El reactivo que obtenga menos masa, será el reactivo limitante y la masa que obtuvo, representaría la masa total teórica</p></li>
+                </ol>
+                <p><span class="nota">&nbsp&nbsp&nbsp&nbspNOTA:</span> Este método es útil, para determinar cuál es el reactivo limitante y para calcular el % de rendimiento</p>
+                
+                <h3 class="margin">3er método</h3>
+                <br><br>
+                <ol class="ulspace">
+                <li><p>Lo primero que se debe hacer, es balancear la ecuación química.</p></li>
+                <li><p>Luego se calculan los moles de cada reaccionante </p></li>
+                <li><p>Posteriormente,se realiza la relación molar entre cada reactivo y el producto(El reactivo limitante será el que tengo menor relación molar con el producto)</p></li>
+                <li><p>Por último,puedes utilizar ambos reactivos para calcular cuanto sobra y cuanto falta en cada sustancia.</p></li>
+                </ol>
+                <p><span class="nota">&nbsp&nbsp&nbsp&nbspNOTA:</span> Este método es más sencillo que los otros, sin embargo, es el menos directo.</p>
+                
+                <h3 class="margin">Otras ecuaciones:</h3>
+                <div class="flex2">
+                    <div class="img">
+                        <img loading="lazy" class="img80"  src="./imagenes/Química/ecuacionesporcentaje.png"
+                      alt="Porcentaje de rendimiento y pureza"> 
+                    </div>
+                    <div  class="selec img">
+                    <img loading="lazy" class="space-img img80" src="./imagenes/Química/indicecuacionesporcentaje.png"
+                    alt="Porcentaje de rendimiento y pureza"> 
+                </div>  
+            </div>
+            <div class="pdf" >
+                <div class="iframe">
+                    <iframe loading="lazy" src="./Apps/pdfjs/web/viewer.html?file=pdfs/Química/ReactivoLimitanteExceso.pdf"  
+                    class="pdf"></iframe>
+                    
+                </div>
+                <br>
+                    <div class="button">
+                        <button><a href="./Apps/pdfjs/web/viewer.html?file=pdfs/Química/ReactivoLimitanteExceso.pdf" target="_blank">Abrir en otra ventana</a></button> 
+                </div>    
+            </div>
+            <br>
+            <hr><br>   
+        </section>
+        <section id="Disoluciones" class="Química hidden4">
+            <div class="standard">
+                <h2>Disoluciones</h2>
+                <br>
+                <div class="flex">
+                    <p>Es una mezcla homogénea (una sola fase) que consta de dos o más componentes, en proporciones variables dentro de ciertos límites,
+                    en donde no existe evidencia de sedimentación. Una disolución será una mezcla en la misma proporción en cualquier cantidad que tomemos
+                    (por pequeña que sea la gota), y no se podrá separar por centrifugación ni filtración. Una disolución es siempre transparente, una suspensión 
+                    presentará turbidez, será traslúcida u opaca. Una emulsión será intermedia entre disolución y suspensión.</p>
+                    <div class="center">
+                        <img loading="lazy" class="space-img img80-450" src="https://disoluciones.net/wp-content/uploads/2020/02/soluto-y-solvente.jpg"
+                          alt="Disoluciones"> 
+                    </div>
+                </div>
+                <h3 class="margin">Otros conceptos importantes:</h3>
+                <ul class="margin">
+                    <li><p><b>Composición porcentual:</b> Indica la cantidad de soluto por cada 100 gramos o militros de disolución. Se 
+                    expresa a traves de unidades físicas(%m/m,%m/v,%v/v)</p></li>
+                    <li><p><b>Concentración:</b> Expresa la cantidad de sustancia (soluto) por unidad de volumen, es decir, expresa la 
+                    proporción en que se encuentran el soluto y el solvente, o el soluto y el volumen de la disolución</p></li>
+                    <li><p><b>Electrolito:</b> Un electrolito es una sustancia que al disolverse en agua, da lugar a la formación de iones.
+                    Los electrolitos pueden ser débiles o fuertes, según esten parcial o totalmente ionizados o disociados en medio acuoso.
+                    Un electrolito fuerte es toda sustancia que al disolverse en agua, provoca exclusivamente la formación de iones con una reacción
+                     de disolución prácticamente irreversible. Un electrolito débil es una sustancia que al disolverse en agua, produce iones parcialmente,
+                    con reacciones de tipo irreversible</p></li>
+                    <li><p><b>Fracción molar:</b> Es la concentración que expresa la proporción en que se encuentra una sustancia respecto
+                    a los moles totales de la disolución</p></li>
+                    <li><p><b>Molalidad:</b> Es una unidad química de concentración que indica la cantidad de moles de soluto por kilogramos
+                    de solvente</p></li>
+                    <li><p><b>Molaridad:</b>Es una unidad química de concentración que indica la cantidad de moles de soluto por litros de disolución.
+                    Está asociada a las condiciones de presión y temperatura. Si la presión o la temperatura se modifican, también cambia el volumen y,
+                    por consiguiente varía la molaridad</p></li>
+                    <li><p><b>Normalidad:</b> Es una medida de la concentración de una solución y se define como la relación entre los equivalentes de una sustancia
+                    y los litros de una solución. Los equivalentes se refieren a las cargar por mol de una sustancia, para el caso de los ácidos se refiere a la
+                    cantidad de cargas de los hidronio H+, para las bases a la cantidad de cargas negativas de los grupos hidroxilo OH<sup>-</sup> y para las sales
+                    se refiere a las cantidades positivas de los elementos metálicos que sustituyen los hidrógenos de los ácidos</p></li>
+                    <li><p><b>Ppm:</b> Proporción de la concentración de una sustancia con respecto a la concentración de otra, como una unidad de soluto en un millón
+                    de unidades de disolvente (Partes por millón)</p></li>
+                    <li><p><b>Solubilidad:</b> Capacidad de una sustancia de disolverse en otra. También hace referencia a la masa de soluto que se puede disolver en 
+                    determinada masa de disolvente, en determinada temperatura y presión</p></li>
+                    <li><p><b>Soluto:</b> Fase dispersa de una disolución. Una disolución puede estar formada por más de un soluto. Cuando el soluto y el solvente están
+                    en el mismo estado, el soluto será el que se encuentre en menor proporción</p></li>
+                    <li><p><b>Solvente:</b> Conocido también como disolvente. Es el medio dispersante en una disolución. Una disolución puede tener más de un solvente</p></li>
+                </ul>
+                <h3 class="margin">Ecuaciones de porcentajes</h3>
+                <br>
+                <div class="flex2">
+                    <div class="img">
+                        <img loading="lazy" class="img80" src="./imagenes/Química/porcentajesdisoluciones.png"
+                      alt="Porcentaje disoluciones"> 
+                    </div>
+                    <div  class="selec img">
+                    <img loading="lazy" class="space-img img80" src="./imagenes/Química/indiceporcentajedisoluciones.png"
+                    alt="Porcentaje disoluciones"> 
+                    </div>
+                </div>
+                <h3 class="margin">Ecuaciones de unidades químicas</h3>
+                <br>
+                <div class="flex2">
+                    <div class="img">
+                        <img loading="lazy" class="img80" src="./imagenes/Química/UnidadesQuimicas.png"
+                      alt="Unidades Quimicas"> 
+                    </div>
+                    <div  class="selec img">
+                    <img loading="lazy" class="space-img img80" src="./imagenes/Química/IndiceUnidades quimicas.png"
+                    alt="Unidades Quimicas"> 
+                    </div>
+                </div>
+                <div class="flex2">
+                    <div class="img">
+                        <img loading="lazy" class="img80"  src="./imagenes/Química/UnidadesQuimicas2.png"
+                      alt="Unidades Quimicas"> 
+                    </div>
+                    <div  class="selec img">
+                    <img loading="lazy" class="space-img img80" src="./imagenes/Química/IndiceUnidades quimicas2.png"
+                    alt="Unidades Quimicas"> 
+                    </div>
+                </div>
+                <br>
+                <h3 class="margin">Otras fórmulas</h3>
+                <br>
+                <div class="img">
+                    <img loading="lazy" class="space-img img80" src="./imagenes/Química/otrasfornulasquimicas.png"
+                     alt="Fórmulas Químcias"> 
+                </div>      
+            </div>
+            <div class="pdf" >
+                <div class="iframe">
+                    <iframe loading="lazy" src="./Apps/pdfjs/web/viewer.html?file=pdfs/Química/Disoluciones.pdf"  
+                    class="pdf"></iframe>
+                    
+                </div>
+                <br>
+                    <div class="button">
+                        <button><a href="./Apps/pdfjs/web/viewer.html?file=pdfs/Química/Disoluciones.pdf" target="_blank">Abrir en otra ventana</a></button> 
+                </div>    
+            </div>
+            <br>
+            <hr><br> 
+        </section>
+        <section id="PropiedadesColigativas" class="Química hidden4">
+            <div class="standard">
+                <h2>Propiedades Coligativas</h2>
+                <br>
+                <div class="flex">
+                    <p>Son aquellas que dependen del número de partículas(moléculas,átomos o iones) disueltas en una cantidad fija de solvente.Sólo dependen del número de partículas de soluto presentes en la solución (No influye la naturaleza de las partículas).
+                        Esas propiedades coligativas son la presión de vapor(mm de Hg), la temperatura de ebullición(&#8451;) , la temperatura de congelación(&#8451;) y la presión osmótica(mm de Hg)
+                    </p>
+                    <img loading="lazy" class="img80-500"  src="./imagenes/Química/Propiedades coligativas.jpg"
+                      alt="Propiedades coligativas"> 
+                </div>
+                <h3 class="margin">Ecuaciones Propiedades Coligativas de disoluciones de soluto no electrolito</h3>
+                <br>
+                <div class="img">
+                    <img loading="lazy" class="img80" src="./imagenes/Química/ecuacionespropiedadescoligativasNOelectrolitos.JPG"
+                    alt="Propiedades coligativas de disoluciones de soluto no electrolito"> 
+                  </div>
+                  <hr>
+                  <br>
+                <div class="flex2">
+                    <div class="img">
+                        <img loading="lazy" class="img80" src="./imagenes/Química/indiceNoElectrolitos1.JPG"
+                        alt="Propiedades coligativas de disoluciones de soluto no electrolito"> 
+                        </div>
+                    <div class="selec img">
+                      <img loading="lazy" class="space-img img80" src="./imagenes/Química/indiceNoElectrolitos2.JPG"
+                    alt="Propiedades coligativas de disoluciones de soluto no electrolito"> 
+                    </div>
+                </div>
+                <hr>
+                <br>
+                <h3 class="margin">Ecuaciones Propiedades Coligativas de disoluciones de soluto electrolitos</h3>
+                <br>
+                <div class="flex2">
+                    <div class="img">
+                        <img loading="lazy" class="img80" src="./imagenes/Química/ecuacionespropiedadescoligativaselectrolitos.JPG"
+                      alt="Propiedades coligativas de disoluciones de soluto electrolito"> 
+                    </div>
+                    <div  class="selec img">
+                    <img loading="lazy" class="space-img img80" src="./imagenes/Química/indiceElectrolitos.JPG"
+                    alt="Propiedades coligativas de disoluciones de soluto electrolito"> 
+                    </div> 
+                </div>
+            </div>
+            <div class="pdf" >
+                <div class="iframe">
+                    <iframe loading="lazy" src="./Apps/pdfjs/web/viewer.html?file=pdfs/Química/PropiedadesColigativas.pdf"  
+                    class="pdf"></iframe>
+                    
+                </div>
+                <br>
+                    <div class="button">
+                        <button><a href="./Apps/pdfjs/web/viewer.html?file=pdfs/Química/PropiedadesColigativas.pdf" target="_blank">Abrir en otra ventana</a></button> 
+                </div>    
+            </div>
+            <br>
+            <hr><br> 
+        </section>
+        <section id="RápidezDeReaccion" class="Química hidden4">
+            <div class="standard">
+                <h2>Rápidez de reacción</h2>
+                <p>La velocidad de una reacción es la variación de la concentración de los reactivos por la variación de una unidad de tiempo. Los factores que afectan
+                la velocidad de reacción. La velocidad de reacción  va decreciendo con el tiempo, y los factores que la afectan son la superficie de contacto, la temperatura
+                y la concentración de los reactivos. Además tienen como unidad de medidad <b>molaridad por segundo (M/s)</b> 
+                </p>
+                <div class="img">
+                    <img src="./imagenes/Química/rapidez de reaccion.png" alt="Rapidez de reacción"
+                    loading="lazy" class="space-img img80">
+                </div>
+                <div class="img">
+                    <img src="./imagenes/Química/rapidez de reaccion2.png" alt="Rapidez de reacción"
+                    loading="lazy" class="space-img img80">
+                </div>
+                <p>Esa es la ecuación que rige la rapidez de reacción. Las letras minúsculas(a,b,c,d) representan los coeficientes estequiométricos.
+                Las letras mayusculas representan los reactivos y los productos. Siendo <b>A</b> y <b>B</b> los reactivos, y <b>C</b> y <b>D</b>  los productos.
+                Sin embargo, los reactivos tienen signo negativo. Ejemplo:  
+                </p>
+                <div class="img">
+                    <img src="./imagenes/Química/ejemplorapidezdereaccion.png" alt="Rapidez de reacción"
+                    loading="lazy" class="space-img img80">
+                </div>
+            </div>
+            <div class="pdf" >
+                <div class="iframe">
+                    <iframe loading="lazy" src="./Apps/pdfjs/web/viewer.html?file=pdfs/Química/RapidezdeReaccion.pdf"  
+                    class="pdf"></iframe>
+                    
+                </div>
+                <br>
+                    <div class="button">
+                        <button><a href="./Apps/pdfjs/web/viewer.html?file=pdfs/Química/RapidezdeReaccion.pdf" target="_blank">Abrir en otra ventana</a></button> 
+                </div>    
+            </div>
+            <br>
+            <hr><br> 
+        </section>
+        <section id="EquilibrioQuimico" class="Química hidden4">
+            <div class="standard">
+                <h2> Equilibrio Químico</h2>
+                <div class="flex">
+                    <div>
+                        <p>Cuando la rápidez de reacción directa e indirecta se igualan es cuando se da el equilibrio químico. Se da cuando en una reacción reversible,
+                            los reactivos y productos se mueven a la misma velocidad por ende no hay cambio neto (generando ese equilibrio)</p>
+                            <p> <b>Pero, ¿qué son las reacciones reversibles?</b> </p>
+                            <p>Son reacciones que se realizan simultáneamente en dos sentidos, es decir, a medida que se forman los productos, estos reaccionan entre sí para formar
+                                nuevamente reactantes. Estas reacciones se representan en una ecuación química con una doble flecha que separa los reactantes de los productos</p>
+                    </div>
+                    <div>
+                        <br><br>
+                        <div class="img">
+                            <img src="http://academia.utp.edu.co/quimica2/files/2018/09/CHEMICAL-EQUILIBRIUM.png" 
+                            alt="Equilibrio Químico" loading="lazy" class="img80-500" >
+                        </div>
+                    </div>      
+                              
+                </div>
+                <div class="img">
+                    <img src="./imagenes/Química/equilibrioQuímico.png" alt="Equilibrio Químico" loading="lazy" class="space-img img80">
+                </div>
+                 <p>Este equilibrio iónico se calcula con la ecuacion de Ke (constante de equilibrio). Es el valor númerico que se obtiene al
+                    sustituir las concentración molares reañes de las sustancias que están en equilibrio en la expresión de la constante de equilibrio
+                 </p>   
+                 <h3 class="margin">Ejemplo de la ecuación</h3>
+                 <div class="flex3">
+                    <div class="selec img" >
+                        <img loading="lazy"  src="./imagenes/Química/ecuacionEquilibrioQuimico1.png"
+                        alt="Equilibrio Químico" class="img80"> 
+                        
+                    </div>
+                    <div class="img">
+                      <img loading="lazy"  src="./imagenes/Química/ecuacionEquilibrioQuimico.png"
+                    alt="Equilibrio Químico" class="xdd img80"> 
+                    </div>
+                </div>
+                <div class="img">
+                    <img src="./imagenes/Química/ecuacionEquilibrioQuimico2.png" alt="Equilibrio Químico" loading="lazy" class="space-img img80">
+                </div>
+                <hr>
+                <br>
+                <h3 class="margin">Factores que afectan el equilibrio químico</h3>
+                <div class="flex">
+                    <div>
+                        <ul class="margin">
+                            <li><p><b>Concentración:</b> Cuando aumenta la concentración de los reaccioanntes, la rapidez directa se favorece y 
+                            cuando los productos aumentan, se favorece la inversa</p></li>
+                            <li><p><b>Presión:</b> El aumento de presión aumenta el lado dónde haya menos moleculas, y la disminución de presión 
+                            favorece dónde hay más moléculas, y si la reacción química tiene el mismo volumen en ambos lados,
+                            la presion no afectaría</p></li>
+                            <li><p><b>Temperatura:</b> Si se amenta la temperatura, se ve favorecida la reacción que se produce por absorción de calor</p></li>
+                        </ul>
+                    </div>
+                    <div class="img">
+                        <img src="https://quizizz.com/media/resource/gs/quizizz-media/quizzes/d59e545e-f1df-433e-8a7a-25d179e16a4a" 
+                        alt="Equilibrio Químico" loading="lazy" class="img80-500">
+                    </div>
+                </div>
+            </div>
+            <div class="pdf" >
+                <div class="iframe">
+                    <iframe loading="lazy" src="./Apps/pdfjs/web/viewer.html?file=pdfs/Química/EquilibrioQuímico.pdf"  
+                    class="pdf"></iframe>
+                    
+                </div>
+                <br>
+                    <div class="button">
+                        <button><a href="./Apps/pdfjs/web/viewer.html?file=pdfs/Química/EquilibrioQuímico.pdf" target="_blank">Abrir en otra ventana</a></button> 
+                </div>    
+            </div>
+            <br>
+            <hr><br> 
+        </section>
+        <section id="EquilibrioIonicoPH" class="Química hidden4" >
+            <div class="standard">
+                <h2>Equilibrio Iónico y pH</h2>
+                <p>El <b>equilibrio iónico</b> es un tipo especial de equilibrio químico. La diferencia es que en este se producen iones y tiene presencia de soluciones acuosa.
+                El <b>pH</b> está altamente relacionado con el equilibrio iónico, ya que este varía dependiendo si es una base o un ácido. Y el encargado de determinar eso es el pH.
+                Básicamente, el pH es una medida de acidez o alcalinidad de una disolución acuosa. Consiste en una escala en base a 14, de 0 a 6 se encuentra los ácidos, siendo 0 lo más ácido.
+                Luego se encuentra las bases, que van desde 8 a 14, siendo 14 lo más alcalino. Por último está el valor neutro, que es 7.</p>
+                <div class="img">
+                    <img src="https://concepto.de/wp-content/uploads/2015/03/escala-ph.jpg" alt="Equilibrio Químico" loading="lazy" class="space-img img80">
+                </div> 
+                <h3 class="margin">Ecuaciones pH</h3>   
+                <div class="flex3">
+                    <div class="selec img" >
+                        <img loading="lazy"  src="./imagenes/Química/ecuacionespH.png"
+                        alt="pH y pOH" class="img80"> 
+                        
+                    </div>
+                    <div class="img">
+                      <img loading="lazy"  src="./imagenes/Química/indicecuacionesph.png"
+                    alt="pH y pOH" class="img80" > 
+                    </div>
+                </div>
+                <h3 class="margin">Ecuaciones Equilibrio Iónico</h3>   
+                <br>
+                <div class="flex3">
+                    <div class="img" >
+                        <img loading="lazy"  src="./imagenes/Química/ecuacionEquilibrioIonico.png"
+                        alt="Equilibrio Ionico" class="img80"> 
+                    </div>
+                    <div class="selec img">
+                      <img loading="lazy" class="space-img img80" src="./imagenes/Química/indicecuacionesEquilibrioIonico.png"
+                    alt="Equilibrio Ionico" > 
+                    </div>
+                </div>
+            </div>
+            <div class="pdf" >
+                <div class="iframe">
+                    <iframe loading="lazy" src="./Apps/pdfjs/web/viewer.html?file=pdfs/Química/EquilibrioIonicopH.pdf"  
+                    class="pdf"></iframe>
+                    
+                </div>
+                <br>
+                    <div class="button">
+                        <button><a href="./Apps/pdfjs/web/viewer.html?file=pdfs/Química/EquilibrioIonicopH.pdf" target="_blank">Abrir en otra ventana</a></button> 
+                </div>    
+            </div>
+            <br>
+            <hr><br> 
+        </section>
+
+        <section class="Química hidden4">
+            <div class="standard">
+                <h2>Hibridación del carbono</h2>
+                <p>Los compuestos básicos tienen 3 tipos de hibridación: sp3, sp2 y sp. Cada una corresponda a su tipo de enlace,
+                    los enlaces simples, son sp3, mientras que los enlaces dobles son sp2 y por último, los enlaces triples serían los sp.
+                </p>
+                <div class="flex3">
+                    <div class="imgcenter">
+                        <img loading="lazy" class="space-img img80-500" src="./imagenes/Química/5to/HibridacionDelCarbono.jpg" 
+                        alt="Hibridación del carbono">
+                    </div>
+                    <div class="imgcenter">
+                        <img loading="lazy" class="space-img img80" src="./imagenes/Química/5to/HibridacionDelCarbono2.jpg" 
+                        alt="Hibridación del carbono">
+                    </div>
+                </div>
+            </div>
+
+            <div class="pdf" >
+                <div class="iframe">
+                    <iframe loading="lazy"src="./Apps/pdfjs/web/viewer.html?file=pdfs/Química/5to/HibridacionCarbono.pdf"  
+                    class="pdf"></iframe>
+                    
+                </div>
+                <br>
+                    <div class="button">
+                        <button><a href="./Apps/pdfjs/web/viewer.html?file=pdfs/Química/5to/HibridacionCarbono.pdf" target="_blank">Abrir en otra ventana</a></button> 
+                </div>    
+            </div>
+            <br>
+            <hr><br> 
+
+        </section>
+        <section id="Isomeria" class="Química hidden4">
+            <div class="standard">
+                <h2>Isomería</h2>
+
+                <p>Los isómeros son los elementos con misma forma molecular pero diferentes propiedades, incluso pesan lo mismo.
+                En total existen 2 tipos de isomería, la plana (estructural) y la espacial (estereoisomería):
+                </p>
+                <h3 class="margin">Isomería Plana</h3>
+                <p>La isomería plana se divide en otros 3 tipos de isomería, las cuales son: Isómeros de cadena, Isómeros de 
+                    posición e Isómeros de función</p>
+                <ul class="margin">
+                    <li><p><b>Cadena:</b></p>
+                        <div class="flex">
+                            <p>Los isómeros de cadena son aquellos que simplemente cambian la cadena principal de carbonos, es decir,
+                                el butano y el metilpropano serían isómeros de cadena, porque tienen los mismos elementos (C4H10),
+                                sin embargo, tienen diferentes cadenas principales
+                            </p>
+                            <div class="imgcenter">
+                                <img loading="lazy" class="space-img img80-500" src="./imagenes/Química/5to/Isomeria/IsomeriaCadena.jpg" 
+                                alt="Isómeros de Cadena">
+                            </div>
+                        </div>
+                    </li>
+                    <li><p><b>Posición:</b></p>
+                    <div class="flex">
+
+                        <p>Los isómeros de posición poseen la misma cadena principal, sin embargo, el o los sustiyentes van cambiando su posición
+                            de carbonos. Por ejemplo, el 2-clorobutano y el 1-clorobutano son isómeros de posición. Sin embargo, hay que tener cuidado
+                            con esta isomería, la gente podría pensar que el 3-clorobutano y el 4-clorobutano también son isómeros,pero en realidad, aunque estes 
+                            rotando el cloro de posición, el 3-clorobutano no existe, simplemente sería un 2-clorobutano
+                        </p>
+                        <div class="imgcenter">
+                            <img loading="lazy" class="space-img img80" src="./imagenes/Química/5to/Isomeria/IsomeríaPosicion.jpg" 
+                            alt="Isómeros de Posición">
+                        </div>
+                    </div>
+                    </li>
+                    <li><p><b>Función</b></p>
+
+                        <p>Los isómeros de función son los que tienen cambios más drásticos, ya que estos a pesar de tener los mismos elementos,
+                            pertenecen a grupos diferentes de compuestos orgánicos. Por ejemplo, los alquenos y cicloalcanos, los alquinos y cicloalquenos,
+                            los alcoholes y eteres, los aldehídos y cetonas y por último los ácidos carboxílicos y las amidas
+                        </p>
+                        <div class="imgcenter">
+                            <img loading="lazy" class="space-img img80" src="./imagenes/Química/5to/Isomeria/IsomeriadeFuncion.jpg" 
+                            alt="Isómeros de Función">
+                        </div>
+                        
+                    </li>
+                </ul>
+
+                <div class="pdf" >
+                    <div class="iframe">
+                        <iframe loading="lazy" src="./Apps/pdfjs/web/viewer.html?file=pdfs/Química/5to/IsomeriaPlana.pdf"  
+                        class="pdf"></iframe>
+                        
+                    </div>
+                    <br>
+                        <div class="button">
+                            <button><a href="./Apps/pdfjs/web/viewer.html?file=pdfs/Química/5to/IsomeriaPlana.pdf" target="_blank">Abrir en otra ventana</a></button> 
+                    </div>    
+                </div>
+                <br>
+                <hr><br> 
+
+                <h2>Isomería espacial</h2>
+                <br>
+                <p>Son sustancias cuyas moléculas tienen el mismo número de átomos colocados en el mismo orden,
+                diferenciándose únicamente en la disposición espacial que ocupan. Los isómeros espaciales se dividen
+                en isomeros conformacionales y configuracionales.
+                </p>
+
+               <h2>Isomería Conformacional</h2>
+                <p>Este tipo de isomería se basa en la rotación de enlaces simples, normalmente se emplea la Proyección de Newman
+                para diferencias los isómeros de un compuesto. Aunque tambíen existe la proyección de caballete, la cual no es tan común 
+                por ser menos práctica
+                </p>
+                
+                <p>Es importante saber que existen 2 tipos de clasificaciones de acuerdo a la estabilidad del confórmero. Estos pueden ser
+                eclipsados o alternados. Los conformeros eclipsados son los menos estables gracias a la cercania de los compuestos, mientras que
+                los conformeros alternados son más estables. Ahora bien, los conformeros alternados también se les conocen como gauche, además de que
+                el conformero más estable o más alternado, se le llama "anti". Mientras que el conformero más eclipsado o menos estable, se le conoce 
+                como Totalmente eclipsado
+                </p>
+
+                <div class="imgcenter">
+                    <img loading="lazy" class="space-img img80-600" src="./imagenes/Química/5to/Isomeria/IsomeriaConformacional.jpg" 
+                    alt="Isómeros Conformacional">
+                </div>
+                <p>Las ciclohexanos tienen dos conformaciones única, conocidas como silla y bote. Es importante saber, que la silla
+                es más estable que el bote porque tiene los conformeros más separados. Luego, también tenemos recordar que las sillas pueden ser  axiales (verticales)
+                o ecuatoriales (horizontales), lo cual es clave, ya que la sillas ecuatoriales son un poco más estables que las axiales, principalmente porque están
+                un poquito más separadas y no coincide ningún vértice     
+                </p>
+                <div class="flex3">
+                    <div class="imgcenter">
+                        <img loading="lazy" class="space-img img80" src="./imagenes/Química/5to/Isomeria/SillaBote.jpg" 
+                        alt="Silla y Bote confomeros">
+                    </div>
+                    <div class="imgcenter">
+                        <img loading="lazy" class="space-img img80-300" src="./imagenes/Química/5to/Isomeria/TiposDeSillas.jpg" 
+                        alt="Silla axial y ecuatorial">
+                    </div>
+
+                </div>
+
+                <div class="pdf" >
+                    <div class="iframe">
+                        <iframe loading="lazy"  src="./Apps/pdfjs/web/viewer.html?file=pdfs/Química/5to/IsomeriaConformacional.pdf"  
+                        class="pdf"></iframe>
+                        
+                    </div>
+                    <br>
+                        <div class="button">
+                            <button><a href="./Apps/pdfjs/web/viewer.html?file=pdfs/Química/5to/IsomeriaConformacional.pdf" target="_blank">Abrir en otra ventana</a></button> 
+                    </div>    
+                </div>
+                <br>
+                <hr><br> 
+
+                <h2>Isomería Geométrica</h2>
+                <br>
+                <p>Los isoméros geómetricos hacen referencia a la posición relative diferentes entre carbonos unidos por doble enlace,
+                    en relación a un plano. Estos isómeros tiene 2 tipos de clasificaciones diferentes de acuerdo al tipo de compuesto,
+                    la cis y trans o la E y Z
+                </p>
+                <ul>
+                    <li class="margin"><p><b>Clasificación Cis y Trans</b></p>
+                    <p>Este tipo de clasifación se utiliza cuando se repite alguno de los sustituyentes. De acuerdo a sus posiciones,
+                    estos determinan si el compuesto es cis o trans. Si ambos sustiyentes coinciden horizontalmente, entonces se clasifica como cis. 
+                    Pero si los sustiyentes coinciden diagonalmente, se clasifica como trans
+                    </p>
+                    <div class="imgcenter">
+                        <img loading="lazy" class="space-img img80" src="./imagenes/Química/5to/Isomeria/CisTrans.jpg" 
+                        alt="Cis y Trans Isomeros Geométricos">
+                    </div>
+                    
+                    </li>
+                    <li class="margin"><p><b>Clasificación E-Z</b></p>
+                        <p>Esta clasificación se utiliza cuando todos los sustituyentes son diferentes. En este caso, nos vamos a enfocar en el sustituyente
+                        de mayor número atómico de cada carbono. El elemento que tenga mayor número atómico, será el elemento 1 del carbono, o visto de otra manera,
+                        el elemento que va a determinar si el compuesto es E o Z. Una vez hayamos determinado el sustituyente de mayor número atómico de cada lado, 
+                        compararemos sus respectivas, si están colocados diagonalmente, el compuesto será "E", pero si coinciden horizontalmente, entonces el compuesto
+                        será "Z". Una manera fácil de memorizarlo, es que Z corresponde con cis (Z→cis) y que E corresponde con trans (E→trans)
+                        </p>
+                        <div class="imgcenter">
+                            <img loading="lazy" class="space-img img80" src="./imagenes/Química/5to/Isomeria/EZgeometrica.jpg" 
+                            alt="E y Z Isomeros Geométricos">
+                        </div>
+
+                </li>
+                </ul>
+                <h3 class="margin">Cosas importantes a recordar</h3>
+                <ul>
+                    <li class="margin">
+                        <p>Los carbonos no pueden tener 2 sustituyentes iguales, porque eso impide la isometría geométrica</p>
+                        <div class="imgcenter">
+                            <img loading="lazy" class="space-img img80" src="./imagenes/Química/5to/Isomeria/NoIsomeriaGeometrica.jpg" 
+                            alt="No isomería geométrica">
+                        </div>
+                    </li>
+                    <li class="margin">
+                        <p>En la clasificación E y Z,  tienen mayor prioridad los sustituyentes con mayor número atómico</p>
+                        <div class="imgcenter">
+                            <img loading="lazy" class="space-img img80" src="./imagenes/Química/5to/Isomeria/PrioridadEZ.jpg" 
+                            alt="Números atómicos elementos">
+                        </div>
+                    </li>
+                </ul>
+                <br>
+
+                <div class="pdf" >
+                    <div class="iframe">
+                        <iframe loading="lazy" src="./Apps/pdfjs/web/viewer.html?file=pdfs/Química/5to/IsomeriaGeometrica.pdf"  
+                        class="pdf"></iframe>
+                        
+                    </div>
+                    <br>
+                        <div class="button">
+                            <button><a href="./Apps/pdfjs/web/viewer.html?file=pdfs/Química/5to/IsomeriaGeometrica.pdf" target="_blank">Abrir en otra ventana</a></button> 
+                    </div>    
+                </div>
+                <br>
+                <hr><br> 
+
+
+                <h2>Isomería Óptica</h2>
+
+                <p>Son aquellos isómeros que polarizan la luz en diferentes posiciones. Para ello, nos basamos en si un carbono es quiral o no.
+                Los carbonos quirales son aquellos que tienen una imagen especular no superponible, es decir, forman un espejismo entre sí (por ejemplo las manos,a pesar de 
+                ser iguales, no son superponibles).Pero,para que los carbonos sean quirales, requieren tener 3 sustituyentes diferentes. Por último, es importante saber que 
+                los isómeros ópticos entre sí de un compuesto orgánico se le conocen como enantiómeros
+                </p>
+                <div class="imgcenter">
+                    <img loading="lazy" class="space-img img80" src="https://www.quimicaorganica.org/images/stories/organica-i/estereoquimica/quiralidad-molecular/imagen-especular.gif" 
+                    alt="Imagen Especular">
+                </div>
+                <p>Para este tipo de isomería se suele utilizar mayoritariamente las proyecciones de Fisher. A través de esta podemos determinar el tipo de giro del carbono quiral, cuando
+                se aplica un fisher horizontal, si el carbono gira en forma horaria se le clasifica con la letra "S", mientras que si gira en forma antihoraria, se le coloca la letra "R. 
+                Ahora bien, se determina la rotación del carbono de acuerdo a la configuración absoluta de los carbonos, es decir, mientras mayor número atómico, mayor prioridad.
+                </p>
+                <div class="imgcenter">
+                    <img loading="lazy" class="space-img img80" src="./imagenes/Química/5to/Isomeria/IsomeriaOptica.jpg" 
+                    alt="Isomería Óptica/Proyección de fisher">
+                </div>
+
+                <p>Ahora bien, también se pueden determinar la isomería óptica de dos carbonos consecutivos. En este caso, también podemos usar la proyección de fisher,
+                sin embargo, hay que determinar el giro de cada carbono. Al ser doble, normalmente acepta 2 imágenes especulares diferentes, por ende, hable opción a otro tipo
+                de isómeros conocidos como diasterómeros. Los diasterómeros son isómeros ópticos que no son enantiómeros. Presentan isomería óptica, pero no tienen relacion de 
+                imagen es especular (no tienen espejismo)
+                </p>
+                <div class="imgcenter">
+                    <img loading="lazy" class="space-img img80-600" src="./imagenes/Química/5to/Isomeria/IsomeriaOpticaDoble.jpg" 
+                    alt="Isomería Óptica/Proyección doble de fisher">
+                </div>
+
+                <div class="pdf" >
+                    <div class="iframe">
+                        <iframe loading="lazy" src="./Apps/pdfjs/web/viewer.html?file=pdfs/Química/5to/IsomeriaOptica.pdf"  
+                        class="pdf"></iframe>
+                        
+                    </div>
+                    <br>
+                        <div class="button">
+                            <button><a href="./Apps/pdfjs/web/viewer.html?file=pdfs/Química/5to/IsomeriaOptica.pdf" target="_blank">Abrir en otra ventana</a></button> 
+                    </div>    
+                </div>
+
+            </div>
+        </section>
+    </main>
+    <br>
+    <footer>
+        <div class="redes">
+            <div class="Javi1">
+                <p>Javier González</p>
+                <br>
+                <a href="https://www.instagram.com/javig1000/" target="_blank"><img 
+                src="https://cdn-icons-png.flaticon.com/512/174/174855.png" alt="Instagram" height="55" ></a>
+         <!--       <a href="https://twitter.com/JavitoxD3" target="_blank"><img 
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Twitter-logo.svg/2491px-Twitter-logo.svg.png"
+                alt="Twitter" height="55" ></a>
+                <a href="https://www.youtube.com/channel/UCVkfPVJAieK1jgeW7NbxP0g" target="_blank"><img 
+                    src="https://upload.wikimedia.org/wikipedia/commons/4/42/YouTube_icon_%282013-2017%29.png"
+                    alt="Twitter" height="55" width="70"></a> -->      
+            </div>
+            <div class="Luis">
+                <p>Luis Noriega</p>
+                <br>
+                <a href="https://www.instagram.com/lxuuiss/" target="_blank"><img 
+                src="https://cdn-icons-png.flaticon.com/512/174/174855.png" alt="Instagram" height="55" ></a>
+            </div>
+                
+            <div class="Merlina">
+                <p>Juliannys Verastegui</p>
+                <br>
+                <a href="https://www.instagram.com/jennaortega/" target="_blank"><img 
+                src="https://cdn-icons-png.flaticon.com/512/174/174855.png" alt="Instagram" height="55" ></a>
+
+        </div>
+        </div>        
+      <p>&copy; Copyright</p>
+
+    </footer>
+        <script src="jquery-3.6.1.js"></script>
+        <script src="Js.js"></script>
+        <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-M48RFKL3JC"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+    
+      gtag('config', 'G-M48RFKL3JC');
+    </script>
+    </body>
+    </html>

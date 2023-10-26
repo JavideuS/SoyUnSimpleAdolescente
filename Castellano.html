@@ -2,9 +2,13 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title> Soy un simple adolescente - Castellano</title>
     <link href="Style.css" rel="stylesheet">
-    <link rel="icon" type="image/x-icon" href="./imagenes/Victini.png">
+    <link rel = “alternate” hreflang=“es” href=“https://soyunsimpleadolescente.com”  />
+    <link rel="icon" type="image/x-icon" href="./imagenes/diseño/Victini.png">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous"/>
+    <script src="https://kit.fontawesome.com/35cdab4b8e.js" crossorigin="anonymous"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Arvo&display=swap');
         @import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap');
@@ -17,74 +21,486 @@
     <header class="header">
         <nav class="nav-2">
                 <div class="text-img">
-                    <a href="./SoyUnSimpleAdolescente.html"><img src="./imagenes/Teemo_Ok.png" 
-               Alt="Teemo feli logo" height="85" width="85"></a>
+                    <a href="./SoyUnSimpleAdolescente.html"><img src="./imagenes/diseño/Teemo_Ok.png" 
+               Alt="Teemo feli logo" id="teemoImg"></a>
                  </div>
             
                  <div class="navbar">
                         <h2><a href="./Matematicas.html">Matemática</a></h2>
-                        <h2><a href="">Física</a></h2>
-                        <h2><a>Biología</a></h2>
+                        <h2><a href="./Física.html">Física</a></h2>
+                    
                         <h2><a href="./Castellano.html">Castellano</a></h2>
-                        <h2><a>Química</a></h2>
+                        <h2><a href="./Quimica.html">Química</a></h2>
+                        <h2 class="sidebarButton"><i class="fa-solid fa-bars"></i></h2>
                 </div>
         </nav>
     </header>
     <main>
-        <section class="Ensayos">
+        <div class="searcher-style">
+            <form id="datalist">
+              <span class="nota">¿Qué tema desea buscar?</span>
+                <input type="text" name="Topicos-mate" id=¨search¨ list="searcher" placeholder="Busca aquí..." autocomplete="off">
+                
+                <datalist id="searcher">
+                    <option value="Ensayos"><a href="#Ensayos"></a></option>
+                    <option value="Textos Expositivos"><a href="#TextosExpositivos"></a></option>
+                    <option value="Paráfrasis"><a href="#Parafrasis"></a></option>
+                </datalist>
+        </form>
+    </div>
+    <div id="progress">
+        <span id="progress-value"><i class="fa-solid fa-rocket fa-lg"></i></span>
+    </div>
+
+        <div class="sidebar">
+            <div>
+                <div class="sidebarButton">
+                    <i class="fa-solid fa-x fa-lg"></i>
+                </div>
+                <br>
+                <div class="center">
+                    <h2>Ruleta para estudiar</h2>
+                </div>
+                <br>
+                <div id="wheel">
+                    <canvas id="canvas" width="500" height="500"></canvas>
+                    <div class="center">
+                        <button onclick="spinWheel()" id="wheelCircularButton">Spin</button> 
+
+                    </div>
+                    
+                    <input type="text" id="sectionName" placeholder="Añada nombre del tema">
+                    <button onclick="addSection()" class="wheelButton">Añadir tema</button>
+                </div>
+                
+            </div>
+        </div>
+        <div class="cont">
+
+            <div class="winNotification">
+                <div class="center">
+                    <img src="./imagenes/diseño/Teemo_Ok.png" alt="Teemin">
+                </div>
+                <h2 class="text"></h2><br><br>
+                <button onclick="winNotification_Close()" >OK</button>
+            </div>
+        </div>
+
+        <button class="contactInput" onclick="displayContact()"><i class="fa-solid fa-user fa-xl"></i></button> 
+
+        <div class="contacto">
+            <h2>Contáctanos</h2>
+            <p>Si tienes alguna duda con el contenido de la página nos puedes escribir a las siguientes direcciones:</p>
+            <div class="contactoflex">
+                <div>
+                    <h2>Luis Noriega</h2>
+                    
+                    <div class="contactogrid">
+                        <img src="./imagenes/diseño/whatsapp.png" alt="Número" height="35px" width="35px" class="one">
+                        <p class="two"><strong>+58 424-1297004</strong></p>
+                        <img src="./imagenes/diseño/correo.png" alt="Correo" height="20px" width="30px" class="three">
+                        <p class="four"><strong>lann.ve@gmail.com</strong></p>
+                    </div>
+                </div>
+                <div>
+                    <h2>Javier González</h2>
+                    <div class="contactogrid">
+                        <img src="./imagenes/diseño/whatsapp.png" alt="Número" height="35px" width="35px" class="one">
+                        <p class="two"><strong>+34 605956165</strong></p>
+                        <img src="./imagenes/diseño/correo.png" alt="Correo" height="20px" width="30px" class="three">
+                        <p class="four"><strong>javi.rm2005@gmail.com</strong></p>
+                    </div>
+                </div> 
+            </div>
+            <button onclick="closeContact()"><i class="fa-regular fa-x fa-xs"></i></button> 
+        </div>
+            
+
+        <section id="Ensayos" class="Ensayos">
             <div class="titulos">
                 <br>
                 <p>Ensayos y Apuntes<p>
             </div>
             
-            <div class="DivinaComedia">
+            <div class="DivinaComedia hidden4">
                 <br>
                 <h2>Divina Comedia</h2>
                 <h3>De Dante Aligheri</h3>
                 <br>
                 <div class="iframe">
-                    <iframe src="https://docs.google.com/viewer?srcid=1Yw8obDtXTUKBwl_OfuizuvMgtOj1UctNS943_hnn5bw&pid=explorer&efh=false&a=v&chrome=false&embedded=true"
-                    style="width:600px; height:500px;" frameborder="0"></iframe>
-                    <iframe src="https://docs.google.com/viewer?srcid=1s0iAXgi_VqSbjWhGDA09IhYty0jzSCvCmTnjtjobCVU&pid=explorer&efh=false&a=v&chrome=false&embedded=true"
-                    style="width:600px; height:500px;" frameborder="0"></iframe>
+                    <iframe loading="lazy" src="https://docs.google.com/viewer?srcid=1Yw8obDtXTUKBwl_OfuizuvMgtOj1UctNS943_hnn5bw&pid=explorer&efh=false&a=v&chrome=false&embedded=true"
+                     frameborder="0" class="iframe"></iframe>
+                     <br>
+                    <iframe loading="lazy" src="https://docs.google.com/viewer?srcid=1s0iAXgi_VqSbjWhGDA09IhYty0jzSCvCmTnjtjobCVU&pid=explorer&efh=false&a=v&chrome=false&embedded=true"
+                     frameborder="0" class="iframe"></iframe>
                 </div>
                 <br>
                 <br>
             </div>
-            <div>
+            <div class="Candido">
+                <br>
+                <h2>Cándido</h2>
+                <h3>De Voltaire</h3>
+                <br>
+                <div class="iframe">
+                    <iframe loading="lazy" src="https://docs.google.com/viewer?srcid=18LCy5-L61EjH-G9IzLNPFRYM9thUeyP5DuzR-K-JuH0&pid=explorer&efh=false&a=v&chrome=false&embedded=true"
+                     frameborder="0" class="iframe"></iframe>
+                     <br>
+                </div>
+                <br>
+                <br>
+            </div>
+            <div class="Frankenstein">
+                <h2>Frankenstein</h2>
+                <h3>De Mary Shelley</h3>
+                <br>
+                <div class="iframe">
+                    <iframe src="https://docs.google.com/viewer?srcid=1txdJf_EVMtgbQ6eeODL6i7UR9pHHp0Y1DHnel96ZaCQ&pid=explorer&efh=false&a=v&chrome=false&embedded=true"
+                     frameborder="0" class="iframe"></iframe>
+                </div>
+                <br>
+                <br>
+            </div>
+            <div class="Metarmorfosis">
+                <h2>Metamorfosis</h2>
+                <h3>De Franz Kafka</h3>
+                <br>
+                <div class="iframe">
+                    <iframe src="https://docs.google.com/viewer?srcid=11vegGL010bY2BwPgEdOgizKFPrO4a79TRx3nDmWZDI0&pid=explorer&efh=false&a=v&chrome=false&embedded=true"
+                     frameborder="0" class="iframe"></iframe>
+                </div>
+                <br>
+                <br>
+            </div>
+            <div class="CantarDelMioCid hidden4">
                 <h2>Cantar del Mio Cid</h2>
                 <br>
                 <div class="iframe">
                     <iframe src="https://docs.google.com/viewer?srcid=11zGPgkWVHCCRKEbNNa-OVx5o08gaHdy5FciN0efpGvE&pid=explorer&efh=false&a=v&chrome=false&embedded=true"
-                    style="width:600px; height:500px;" frameborder="0"></iframe>
+                     frameborder="0" class="iframe"></iframe>
                 </div>
                 <br>
                 <br>
             </div>
+            <div class="LaOdisea hidden4">
+                <h2>La Odisea</h2>
+                <h3>De Homero</h3>
+                <br>
+                <div class="iframe">
+                    <iframe loading="lazy" src="https://docs.google.com/viewer?srcid=1fz45ZRGUdWcnXey9mIef5g9IEc-3d6L4QiWwP0PjPh0&pid=explorer&efh=false&a=v&chrome=false&embedded=true"
+                     frameborder="0" class="iframe"></iframe>
+                </div>
+                <br>
+                <br>
+            </div>
+            <div class="elDecameron hidden4">
+                <h2>El Decamerón</h2>
+                <h3>De Giovanni Bocaccio</h3>
+                <br>
+                <div class="iframe">
+                    <iframe loading="lazy" src="https://docs.google.com/viewer?srcid=1RK6cgD9j6WsD7WUooeDquStfn8UHfjd3QKSVM9QUI8E&pid=explorer&efh=false&a=v&chrome=false&embedded=true"
+                     frameborder="0" class="iframe"></iframe>
+                </div>
+                <br>
+                <br>
+            </div>
+            <div class="laIliada hidden4">
+                <h2>La Ilíada</h2>
+                <h3>De Homero</h3>
+                <br>
+                <div class="iframe">
+                    <iframe loading="lazy" src="https://docs.google.com/viewer?srcid=1L3lhCiQBjzNo2OhG5dZI2hBziuZGy1OO5ou_-GJ-a_w&pid=explorer&efh=false&a=v&chrome=false&embedded=true"
+                     frameborder="0" class="iframe"></iframe>
+                </div>
+                <br>
+                <br>
+            </div>
+            <div class="DonQuijote">
+                <h2>El Quijote</h2>
+                <h3>De Miguel de Cervantes</h3>
+                <br>
+                <div class="iframe">
+                    <iframe loading="lazy" src="https://docs.google.com/viewer?srcid=136KB0m3tPMj50e6Z7BS78PTUunKiz2j0m3FQ4HX3uOY&pid=explorer&efh=false&a=v&chrome=false&embedded=true"
+                     frameborder="0" class="iframe"></iframe>
+                </div>
+                <br>
+                <br>
+            </div>
+            <div class="OtrosEnsayos hidden4">
+                <h2>Camino del héroe</h2>
+                <br>
+                <div class="iframe">
+                    <iframe loading="lazy" src="https://docs.google.com/viewer?srcid=1v6KhsfFB9yJbaJdc_1EBX7g9JSsgjBwtDdArFiNAHsA&pid=explorer&efh=false&a=v&chrome=false&embedded=true"
+                     frameborder="0" class="iframe"></iframe>
+                </div>
+                <br>
+                <br>
+            </div>
+            <div class="Antologia">
+                <div class="hidden4">
+                    <h2>Resumen - El relato de un naúfrago</h2>
+                <h3>De Gabriel García Márquez</h3>
+                <br>
+                <div class="iframe">
+                    <iframe loading="lazy" src="https://docs.google.com/viewer?srcid=1iLOip6BctaGxVSqET6lA5sJ6_LIwo7ybYVo-7pU6v2s&pid=explorer&efh=false&a=v&chrome=false&embedded=true"
+                     frameborder="0" class="iframe"></iframe>
+                </div>
+                <br>
+                <br>
+                </div> 
+                <div class="hidden4">
+                <h2>Comentario de texto - El niño de la pijama de rayas</h2>
+                <h3>De John Boyne</h3>
+                <br>
+                <div class="iframe">
+                    <iframe loading="lazy" src="https://docs.google.com/viewer?srcid=1EKkD8z_RyRf25KU7szLd_aM4iQetnZ6kkvQXhRpv_TQ&pid=explorer&efh=false&a=v&chrome=false&embedded=true"
+                     frameborder="0" class="iframe"></iframe>
+                </div>
+                <br>
+                <br>
+                </div>
+                <div class="hidden4">
+                    <h2>Comentario de texto - El príncipe y el mendigo</h2>
+                <h3>De Mark Twain</h3>
+                <br>
+                <div class="iframe">
+                    <iframe loading="lazy" src="https://docs.google.com/viewer?srcid=1U-JE2KZFaTiHHVVO9lgeuIKqcvFVL99rCC-sc6LUVaY&pid=explorer&efh=false&a=v&chrome=false&embedded=true"
+                     frameborder="0" class="iframe"></iframe>
+                </div>
+                <br>
+                <br>
+                </div>          
+            </div>
         </section>
-        <section class="Antologias">
-            <div class="Antologias">
-                
 
+        <section id="TextosExpositivos" class="TextosExpositivos">
+            <div class="titulos">
+                <br>
+                <p>Textos Expositivos<p>
+            </div>
+            <div class="TextosExpositivos">
+                <div class="hidden4">
+                <br><br><br>
+                <h2>Una Ciudad Flotante</h2>
+                <h3>De Julio Verne</h3>
+                <br>
+                <div class="iframe">
+                    <iframe loading="lazy" src="https://docs.google.com/viewer?srcid=1jLwe0tB9CrOiIEuWQI54kUKksEuRzm-w_qDBb7ZMmms&pid=explorer&efh=false&a=v&chrome=false&embedded=true"
+                     frameborder="0" class="iframe"></iframe>
+                </div>
+                <br>
+                <br>
+                </div>
+                <div class="hidden4">
+                <h2>El Gallo Loco</h2>
+                <h3>De Gloria Stolk</h3>
+                <br>
+                <div class="iframe">
+                    <iframe loading="lazy" src="https://docs.google.com/viewer?srcid=1Em6sokjcNOHvtindMDKUtYsOOQCRlWvzU64Mi7kIPwc&pid=explorer&efh=false&a=v&chrome=false&embedded=true"
+                     frameborder="0" class="iframe"></iframe>
+                </div>
+                <br>
+                <br>
+                </div>
+                <div class="hidden4">
+                <h2>Animarse a Volar</h2>
+                <h3>De Jorge Bucay</h3>
+                <br>
+                <div class="iframe">
+                    <iframe loading="lazy" src="https://docs.google.com/viewer?srcid=1USrRADbG1koVK7HzScYEef9gUzGe4sUN0xWCO2H9GHU&pid=explorer&efh=false&a=v&chrome=false&embedded=true"
+                     frameborder="0" class="iframe"></iframe>
+                </div>
+                <br>
+                <br>
+                </div>
+                <div class="hidden4">
+                    <h2>La Actriz</h2>
+                <h3>De Agatha Christie</h3>
+                <br>
+                <div class="iframe">
+                    <iframe loading="lazy" src="https://docs.google.com/viewer?srcid=1F0Vl2B1T0FpSGI6hCtO2WIm_o0vW36PIkJ3BBLpxnKA&pid=explorer&efh=false&a=v&chrome=false&embedded=true"
+                     frameborder="0" class="iframe"></iframe>
+                </div> 
+                <br>
+                <br>
+                </div>
+                <div class="hidden4">
+                    <h2>La casa de los sueños</h2>
+                    <h3>De Agatha Christie</h3>
+                    <br>
+                    <div class="iframe">
+                        <iframe loading="lazy" src="https://docs.google.com/viewer?srcid=17Fj_0v711HZxDOU2Wv1K2lks_FitKD-Dq0D2yrJ93-8&pid=explorer&efh=false&a=v&chrome=false&embedded=true"
+                         frameborder="0" class="iframe"></iframe>
+                    </div>
+                    <br>
+                    <br>
+                </div>
+                <div class="hidden4">
+                    <h2>La ladrona de libros</h2>
+                <h3>De Markus Zusak</h3>
+                <br>
+                <div class="iframe">
+                    <iframe loading="lazy" src="https://docs.google.com/viewer?srcid=1u-KcI4iEYf6j_V1Mf0wUIXAcsu-2Ud9XW1OWzpnSgg8&pid=explorer&efh=false&a=v&chrome=false&embedded=true"
+                     frameborder="0"> class="iframe"</iframe>
+                </div>
+                <br>
+                <br>
+                </div>
+                <div class="hidden4">
+                    <h2>Las Dos Chelitas</h2>
+                <h3>De Julio Garmendia</h3>
+                <br>
+                <div class="iframe">
+                    <iframe loading="lazy" src="https://docs.google.com/viewer?srcid=1ksBIClPhinycvFVIV157ebFXWHtORljLzP_DoA9nKII&pid=explorer&efh=false&a=v&chrome=false&embedded=true"
+                     frameborder="0" class="iframe"></iframe>
+                </div>
+                </div>
+                
+            </div>
+        </section>
+
+        <section id="Parafrasis" class="Parafrasis">
+            <div class="titulos">
+                <br>
+                <p>Parafrasis<p>
+            </div>
+            <div class="Parafrasis">
+                <div class="hidden4">
+                    <br><br><br>
+                <h2>El Extraño caso de Dr. Jekyll y Mr. Hyde</h2>
+                <h3>De Robert Louis Stevenson</h3>
+                <br>
+                <div class="iframe">
+                    <iframe loading="lazy" src="https://docs.google.com/viewer?srcid=191zSX_AhjJKp0eoUd-n8gX1zL5HfILsgWj2noRTLf-s&pid=explorer&efh=false&a=v&chrome=false&embedded=true"
+                     frameborder="0" class="iframe"></iframe>
+                </div>
+                <br>
+                <br>
+                </div>
+                <div class="hidden4">
+                    <h2>Estrella Negra, Brillante Amanecer</h2>
+                <h3>De Scott O ‘Dell</h3>
+                <br>
+                <div class="iframe">
+                    <iframe loading="lazy" src="https://docs.google.com/viewer?srcid=1g0iBffjKReDXsQIdpC9ARBoHvHBJAOyDpr1DrAS3Haw&pid=explorer&efh=false&a=v&chrome=false&embedded=true"
+                     frameborder="0" class="iframe"></iframe>
+                </div>
+                <br>
+                <br>
+                </div>
+                <div class="hidden4">
+                    <h2>Amigos por el viento</h2>
+                <h3>De Liliana Bodoc</h3>
+                <br>
+                <div class="iframe">
+                    <iframe loading="lazy" src="https://docs.google.com/viewer?srcid=1lNxmoxT9Yi_yPuRp2ECnjhBfEzf6ScSctiuEPqkU2AQ&pid=explorer&efh=false&a=v&chrome=false&embedded=true"
+                     frameborder="0" class="iframe"></iframe>
+                </div>
+                <br>
+                <br>
+                </div>
+                <div class="hidden4">
+                    <h2>El loro pelado</h2>
+                    <h3>De Horacio Quiroga</h3>
+                    <br>
+                    <div class="iframe">
+                        <iframe loading="lazy" src="https://docs.google.com/viewer?srcid=10JtUFG0Wln7Td2UYYZNbmDGgy8Hmyy8uAPckuZQkf7Q&pid=explorer&efh=false&a=v&chrome=false&embedded=true"
+                         frameborder="0" class="iframe"></iframe>
+                    </div>
+                    <br>
+                    <br>
+                </div>
+               <div class="hidden4">
+                <h2>La Tortuga Gigante</h2>
+                <h3>De Horacio Quiroga</h3>
+                <br>
+                <div class="iframe">
+                    <iframe loading="lazy" src="https://docs.google.com/viewer?srcid=16sQZurWbIsqdqjmq72ZdnxdPdW6QUImrvrcVqxgLaAM&pid=explorer&efh=false&a=v&chrome=false&embedded=true"
+                     frameborder="0" class="iframe"></iframe>
+                </div>
+                <br>
+                <br>
+               </div>
+                <div class="hidden4">
+                    <h2>Barba Azul</h2>
+                <h3>De Charles Perrault</h3>
+                <br>
+                <div class="iframe">
+                    <iframe loading="lazy" src="https://docs.google.com/viewer?srcid=1Q0yxSWCxIAoW19HH-2BAyLMbQZtdof0Zc_KSDc65E5g&pid=explorer&efh=false&a=v&chrome=false&embedded=true"
+                     frameborder="0" class="iframe"></iframe>
+                </div>
+                <br>
+                <br>
+                </div>
+                <div class="hidden4">
+                    <h2>El Diente Roto</h2>
+                <h3>De Pedro Emilio Coll</h3>
+                <br>
+                <div class="iframe">
+                    <iframe loading="lazy" src="https://docs.google.com/viewer?srcid=1wFZkQu0T28y8ohPUREfe3ZLJB1T0DqK8YrLQ_gKYnY0&pid=explorer&efh=false&a=v&chrome=false&embedded=true"
+                     frameborder="0" class="iframe"></iframe>
+                </div>
+                <br>
+                <br>
+                </div>
+                <div class="hidden4">
+                    <h2>Ayer compré un viejito</h2>
+                    <h3>De Armando José Sequera</h3>
+                    <br>
+                    <div class="iframe">
+                        <iframe loading="lazy" src="https://docs.google.com/viewer?srcid=1zOf6_ILk4cCf1isoDfYmYobZmICpWiHmVQIietGQ-NI&pid=explorer&efh=false&a=v&chrome=false&embedded=true"
+                         frameborder="0" class="iframe"></iframe>
+                    </div>
+                    <br>
+                    <br>
+                </div>
+              
             </div>
         </section>
 
     </main>
     <footer>
         <div class="redes">
-            <p>Javier González</p>
-            <a href="https://www.instagram.com/javig1000/" target="_blank"><img 
-            src="https://cdn-icons-png.flaticon.com/512/174/174855.png" alt="Instagram" height="55" ></a>
-            <a href="https://twitter.com/JavitoxD3" target="_blank"><img 
-            src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Twitter-logo.svg/2491px-Twitter-logo.svg.png"
-            alt="Twitter" height="55" ></a>
-            <a href="https://www.youtube.com/channel/UCVkfPVJAieK1jgeW7NbxP0g" target="_blank"><img 
-                src="https://upload.wikimedia.org/wikipedia/commons/4/42/YouTube_icon_%282013-2017%29.png"
-                alt="Twitter" height="55" width="70"></a>
+            <div class="Javi1">
+                <p>Javier González</p>
+                <br>
+                <a href="https://www.instagram.com/javig1000/" target="_blank"><img 
+                src="https://cdn-icons-png.flaticon.com/512/174/174855.png" alt="Instagram" height="55" ></a>
+         <!--       <a href="https://twitter.com/JavitoxD3" target="_blank"><img 
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Twitter-logo.svg/2491px-Twitter-logo.svg.png"
+                alt="Twitter" height="55" ></a>
+                <a href="https://www.youtube.com/channel/UCVkfPVJAieK1jgeW7NbxP0g" target="_blank"><img 
+                    src="https://upload.wikimedia.org/wikipedia/commons/4/42/YouTube_icon_%282013-2017%29.png"
+                    alt="Twitter" height="55" width="70"></a> -->      
+            </div>
+            <div class="Luis">
+                <p>Luis Noriega</p>
+                <br>
+                <a href="https://www.instagram.com/lxuuiss/" target="_blank"><img 
+                src="https://cdn-icons-png.flaticon.com/512/174/174855.png" alt="Instagram" height="55" ></a>
+            </div>
+                
+            <div class="Merlina">
+                <p>Juliannys Verastegui</p>
+                <br>
+                <a href="https://www.instagram.com/jennaortega/" target="_blank"><img 
+                src="https://cdn-icons-png.flaticon.com/512/174/174855.png" alt="Instagram" height="55" ></a>
+
+        </div>
         </div>        
-     <p>&copy; Copyright</p>
+      <p>&copy; Copyright</p>
+
     </footer>
     <script src="jquery-3.6.1.js"></script>
     <script src="Js.js"></script>
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-M48RFKL3JC"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-M48RFKL3JC');
+</script>
 </body>
 </html>
