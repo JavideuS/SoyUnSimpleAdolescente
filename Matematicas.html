@@ -2,16 +2,21 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title> Soy un simple adolescente - Matemáticas</title>
     <link href="Style.css" rel="stylesheet">
-    <link rel="icon" type="image/x-icon" href="./imagenes/snivy.png">
-    
+    <link rel = “alternate” hreflang=“es” href=“https://soyunsimpleadolescente.com”  />
+    <link rel="icon" type="image/x-icon" href="./imagenes/diseño/snivy.png">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous"/>
+    <script src="https://kit.fontawesome.com/35cdab4b8e.js" crossorigin="anonymous"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Arvo&display=swap');
         @import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap');
         @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
         @import url('https://fonts.googleapis.com/css2?family=Fuzzy+Bubbles&display=swap');
         @import url('https://fonts.googleapis.com/css2?family=Raleway:ital@1&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Aleo&display=swap');
     </style>
 </head>
 
@@ -19,90 +24,1747 @@
     <header class="header">
         <nav class="nav-2">
             <div class="text-img">
-                <a href="./SoyUnSimpleAdolescente.html"><img src="./imagenes/Teemo_Ok.png" 
-               Alt="Teemo feli logo" height="85" width="85"></a>
+                <a href="./SoyUnSimpleAdolescente.html"><img src="./imagenes/diseño/Teemo_Ok.png" 
+               Alt="Teemo feli logo" id="teemoImg"></a>
             </div>
             <div class="navbar">
                 <h2><a href="./Matematicas.html">Matemática</a></h2>
-                <h2><a href="">Física</a></h2>
-                <h2><a>Biología</a></h2>
+                <h2><a href="./Física.html">Física</a></h2>
+          
                 <h2><a href="./Castellano.html">Castellano</a></h2>
-                <h2><a>Química</a></h2>
+                <h2><a href="./Quimica.html">Química</a></h2>
+                <h2 class="sidebarButton"><i class="fa-solid fa-bars"></i></h2>
             </div>   
         </nav>
     </header>
 
     <main>
         <div class="searcher-style">
-                <form id="datalist">
-                  <span class="nota">¿Qué tema desea buscar?</span>
-                    <input type="text" name="Topicos-mate" id=¨search¨ list="searcher" placeholder="Busca aquí..." autocomplete="off">
+            <form id="datalist">
+                <span class="nota">¿Qué tema desea buscar?</span>
+                <input type="text" name="Topicos-mate" id=¨search¨ list="searcher" placeholder="Busca aquí..." autocomplete="off">
                     
-                    <datalist id="searcher">
-                        <option value="Teorema de Pitágoras"><a href="#pitagoras"></a></option>
-                        <option value="Logaritmos"><a href="#logaritmos"></a></option>
-                        <option value="Identidades Trigonométricas"></option>
-                        <option value="Productos Notables"></option>
-                    </datalist>
-                </form>
+                <datalist id="searcher">
+                    <option value="Teorema de Pitágoras"><a href="#pitagoras"></a></option>
+                    <option value="Ecuaciones Trigonométricas"><a href="#EcuacionesTrigonometricas"></a></option>
+                    <option value="Logaritmos"><a href="#logaritmos"></a></option>
+                    <option value="Identidades Trigonométricas"><a href="IdentidadesTrigonometricas"></a></option>
+                    <option value="Productos Notables"></option>
+                    <option value="Ángulos"><a href="#angulos"></a></option>
+                    <option value="Números imaginarios"><a href="#NumerosImaginarios"></a></option>
+                </datalist>
+            </form>
+        </div>
+
+        <div id="progress">
+            <span id="progress-value"><i class="fa-solid fa-rocket fa-lg"></i></span>
+        </div>
+
+            <div class="sidebar">
+                <div>
+                    <div class="sidebarButton">
+                        <i class="fa-solid fa-x fa-lg"></i>
+                    </div>
+                    <br>
+                    <div class="center">
+                        <h2>Ruleta para estudiar</h2>
+                    </div>
+                    <br>
+                    <div id="wheel">
+                        <canvas id="canvas" width="500" height="500"></canvas>
+                        <div class="center">
+                            <button onclick="spinWheel()" id="wheelCircularButton">Spin</button>
+    
+                        </div>
+                        
+                        <input type="text" id="sectionName" placeholder="Añada nombre del tema">
+                        <button onclick="addSection()" class="wheelButton">Añadir tema</button>
+                    </div>
+                    
+                </div>
             </div>
-        <section id="pitagoras">
+
+            <div class="cont">
+
+                <div class="winNotification">
+                    <div class="center">
+                        <img src="./imagenes/diseño/Teemo_Ok.png" alt="Teemin">
+                    </div>
+                    <h2 class="text"></h2><br><br>
+                    <button onclick="winNotification_Close()" >OK</button>
+                </div>
+            </div>
+            
+            <button class="contactInput" onclick="displayContact()"><i class="fa-solid fa-user fa-xl"></i></button> 
+
+            <div class="contacto">
+                <h2>Contáctanos</h2>
+                <p>Si tienes alguna duda con el contenido de la página nos puedes escribir a las siguientes direcciones:</p>
+                <div class="contactoflex">
+                    <div>
+                        <h2>Luis Noriega</h2>
+                        
+                        <div class="contactogrid">
+                            <img src="./imagenes/diseño/whatsapp.png" alt="Número" height="35px" width="35px" class="one">
+                            <p class="two"><strong>+58 424-1297004</strong></p>
+                            <img src="./imagenes/diseño/correo.png" alt="Correo" height="20px" width="30px" class="three">
+                            <p class="four"><strong>lann.ve@gmail.com</strong></p>
+                        </div>
+                    </div>
+                    <div>
+                        <h2>Javier González</h2>
+                        <div class="contactogrid">
+                            <img src="./imagenes/diseño/whatsapp.png" alt="Número" height="35px" width="35px" class="one">
+                            <p class="two"><strong>+34 605956165</strong></p>
+                            <img src="./imagenes/diseño/correo.png" alt="Correo" height="20px" width="30px" class="three">
+                            <p class="four"><strong>javi.rm2005@gmail.com</strong></p>
+                        </div>
+                    </div> 
+                </div>
+                <button onclick="closeContact()"><i class="fa-regular fa-x fa-xs"></i></button> 
+            </div>
+                
+    
+        <section id="pitagoras" class="standard hidden4" >
             <div class="pitagoras">
-                <h2>Teorema de Pitágoras</h2>
+                <br>
+                <hr>
+                <br>
+                <h2>Teorema de Pitágoras y Funciones Trigonométricas</h2>
+                <div id="abcde" class="flex">
+                    <div>
+                            <p >&nbsp&nbsp&nbsp&nbspEl <span class="textopitagoras">Teorema de Pitágoras</span> nos indica que todos los 
+                            triángulos cumple la propiedad de que la suma de sus catetos elevados al cuadrado, es igual a 
+                            la hipotenusa elevada al cuadrado.</p>
+                            <p>&nbsp&nbsp&nbsp&nbspEs importante saber que la hipotenusa es el lado más largo del triángulo y siempre está 
+                            opuesto al ángulo recto. Por otro lado los catetos se pueden identificar como cateto adyacente 
+                            y cateto opuesto, de acuerdo a la posición del ángulo.El cateto adyacente vendría a ser el 
+                            cateto más cercano al ángulo recto, prácticamente es el lado que está junto al angulo dado. 
+                            Mientras que el cateto opuesto es el que está en frente del ángulo. </p>
+                           
+                            <p><span class="nota">&nbsp&nbsp&nbsp&nbspNOTA: </span>El <span class="italics">cateto adyacente</span> representa el coseno del ángulo, mientras que el <span class="italics">cateto opuesto</span> opuesto representa el seno del ángulo</p>
+                    </div>
+                    <div class="img">
+                        <img loading="lazy" class="space-img img80-350" src="https://www.neurochispas.com/wp-content/uploads/2021/05/como-aplicar-el-teorema-de-pitagoras.png"
+                          alt="Triángulo Rectángulo">   
+                    </div>
+                </div>
+                <hr>
+                <br>
+                <div id="abcde" class="flex">
+                    <div>
+                        <p >&nbsp&nbsp&nbsp&nbspLas <span class="textopitagoras">Funciones Trigonométricas</span> son las comparaciones entre 
+                        los 3 lados y los 3 ángulos de un triángulo rectángulo. De esa forma, podemos determinar el seno, 
+                        el coseno, la tangente, la cotagente, la secante y la cosecante de cualquier triángulo rectángulo, en base
+                        a sus catetos e hipotenusa. Siendo las funciones más comúnes el <span class="italics">seno</span>, 
+                        el <span class="italics">coseno</span> y la <span class="italics">tangente</span>.</p>
+                        <br>    
+                        <p><span class="nota">&nbsp&nbsp&nbsp&nbspNOTA: </span>El <span class="italics">seno del ángulo</span> es el opuesto de la 
+                        cosecante,<span class="italics"> el coseno del ángulo</span> es el de la secante y por último,
+                        <span class="italics"> la tangente del ángulo</span> es el opuesto de la cotagente </p>
+                    </div>
+                    
+                    <div class="img">
+                        <img loading="lazy" class="space-img img80-500 " src="https://cursoparalaunam.com/wp-content/uploads/2021/12/las-razones-trigonometricas.jpg"
+                        alt="Razones Trigonométricas">   
+                    </div>
+                </div>
+                <div>
+                    <div class="pdf-grid" >
+                        <div class="iframe grid11">
+                            <iframe loading="lazy" src="./Apps/pdfjs/web/viewer.html?file=pdfs/Matemáticas/Pitágoras/pitagorasluis.pdf" 
+                            class="pdf "></iframe>
+                        </div>
+                        
+                        <div class="button grid21">
+                            <button><a href="./Apps/pdfjs/web/viewer.html?file=pdfs/Matemáticas/Pitágoras/pitagorasluis.pdf" target="_blank">Abrir en otra ventana</a></button> 
+                        </div>
+                        
+                        <div class="iframe grid12">
+                            <iframe loading="lazy" src="./Apps/pdfjs/web/viewer.html?file=pdfs/Matemáticas/Pitágoras/pitagorasexamen.pdf" 
+                             class="pdf "></iframe>
+                        </div>
+                        
+                        <div class="button grid22">     
+                            <button><a href="./Apps/pdfjs/web/viewer.html?file=pdfs/Matemáticas/Pitágoras/pitagorasexamen.pdf" target="_blank">Abrir en otra ventana</a></button> 
+                        </div>        
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="angulos" class="standard hidden4" >
+            <div class="angulos" >
+                <br>
+                <hr>
+                <br>
+                <h2>Ángulos</h2>
+                <br>
+                <ul class="unorderedlist">
+                <li><h3>Ángulos Notables</li></h3>
+                    <div class="flex">
+                    <div>
+                    <p>&nbsp&nbsp&nbsp&nbspLos <b>ángulos notables</b> son aquellos que salen con mayor frecuencia en la trigonometría, 
+                    y a cada uno de ellos se le asigna un valor para facilitar los cálculos. Los ángulos notables son
+                    <b> 0°, 30°, 45°, 60°, 90°, 180°, 270° y 360°</b>. De esa forma, se facilitan la resolución de 
+                    las razones trigonométricas.</p>
+                    </div>
+                    <div class="img">
+                        <img loading="lazy" class="space-img img80-500" src="https://i0.wp.com/matematicascercanas.com/wp-content/uploads/2015/11/razonestrigono_01.jpg?resize=501%2C206&ssl=1"
+                         alt="Ángulos notables">   
+                    </div>
+                    </div>
+                <li><h3>Ángulos Sexagesimales</h3></li>
+                    <div class="flex">
+                        <div>
+                            <p>&nbsp&nbsp&nbsp&nbspEl sistema de medida de <b>ángulos sexagesimal</b>, está definido por grados, minutos  
+                            y segundos. Los <em>grados sexagesimales</em> van ubicados en la izquierda y tienen el símbolo de <b>(°)</b>,luego vienen 
+                            los <em>minutos sexagesimales</em> que están representados por una sola comilla <b>(')</b> y por último están los 
+                            <em>segundos sexagesimales</em> los cuales se identifican con las comillas dobles<b>(")</b>.</p>
+                            <p><b>Conversion entre ángulos sexagesimales</b></p>
+                            <ul class="ulspace">
+                                <li><p>1 ángulo recto = 90° (grados sexagesimales)</p></li>
+                                <li><p>1 grado sexagesimal = 60' (minutos sexagesimales)</p></li>
+                                <li><p>1 minuto sexagesimal = 60"(segundos sexagesimales)</p></li>
+                            </ul>
+                        </div>
+                        <div class="img">
+                            <img loading="lazy" class="space-img img80-500" src="https://www.mundoprimaria.com/wp-content/uploads/2022/07/que-es-el-sistema-sexagesimal-para-ninos-y-ninas.jpg"
+                             alt="Ángulos sexagesimales">   
+                        </div>
+                    </div>
+                    <br>
+                    
+                <li><h3>Radianes</h3></li>
                 <div class="flex">
                     <div>
-                        <p >El <span class="textopitagoras">Teorema de Pitágoras</span> nos indica que todos los 
-                        triángulos cumple la propiedad de que la suma de sus catetos elevados al cuadrado, es igual a 
-                        la hipotenusa elevada al cuadrado.</p>
-                        <br>    
-                        <p>Es importante saber que la hipotenusa es el lado más largo del triángulo y siempre está 
-                        opuesto al ángulo recto. Por otro lado los catetos se pueden identificar como cateto adyacente 
-                        y cateto opuesto, de acuerdo a la posición del ángulo.El cateto adyacente vendría a ser el 
-                        cateto más cercano al ángulo recto, prácticamente es el lado que está junto al angulo dado. 
-                        Mientras que el cateto opuesto es el que está en frente del ángulo. </p>
-                        <br>
-                        <p><span class="nota">NOTA: </span>El <span class="italics">cateto adyacente</span> representa el coseno del ángulo, mientras que el <span class="italics">cateto opuesto</span> opuesto representa el seno del ángulo</p>
+                        <p>&nbsp&nbsp&nbsp&nbspUn <em>radián</em> es una unidad de medida que se utiliza para medir los ángulos,
+                        se representan con el símbolo pi <b>(&#960)</b> y un radián es equivalente a 
+                        <b>180°</b>. De esta forma, 2&#960 representan <b>360°</b> (un círculo completo), y <Sup>&#960</sup>/<sub>2</sub> representa
+                        <b>90°</b> (un ángulo recto).</p>
+                        <ul class="ulspace">
+                            <li><p>&#960 = 180° </p></li>
+                            <li><p>2&#960 = 360°</p></li>
+                            <li><p><Sup>&#960</sup>/<sub>2</sub> = 90° </p></li>
+                            <li><p><Sup>&#960</sup>/<sub>4</sub> = 45° </p></li>
+                        </ul>
                     </div>
-                
                     <div class="img">
-                        
-                        <img class="space-img" src="https://www.neurochispas.com/wp-content/uploads/2021/05/como-aplicar-el-teorema-de-pitagoras.png"
-                        width="300" height="295" alt="Triángulo Rectángulo">   
+                        <img loading="lazy" class="space-img img80-500" src="https://educapedia.org/wp-content/uploads/2020/10/radianes-a-grados.jpg"
+                       alt="Radianes">   
                     </div>
                 </div>
-                 <div id="pdf">
+                </ul>
+            </div>
+            <div class="pdf-grid" >
+               <div class="iframe grid11">
+                   <iframe loading="lazy" src="./Apps/pdfjs/web/viewer.html?file=pdfs/Matemáticas/Pitágoras/ejerciciosangulos.pdf" 
+                   class="pdf"></iframe>
+                </div>
+                
+                <div class="button grid21">
+                    <button><a href="./Apps/pdfjs/web/viewer.html?file=pdfs/Matemáticas/Pitágoras/ejerciciosangulos.pdf" target="_blank">Abrir en otra ventana</a></button> 
+                 </div>
+                 
+                <div class="iframe grid12">
+                   <iframe loading="lazy" src="./Apps/pdfjs/web/viewer.html?file=pdfs/Matemáticas/Pitágoras/pitagorasangulos.pdf" 
+                   class="pdf"></iframe>
+               </div>
+               
+                <div class="button grid22">
+                   <button><a href="./Apps/pdfjs/web/viewer.html?file=pdfs/Matemáticas/Pitágoras/pitagorasangulos.pdf" target="_blank">Abrir en otra ventana</a></button> 
+                </div>    
+           </div>
+            </div>
+            <br>
+            <hr>
+            <br>
+        </section>
+        <section id="IdentidadesTrigonometricas" class="standard hidden4" >
+           
+            <br>
+            <h2>Identidades fundamentales</h2>
+            <div class="flex" >
+                <div>
+                    <p>&nbsp&nbsp&nbsp&nbspExisten muchas identidades trigonómetricas, siendo las más famosas, las identidades pitágoricas o fundamentales, las cuales 
+                    gracias al Teorema de Pitágoras nos indica que <b>sen<sup>2</sup>&#945  + cos<sup>2</sup> &#945 = 1</b>. Esto sucede,
+                    ya que <b>cos&#945 = x</b> y <b>sen&#945 = y,</b> entonces al elevar cada uno al cuadrado y sumarlos, siempre el resultado
+                    será <b>1</b>.  </p>
+                    <p>&nbsp&nbsp&nbsp&nbspEl resto de las identidades surgen o se crean a partir de la identidad base. Una de ellas es <b>1  + ctg<sup>2</sup>&#945 = csc<sup>2</sup>&#945</b>,
+                        la cual se forma diviendo todos los términos entre <b>sen<sup>2</sup>&#945</b>. Por ende, <b>sen<sup>2</sup>&#945 / sen<sup>2</sup> &#945</b> se convierte en <b>1</b>, 
+                        posteriormente, al dividir <b>cos<sup>2</sup>&#945 / sen<sup>2</sup> &#945</b> obtenemos <b>ctg<sup>2</sup>&#945</b>, así pues, conseguimos <b>csc<sup>2</sup>&#945</b> 
+                        gracias a dividir <b> 1 / cos<sup>2</sup>&#945</b>, </p>
+                <p>&nbsp&nbsp&nbsp&nbspLa tercera identidad, a diferencia de la segunda se genera al dividir ambos lados de la igualdad entre <b>cos<sup>2</sup> &#945</b>, de tal forma forma que <b>sen<sup>2</sup>&#945 / cos<sup>2</sup> &#945</b>
+                    se convierte en <b>tan<sup>2</sup>&#945</b>,luego <b>cos<sup>2</sup>&#945 / cos<sup>2</sup> &#945</b> se convierte en <b>1</b> y por ultimo, <b>1 / cos<sup>2</sup> &#945</b> se transforma en <b>sec<sup>2</sup>&#945</b>.
+                    Siendo así <b>tan<sup>2</sup>&#945  + 1 = sec<sup>2</sup>&#945</b> una identidad trigonométricas.
+                </p>
+                </div>  
+                <div class="img">
+                    <img loading="lazy" class="space-img img80-300" src="https://i0.wp.com/lasmatesfaciles.com/wp-content/uploads/2019/10/imagen-2.png?resize=312%2C524&ssl=1"
+                    alt="Identidades Trigonométricas"> 
+                </div>
+            </div>
+            <div class="flex">
+            <div>
+            <p><span loading="lazy" class="nota">&nbsp&nbsp&nbsp&nbspNOTA:</span> Estas identidades se derivan del circulo unitario, es por eso que al
+                sumar el seno y el coseno elevados al cuadrado obtenemos 1, ya que sería la hipotenusa(el radio), el cual vale 1</p>
+                <ul class="ulspace">
+                    <li><p>sen = seno</p></li>
+                    <li><p>cos = coseno</p></li>
+                    <li><p>tan = tangente</p></li>
+                    <li><p>csc = cosecante</p></li>
+                    <li><p>sec = secante</p></li>
+                    <li><p>ctg = cotangente</p></li>
+                </ul>
+            </div>
+            <div class="img"> 
+                <img class="space-img img80-300" src="https://www.neurochispas.com/wp-content/uploads/2021/05/seno-y-coseno-en-circulo-unitario.png"
+                 height="195" alt="Círculo Unitario">    
+            </div>
+
+            </div >
+            <div class="margin">
+                <h2>Otras identidades trigonométricas</h2>
+                <ul>
+                <li><h3>Suma  y Resta de ángulos</h3></li>
+                <br>
+                <br>
+                <div class="img">
+                    <img loading="lazy" class="space-img img80-300" src="https://www.matesfacil.com/ESO/trigonometria/suma/p0.png"
+                    alt="Suma de ángulos"> 
+                </div>
+                <br>
+                <br>
+                <li><h3>Ángulo Doble</h3></li>
+                <br>
+                <br>
+                <div class="img">
+                    <img loading="lazy" class="space-img img80-300" src="https://www.neurochispas.com/wp-content/uploads/2022/01/identidades-de-angulos-dobles.png"
+                    height="300" alt="Ángulo Doble"> 
+                </div>
+                <br>
+                <br>
+                <li><h3>Ángulo Medio</h3></li>
+                <br>
+                <br>
+                <div class="img">
+                    <img loading="lazy" class="space-img img80-300" src="https://latex.codecogs.com/gif.latex?\large&space;\begin{align*}&space;\bullet&space;&&space;\hspace{1.0em}&space;\sin&space;\frac{\pi&space;}{2}=\pm&space;\sqrt{\frac{1-\cos&space;a}{2}}&space;\\&space;\bullet&space;&&space;\hspace{1.0em}&space;\cos&space;\frac{\pi&space;}{2}=\pm&space;\sqrt{\frac{1+\cos&space;a}{2}}&space;\\&space;\bullet&space;&&space;\hspace{1.0em}&space;\tan\frac{\pi&space;}{2}=&space;\sqrt{\frac{1-\cos&space;a}{1+\cos&space;a}}\\&space;\end{align*}"
+                    alt="Ángulo medio"> 
+                </div>
+                </ul>
+                <br><br>
+            </div>
+            <div class="pdf" >
+                <div class="iframe">
+                    <iframe loading="lazy" src="./Apps/pdfjs/web/viewer.html?file=pdfs/Matemáticas/Pitágoras/identidades.pdf" 
+                    class="pdf"></iframe>
+                    
+                </div>
+                <br>
+                    <div class="button">
+                        <button><a href="./Apps/pdfjs/web/viewer.html?file=pdfs/Matemáticas/Pitágoras/identidades.pdf" target="_blank">Abrir en otra ventana</a></button> 
+                </div>    
+            </div>
+             </div>
+             <br>
+             <br>
+        </section>
+        <section id="TeoremaSenoCoseno" class="standard hidden4" >
+            <hr>
+            <br>
+            <h2>Teorema del Seno y del Coseno</h2>
+            <br>
+            <div class="flex">
+            <div class="angulos">
+                <h3 class="margin">Teorema del seno</h3>
+                <p>&nbsp&nbsp&nbsp&nbspEl <b>Teorema del Seno</b> establece una relación entre cualquier lado de un tríangulo con su ángulo opuesto. 
+                Básicamente, relaciona las longitudes de los lados con el seno de los ángulos opuestos.</p>
+                <br>
+                <p>La ecuación que la compone es: <b><sup>a<sup>2</sup></sup>/<sub>sen&#945</sub> = <sup>b<sup>2</sup></sup>/<sub>sen&#946</sub> = <sup>c<sup>2</sup></sup>/<sub>sen&#947</sub> </b> </p>
+            </div>  
+            <div class="img">
+                <img loading="lazy" class="space-img img80-450" src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Ley_de_los_senos.svg/1200px-Ley_de_los_senos.svg.png"
+                height="275px" alt="Ángulo medio"> 
+            </div>  
+            </div>
+            <br>
+            <div class="flex">
+                <div class="angulos">
+                <h3 class="margin">Teorema del Coseno</h3>
+                <p>&nbsp&nbsp&nbsp&nbspEl <b>Teorema del Coseno</b> establece una relación entre 2 lados cualquiera del triángulo con el ángulo 
+                formado entre ellos. Básicamente, relaciona las longitudes de dos lados con el coseno del ángulo que forman entre ellos.</p>
+                <br>
+               <p>El teorema del coseno tiene 3 diferentes ecuaciones de acuerdo al lado que quieres hallar:</p>
+               <ul class="margin">
+                <li><p>a<sup>2</sup> = b<sup>2</sup> + c<sup>2</sup> - 2b &#215 c&#215cos&#945</p></li>
+                <li><p>b<sup>2</sup> = a<sup>2</sup> + c<sup>2</sup> - 2a &#215 c&#215cos&#946</p></li>
+                <li><p>c<sup>2</sup> = a<sup>2</sup> + b<sup>2</sup> - 2a &#215 b&#215cos&#947</p></li>
+               </ul>
+                </div>
+                <div class="img">
+                    <img loading="lazy" class="space-img img80-300" src="https://www.matesfacil.com/BAC/trigonometria/teorema/coseno/TCOS1.png"
+                   alt="Ángulo medio"> 
+                    </div>  
+                </div>
+                <div class="pdf" >
                     <div class="iframe">
-                        <iframe src="./Apps/pdfjs/web/viewer.html?file=Hoja de trabajo 3-día 1.pdf" style="width:630px; height:575px;" 
-                         class="pdf"></iframe>
+                        <iframe loading="lazy" src="./Apps/pdfjs/web/viewer.html?file=pdfs/Matemáticas/Pitágoras/teoremasenocoseno.pdf" 
+                        class="pdf"></iframe>
+                        
                     </div>
+                    <br>
                         <div class="button">
-                        <br>
-                        <button><a href="./Apps/pdfjs/web/viewer.html?file=Hoja de trabajo 3-día 1.pdf" target="_blank">Abrir en otra ventana</a></button> 
+                            <button><a href="./Apps/pdfjs/web/viewer.html?file=pdfs/Matemáticas/Pitágoras/teoremasenocoseno.pdf" target="_blank">Abrir en otra ventana</a></button> 
                     </div>    
                 </div>
+                <br>
+                <br>
             </div>
         </section>
-        <section id="logaritmos">
-            <div class="logaritmos">
-                <h2>Logaritmos</h2>
+        <section id="EcuacionesTrigonometricas" class="standard hidden4" >
+            <hr>
+            <br>
+            <h2>Ecuaciones</h2>
+            <br>
+            <div class="flex">
+                <div class="angulos">
+                    <h3 class="margin">Ecuaciones Trigonómetricas</h3>
+                    <p>&nbsp&nbsp&nbsp&nbspEn el caso de las <b>ecuaciones trigonómetricas</b> la incógnita pasa de ser un número a ser un ángulo que 
+                    satisface la ecuación. Cabe decir que en las ecuaciones trigonométricas pueden haber una o más identidades.</p>
+                    <p><b>&nbsp&nbsp&nbsp&nbspRecomendación: </b>A la hora de resolver las ecuaciones trigonómetricas se recomienda convertir todos los términos 
+                    a una misma variable, generalmente, se suelen convertir las variables en función del <b>seno</b> o del <b>coseno</b>, y en algunos 
+                    casos de la <b>tangente</b>. De esta forma es más fácil tanto resolver la ecuación, cómo hallar el valor del ángulo. </p>
+                </div>
+                <div class="img">
+                    <img loading="lazy" class="space-img img80-250" src="https://www.ejerciciosecuaciones.com/wp-content/uploads/2021/01/Ecuaciones-trigonometricas-resueltas.png"
+                     alt="Ecuaciones trigonométricas"> 
+                    </div>  
+                </div>
+            </div>
+            <div class="pdf" >
+                <div class="iframe">
+                    <iframe loading="lazy" src="./Apps/pdfjs/web/viewer.html?file=pdfs/Matemáticas/Pitágoras/EcuacionesTrigonometricas.pdf" 
+                    class="pdf"></iframe>
+                    
+                </div>
+                <br>
+                    <div class="button">
+                        <button><a href="./Apps/pdfjs/web/viewer.html?file=pdfs/Matemáticas/Pitágoras/EcuacionesTrigonometricas.pdf" target="_blank">Abrir en otra ventana</a></button> 
+                </div>    
+            </div>
+            <br>
+            <br>
+            <div class="flex">
+                <div class="h3">
+                    <h3 class="margin">Ecuaciones Exponenciales</h3>
+                    <p>Son ecuaciones cuya incógnita únicamente forma parte de un exponente. 
+                    La incógnita puede aparecer en el exponente de uno o más términos, en cualquier miembro de la ecuación. Para resolver 
+                    resolver estas ecuaciones hay 2 formas, la primera es con igualación de bases para así poder obtener una ecuación de los exponentes para despejar x(la incógnita). 
+                    La segunda es aplicando logaritmos a ambos lados de la igualdad. 
+                    </p>
+                    <p><span class="nota">&nbsp&nbsp&nbsp&nbspNOTA:</span> En estas ecuaciones se suelen usar las propiedades de la potenciación, los logaritmos y los cambios de variable </p>
+                </div>
+                <div class="img">
+                    <img loading="lazy" src="https://www.ejerciciosecuaciones.com/wp-content/uploads/2021/01/Ecuaciones-exponenciales-resueltas.png" 
+                    class="space-img img80-250"  alt="Ecuaciones Exponenciales">
+                </div>
+            </div>
+            <div class="pdf-grid" >
+                <div class="iframe grid11">
+                    <iframe loading="lazy" src="./Apps/pdfjs/web/viewer.html?file=pdfs/Matemáticas/Logaritmos/ecuacionesexponenciales.pdf" 
+                    class="pdf"></iframe>
+                </div>
+                
+                <div class="button grid21">
+                    <button><a href="./Apps/pdfjs/web/viewer.html?file=pdfs/Matemáticas/Logaritmos/ecuacionesexponenciales.pdf" target="_blank">Abrir en otra ventana</a></button> 
+                </div>
+                
+                <div class="iframe grid12">
+                    <iframe loading="lazy" src="./Apps/pdfjs/web/viewer.html?file=pdfs/Matemáticas/Logaritmos/ecuacionesvariadas.pdf" 
+                    class="pdf"></iframe>
+                </div>
+                
+                
+                <div class="button grid22">
+                    <button><a href="./Apps/pdfjs/web/viewer.html?file=pdfs/Matemáticas/Logaritmos/ecuacionesvariadas.pdf" target="_blank">Abrir en otra ventana</a></button> 
+                </div>    
+            </div>
+            <br>
+            <br>
+                <div class="h3">
+                    <h3 class="margin">Ecuaciones Logarítmicas</h3>
+                    <p>Son aquellas donde la incógnita forma parte del argumento del logaritmo. Para resolverlos hay que utilizar propiedades de los logaritmos y antilogaritmos.</p>
+                    <div class="center">
+                        <img loading="lazy" class="space-img img80" src="./imagenes/mate/ecuacioneslogaritmicas.JPG"  alt="Ecuaciones logaritmicas">
+                    </div>    
+                </div>
+                <br>
+                <div class="pdf-grid" >
+                    <div class="iframe grid11">
+                        <iframe loading="lazy" src="./Apps/pdfjs/web/viewer.html?file=pdfs/Matemáticas/Logaritmos/ecuacioneslogaritmicas.pdf" 
+                        class="pdf"></iframe>
+                    </div>
+                    <div class="button grid21">
+                        <button><a href="./Apps/pdfjs/web/viewer.html?file=pdfs/Matemáticas/Logaritmos/ecuacioneslogaritmicas.pdf" target="_blank">Abrir en otra ventana</a></button> 
+                    </div>
+                    <div class="iframe grid12">
+                        <iframe loading="lazy" src="./Apps/pdfjs/web/viewer.html?file=pdfs/Matemáticas/Logaritmos/sistemaecuacioneslogexp.pdf" 
+                        class="pdf"></iframe>
+                    </div>
+                    <div class="button grid22">
+                        <button><a href="./Apps/pdfjs/web/viewer.html?file=pdfs/Matemáticas/Logaritmos/sistemaecuacioneslogexp.pdf" target="_blank">Abrir en otra ventana</a></button> 
+                    </div>    
+                </div>
+                <br>
+                <br>
+        </section>
+        <section id="NumerosImaginarios" class="standard hidden4" >
+            <hr>
+            <br>
+            <h2>Numeros Complejos</h2>
+            <div class="flex">
+                <div class="angulos">
+                    <p>&nbsp&nbsp&nbsp&nbspUn <b>número complejo</b>  es la suma de un número real y un un número imaginario. Ese número imaginario 
+                    se simboliza con la letra i y representa &#8730-1, es decir, se utiliza "i" para representar todas las raíces negativas
+                    que no tienen una solución real.</p>
+                    <p><b>Fórmula de los números complejos:</b> z = a + b&#215i <br><br>
+                    Siendo a la parte real y b la parte imaginaria</p>
+                    <h3 class="margin">Potencias de la unidad imaginaria</h3>
+                    <ul class="ulspace">
+                        <br>
+                        <br>
+                       <li><p>i<sup>0</sup> = 1</p></li> 
+                       <li><p>i<sup>1</sup> = i</p></li> 
+                       <li><p>i<sup>2</sup> = -1</p></li> 
+                       <li><p>i<sup>3</sup> = -i</p></li>
+                       <li><p>i<sup>4</sup> = -1</p></li>
+                    </ul>
+                    <p><span class="nota">&nbsp&nbsp&nbsp&nbspNOTA:</span> A partir de la 4ta potencia de i, se empiezan a repetir los números, 
+                        por eso para calcular el valor de números imaginarios con potencia mayor a 3, debemos dividir esa potencia entre 4,
+                        y el resto indicará su potencia entre 0 y 3, en la cual podras deducir su valor.</p>
+                </div>
+                <div > 
+                    <div class="img">
+                        <img loading="lazy" class="space-img img80-250" src="https://i.ytimg.com/vi/jHERiQIf9KA/maxresdefault.jpg"
+                        alt="Número Complejo"> 
+                    </div>
+                    <div class="img">
+                        <img loading="lazy" class="space-img img80-250" src="https://matemelga.files.wordpress.com/2018/08/imaginario.jpg"
+                        alt="Número Imaginario"> 
+                    </div>
+                </div>  
+                </div>
+                <br><br>
+                <div class="flex">
+                    <div class="angulos">
+                    <h3 class="margin">Plano cartesiano con números complejos</h3>
+                    <p>&nbsp&nbsp&nbsp&nbspLos números complejos también se pueden escribir en forma de par ordenado, de tal forma que la parte real representa
+                    el eje x, y la parte imaginaria representando el eje y. <br>
+                    <b> z = a + b&#215i = (a,b)</b>
+                    </p>
+                    <h3 class="margin">Tipos de números complejos</h3>
+                    <ul class="margin">
+                        <li><p> <b>Imaginarios puros:</b> En este caso la parte real es cero => Z = 0 + bi &#8594 (0,b)</p></li>
+                        <li><p><b>Reales puros:</b> En este la parte imaginaria es 0  => Z = a + 0i &#8594 (a,0)</p></li>
+                        <li><p><b>Complejo Nulo:</b> En este caso ambas parte, tanto la real como la imaginaria son 0 => Z = 0 + 0i &#8594 (0,0)</p></li>
+                        <li><p><b>Opuesto de un complejo:</b>Sea z = a + bi su opuesto será -z = -a - bi 
+                        <br><b>Ejemplo:</b> z= -3 +5i &#8594 -z= +3 - 5i</p></li>
+                        <li><p><b>Conjugada de un complejo:</b> Sea z = a + bi su opuesto será ƶ = a - bi
+                        <br><b>Ejemplo:</b> z= -5 +3i &#8594 ƶ= -5 - 3i</p></li>
+                       </ul>
+                    </div>
+                    <div>
+                        <br><br>
+                        <div class="img">
+                            <img loading="lazy" class="space-img img80-350" src="https://i.ytimg.com/vi/8ycGicTWcFU/maxresdefault.jpg"
+                            alt="Plano cartesiano números complejos">  
+                        </div>
+                        <div class="img">
+                            <img loading="lazy" class="space-img img80-500" src="https://i.ytimg.com/vi/wBHZBE8ocEg/maxresdefault.jpg"
+                            alt="Plano cartesiano números complejos">  
+                        </div>
+                    </div>  
+                </div>
+                <div class="pdf" >
+                    <div class="iframe">
+                        <iframe loading="lazy" src="./Apps/pdfjs/web/viewer.html?file=pdfs\Matemáticas\NumerosImaginarios/numeroscomplejos.pdf" 
+                        class="pdf"></iframe>
+                    </div>
+                    <br>
+                        <div class="button">
+                            <button><a href="./Apps/pdfjs/web/viewer.html?file=pdfs\Matemáticas\NumerosImaginarios/numeroscomplejos.pdf" target="_blank">Abrir en otra ventana</a></button> 
+                    </div>    
+                </div>
+                <br>
+                <div>
+                    <div class="angulos">
+                        <h3 class="margin">Operaciones con números complejos</h3>
+                        <ol class="margin">
+                            <li><p> <b>Adición y sustracción:</b> En este caso simplemente hay que juntar las partes reales y las partes imaginarias para poder realizar la operación.
+                            En el caso de la suma no hay que realizar más nada, simplemente sumas las partes reales entre sí y las partes imaginarias entre sí. Sin embargo, en la resta,
+                            primero hay que cambiarle el signo a toda el número complejo (tanto la parte real como la imaginaria) para luego poder sumar cada parte.
+                            <br><br><b> Ejemplo:</b></p>
+                            <div class="img">
+                                <img loading="lazy" class="space-img img80" src="./imagenes/mate/sumarestacomplejos.png"
+                                 alt="Suma y resta con números complejos"> 
+                            </div>
+                            </li>
+                            
+                            <li><p><b>Multiplicación:</b>En este caso, hay que realizar una multiplicación distributiva y luego realizar una suma algebraica entre los términos. 
+                            Aunque, el último término siempre quedará con un i<sup>2</sup> el cual le cambiará el signo al número y se convertirá en un número real.
+                            <br><br><b>Ejemplo:</b></p>
+                                <div class="img">
+                                    <img loading="lazy" class="space-img img80" src="./imagenes/mate/multiplicacioncomplejos.png"
+                                     alt="Multiplicación con números complejos"> 
+                                    </div>
+                            </li>
+                            
+                            <li><p><b>División:</b> En el caso de las divisiones tenemos que multiplicar ambos terminos por la conjugada del denominador. 
+                            De esa forma se puede realizar el siguiente producto notable en el denominador => (a + b) &#215 (a - b) = a<sup>2</sup> - c <sup>2</sup>
+                            <br><br><b>Ejemplo:</b></p>
+                            <div class="img">
+                                <img loading="lazy" class="space-img img80" src="./imagenes/mate/divisioncomplejos.png"
+                                 alt="Division con números complejos"> 
+                                </div>
+                            </li>
+                        
+                            <li><p><b>Sistemas de ecuaciones:</b> En el caso de los sistemas de ecuaciones lo que hay que hacer es igualar las partes reales y las partes imaginarias, para que queden 2 ecuaciones lineales.
+                            <br><br><b>Ejemplo:</b></p>
+                            <div class="img">
+                                <img loading="lazy" class="space-img img80" src="./imagenes/mate/ecuacionescomplejos.png"
+                                alt="Ecuaciones con números complejos"> 
+                            </div>
+                            </li>    
+
+                            <li><p><b>Raíz cuadrada de un complejo:</b> Para un complejo z= a + bi su raíz cuadrada será &#8594 &#8730(a + bi) = x + yi
+                            <br>Por lo tanto, el problema consiste en hallar los valores de "<b>x</b>" y "<b>y</b>".
+                            <br><br><b>Ejemplo:</b></p>
+                            <div class="img">
+                                <img loading="lazy" class="space-img img80" src="./imagenes/mate/raizcomplejos.png"
+                                alt="Raíz cuadrada de números complejos"> 
+                            </div>
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+                <div class="pdf" >
+                    <div class="iframe">
+                        <iframe loading="lazy" src="./Apps/pdfjs/web/viewer.html?file=pdfs\Matemáticas\NumerosImaginarios/operacionescomplejos.pdf" 
+                        class="pdf"></iframe>
+                    </div>
+                    <br>
+                        <div class="button">
+                            <button><a href="./Apps/pdfjs/web/viewer.html?file=pdfs\Matemáticas\NumerosImaginarios/operacionescomplejos.pdf" target="_blank">Abrir en otra ventana</a></button> 
+                    </div>    
+                </div>
+                </div>
+                <div>
+                    <div class="angulos">
+                        <br><br>
+                        <h3 class="margin">Forma Polar o Trigonométrica de un complejo</h3>
+                        <p>Para convertir un complejo a forma polar, hay que utilizar un vector cuyo origen será el origen del plano y su extremo será el número complejo.
+                        <ul class="margin">
+                            <li><p><b> Modulo |z|</b></p><img loading="lazy" class="space-img img80" src="./imagenes/mate/modulocomplejo.png"
+                              alt="Modulo complejos"></li><hr>
+                            <li><p><b>Argumento(&#945)</b></p><img loading="lazy" class="space-img img80" src="./imagenes/mate/argumentocomplejos.png"
+                                alt="Argumento numeros complejos"></li><hr>
+                            <li><p><b>Forma polar de un complejo:</b></p><img loading="lazy"  class="space-img img80" src="./imagenes/mate/formapolarcomplejo.png"
+                                alt="Forma polar numeros complejos"></li><hr>
+                        </ul>
+                    </div>
+                </div>
+                <br><br>
+                <div>
+                    <div class="h3">
+                        <h3 class="margin">Operaciones con complejos en forma polar</h3>
+                        <ul class="margin">
+                            <li><p><b>Multiplicación:</b></p><img loading="lazy" class="space-img img80" src="./imagenes/mate/multiplicacionpolares.png"
+                              alt="Multiplicación entre complejos"></li>
+                              <hr>
+                            <li><p><b>División:</b></p><img loading="lazy" class="space-img img80" src="./imagenes/mate/divisionpolares.png"
+                                alt="División entre complejos"></li>
+                                <hr>
+                            <li><b>Potenciación:</b></p><img loading="lazy" class="space-img img80" src="./imagenes/mate/potenciacionpolares.png"
+                                alt="Potenciación de complejos"></li>
+                                <hr>
+                                <li><b>Raíces enésimas:</b></p><img loading="lazy" class="space-img img80" src="./imagenes/mate/raicespolares.png"
+                                    alt="Raíces enésimas de complejos"></li>
+                                  
+                        </ul>
+                    </div>
+                </div>
+                <br>
+                <div class="pdf" >
+                    <div class="iframe">
+                        <iframe loading="lazy" src="./Apps/pdfjs/web/viewer.html?file=pdfs\Matemáticas\NumerosImaginarios/operacionespolares.pdf" 
+                        class="pdf"></iframe>
+                    </div>
+                    <br>
+                        <div class="button">
+                            <button><a href="./Apps/pdfjs/web/viewer.html?file=pdfs\Matemáticas\NumerosImaginarios/operacionespolares.pdf" target="_blank">Abrir en otra ventana</a></button> 
+                    </div>    
+                </div>
+                <br>
+                <hr>
+                <br>
+        </section>
+         <section id="logaritmos" class="standard hidden4" >
+            
+            <h2>Logaritmos</h2>
+            <div class="flex">
+                <div>
+                    <p>Se define como el número al cual hay que elevar otro número llamado <b>¨base¨</b>  para obtener un valor obtenido.
+                    Los logaritmos comprenden al conjunto de los números reales positivos, ya que la <b>base siempre es positiva y diferente de 1</b> , además,
+                    son el inverso de la función exponencial. 
+                    </p>
+                    
+                </div>
+                <div class="img">
+                    <img loading="lazy" class="space-img img80" src="./imagenes/mate/logaritmos.JPG" alt="Logaritmos">
+                </div>
+            </div>
+            <div>
+                <h3 class="margin">Propiedades de logaritmos</h3>
+                <div class="img">
+                    <div class="flex">
+                        <img loading="lazy" class="space-img img80" src="./imagenes/mate/propiedadeslogaritmos.JPG" alt="Propiedades Logaritmos">
+                    <img loading="lazy" class="space-img img80" src="./imagenes/mate/propiedadeslogaritmos1.JPG" alt="Propiedades Logaritmos">
+                    </div>  
+                </div>
+                <div class="h3">
+                    <br>
+                    <br>
+                    <h3 class="margin">Antilogaritmos</h3>
+                    <p>Consiste en elevar el logaritmo a una potencia que sea de igual base que el logaritmo</p>
+                    <div class="img">
+                        <img loading="lazy" class="space-img img80" src="./imagenes/mate/antilogaritmos.JPG" alt="Antilogaritmos">
+                    </div>
+                </div>
+
+                </div>
+            </div>
+            <div class="pdf-grid" >
+                <div class="iframe grid11">
+                    <iframe loading="lazy" src="./Apps/pdfjs/web/viewer.html?file=pdfs/Matemáticas/Logaritmos/logaritmos.pdf" 
+                    ></iframe>
+                </div>
+                <div class="button grid21">
+                    <button><a href="./Apps/pdfjs/web/viewer.html?file=pdfs/Matemáticas/Logaritmos/logaritmos.pdf" target="_blank">Abrir en otra ventana</a></button> 
+                </div>
+                <div class="iframe grid12">        
+                    <iframe loading="lazy" src="./Apps/pdfjs/web/viewer.html?file=pdfs/Matemáticas/Logaritmos/logaritmos2.pdf" 
+                    ></iframe>
+                </div>
+                <div class="button grid22">
+                    <button><a href="./Apps/pdfjs/web/viewer.html?file=pdfs/Matemáticas/Logaritmos/logaritmos2.pdf" target="_blank">Abrir en otra ventana</a></button> 
+                </div>    
+            </div>
+            <br>
+                <hr>
+                <br>
+        </section>
+        
+        <section  id="Teorema del Resto"  class="standard hidden4">
+            <h2>Teorema del Resto</h2>
+            <div class="flex">
+                <div>
+                    <p>
+                        Al dividir un polinomio P(x) entre un binomio (x ± a) y al evaluar el P(a) o P(-a) lo que se obtiene
+                        es el residuo P(x) ÷ (x ± a). Si P (a)o P(-a) = 0 (es igual a cero), se dice que P(x) es divisible por (x ± a). 
+                        En pocas palabras, al sustiuir todas las x por "a" o "-a" en P(x), obtendremos el residuo de la división. 
+                    </p>
+                    <p><span class="nota">&nbsp&nbsp&nbsp&nbspNOTA: El Teorema del Resto solo aplica cuando el divisor Q(x) es de la forma (x ± a)</p>
+                </div>
+                <div class="img">
+                    <img loading="lazy" class="space-img img80-300" src="https://www.polinomios.org/wp-content/uploads/2020/10/teorema-del-resto.jpg" 
+                    alt="Teorema del resto">
+                </div>
+            </div>
+            <div class="pdf" >
+                <div class="iframe">
+                    <iframe loading="lazy" src="./Apps/pdfjs/web/viewer.html?file=pdfs\Matemáticas\TeoremaDelResto/Teorema del resto.pdf" 
+                    class="pdf"></iframe>
+                </div>
+                <br>
+                    <div class="button">
+                        <button><a href="./Apps/pdfjs/web/viewer.html?file=pdfs\Matemáticas\TeoremaDelResto/Teorema del resto.pdf" target="_blank">Abrir en otra ventana</a></button> 
+                </div>    
+            </div>
+            <br>
+                <hr>
+                <br>
+            <div class="CocienteNotable">
+                <h2>Cocientes Notables</h2>
+            <div class="angulos">
+                <p> Los cocientes notables son divisiones exactas entre polinomios, que se usan con frecuencia en álgebra y cálculo.</p>
+                <h3 class="margin">Criterios de los cocientes notables</h3>
+                <div class="img">
+                    <img loading="lazy" class="space-img img80" src="./imagenes/mate/5to/Cociente notables.png" 
+                    alt="Cocientes Notables">
+                </div>
+                <p><span class="nota">&nbsp&nbsp&nbsp&nbspNOTA: En el primer caso todos elementos serán positivos. Mientras que en el segundo y 
+                    tercer caso, los signos van intercalados (es decir, uno positivo y uno negativo). </p>
+            </div>
+            </div>
+            <div class="pdf" >
+                <div class="iframe">
+                    <iframe loading="lazy" src="./Apps/pdfjs/web/pdfs/Matemáticas/TeoremaDelResto/Cocientes notables.pdf"
+                    class="pdf" ></iframe>
+                </div>
+                <br>
+                    <div class="button">
+                        <button><a href="./Apps/pdfjs/web/pdfs/Matemáticas/TeoremaDelResto/Cocientes notables.pdf" target="_blank">Abrir en otra ventana</a></button> 
+                </div>    
+            </div>
+            <br>
+                <hr>
+                <br>
+        </section>
+        <section id="Ruffini" class="standard hidden4">
+            <h2>Regla de Ruffini</h2>
+            <div class="flex">
+                <div>
+                    <p>Es una división sintética entre un polinomio P(x) y un binomio (x ± a). En matemáticas, la regla de Ruffini 
+                    facilita el cálculo rápido de la división de cualquier polinomio de forma (x ± a) y se relaciona con el Teorema del resto.</p>
+                    <p>Pasos:</p>
+                    <ol class="margin">
+                        <li><p>Se completa y se ordena el D(x) → (D(x) es el dividendo)</p> </li>
+                        <li><p>Se despeja la "x" del divisor</p></li>
+                        <li><p>Usamos los coeficientes del D(x) y el número dado por el divisor</p></li>
+                        <li><p>Lo primero, es usar el coeficiente de la incógnita (x) de mayor grado. Luego, se multiplica por el divisor y 
+                            pasa sumando con el coeficiente de (x-n), es decir, el número de la derecha (x<sup>3</sup> → x<sup>2</sup>) .
+                            Este proceso se repite con todos los elementos del dividendo.
+                        </p></li>
+                    </ol>
+                </div>
+                <div class="imgcenter ">
+                    <img loading="lazy" class="space-img img80-500" src="./imagenes/mate/5to/Ruffini.jpg" 
+                    alt="Ruffini">
+                </div>
+            </div>
+            <h3 class="center">Factorización mediante Ruffini</h3>
+            <div class="flex">
+                <div>
+                    <p>Son todos aquellos divisores del polinomio que dan como resultado la expresión polinómica, 
+                    simplificada, en forma de multiplicación. Estos tambíen se conocen como raíces o ceros (0) del polinomio.
+                    Para calcularlos se utiliza el método de Ruffini, con la condición de que el residuo tiene que ser igual a cero (0)</p>
+                    <p><span class="nota">Datos Importantes:</span></p>
+                    <ul class="margin">
+                        <li><p>Un polinomio puede tener tantas raíces, en base, al grado mayor del polinomio. Es decir, si el 
+                            polinomio es grado 3, sólo podrá tener 3 raíces</p></li>
+                        <li><p>Utilizar como divisores del polinomio, aquellos números que sean divisores del término 
+                        independiente (ya sean positivo o negativos)</p></li>
+                        <li><p>Cuando el coeficiente de la variable de mayor grado del polinomio es igual a 1 (uno), 
+                        P(x) solo tendrá raíces "enteras"</p></li>
+                        <li><p>Cuando el coeficiente de la variable de mayor grado del polinomio es mayor a 1 (uno), 
+                            P(x) tendrá al menos una raíz "fraccionaria"</p></li>
+                        <li><p>Por último, es importante saber que existen polinomios que aceptan raíces "imaginarias" (i). 
+                            Además, toda raíz compleja también admite su conjugada</p></li>
+                    </ul>
+                </div>
+                <div class="imgcenter">
+                    <img loading="lazy" class="space-img img80-500" src="./imagenes/mate/5to/FactorizaciónRuffini.jpg" 
+                    alt="Ruffini">
+                </div>
+            </div>
+            <div class="pdf-grid" >
+                <div class="iframe grid11">
+                    <iframe loading="lazy" src="./Apps/pdfjs/web/viewer.html?file=pdfs\Matemáticas/Ruffini/Ruffini.pdf" 
+                    class="pdf" ></iframe>
+                </div>
+                <div class="button grid21">
+                    <button><a href="./Apps/pdfjs/web/viewer.html?file=pdfs\Matemáticas/Ruffini/Ruffini.pdf"  target="_blank">Abrir en otra ventana</a></button> 
+                </div>
+                <div class="iframe grid12">        
+                    <iframe loading="lazy"  src="./Apps/pdfjs/web/viewer.html?file=pdfs/Matemáticas/Ruffini/RuffiniPrueba.pdf" 
+                    ></iframe>
+                </div>
+                <div class="button grid22">
+                    <button><a href="./Apps/pdfjs/web/viewer.html?file=pdfs/Matemáticas/Ruffini/RuffiniPrueba.pdf" target="_blank">Abrir en otra ventana</a></button> 
+                </div>    
+            </div>
+            <br>
+            <hr><br>
+        </section>
+        <section id="Limites" class="standard hidden4">
+            <h2>Límites</h2>
+            <div class="flex">
+                <div>
+                    <p>Un límite expresa la tendencia que presenta una función f(x), cuando X o su parámetro tiende a algún número.
+                        Esta aproximación se puede hacer tanto por la derecha x<sup>+</sup> o por la izquierda x<sup>-</sup></p>
+                    <p>Es precisamente por eso, que se dice que un límite existe, es cuando los límites laterales 
+                    (por la izquierda y por la derecha) son iguales. Es decir, si tenemos una función que tiende a x → 3, la 
+                    función tendrá un limite solo si x → 3<sup>-</sup> y 3<sup>+</sup> dan el mismo resultado.</p>
+                    <p><span class="nota">&nbsp&nbsp&nbsp&nbspNOTA:</span> Un límite por la izquierda hace una referencia a un número muy cercano a X, pero que es menor que X (en el caso anterior sería 2.99999999999).
+                    Mientra que un límite por la derecha, es un número muy cercano a X pero siempre mayor a este (en este caso sería 3.0000000001)</p>
+                
+                </div>
+                <div class="imgcenter">
+                    <img loading="lazy" class="space-img img80-450" src="https://www.fisicalab.com/sites/all/files/contenidos/matematicas/2224_limites_funciones/notacion_concepto_limite.gif" 
+                    alt="Limites">
+                </div>
+            </div>
+            <div >
+                <h3 class="margin"><span class="nota">Regla de los infinitos</span></h3>
+                <div class="img">
+                    <img loading="lazy" class="space-img img80" src="./imagenes/mate/5to/Regla de los infinitos.png" 
+                    alt="Regla de los infinitos">
+                </div>
+                <h3 class="margin"><span class="nota">Existencia del límite</span></h3>
+                <div class="flex">
+                    <p>Si el limite f(x) es igual a un número, a <i class="fa-solid fa-infinity"></i> o -<i class="fa-solid fa-infinity"></i>,
+                    se dice que el límite existe</p>
+                    <div class="img">
+                        <img loading="lazy" class="space-img img80" src="./imagenes/mate/5to/Existencia limite.png" 
+                        alt="Existencia Limite">
+                    </div>
+                </div>
+                <div class="flex">
+                    <p>Se dice que el limite f(x) no existe cuando el límite por la izquierda, es distinto al límite por la derecha</p>
+                    <div class="img">
+                        <img loading="lazy" class="space-img img80" src="./imagenes/mate/5to/Existencia limite2.png" 
+                        alt="Existencia Limite">
+                    </div>
+                </div>
+                <h3 class="margin">Propiedades</h3>
+                <ul class="margin">
+                    <li><p><b>Funciones con una constantes</b></p><img loading="lazy" class="space-img img80" src="./imagenes/mate/5to/PropiedadLimite.png" 
+                        alt="Limites"></li>
+                        <hr>
+                    <li><p><b>Suma de funciones</b></p><img loading="lazy" class="space-img img80" src="./imagenes/mate/5to/PropiedadLimite2.png" 
+                            alt="Limites"></li>
+                            <hr>
+                    <li><p><b>Multiplicación de funciones</b></p><img loading="lazy" class="space-img img80" src="./imagenes/mate/5to/PropiedadLimite3.png" 
+                                alt="Limites"></li>
+                                <hr>
+                    <li><p><b>División de funciones</b></p><img loading="lazy" class="space-img img80" src="./imagenes/mate/5to/PropiedadLimite4.png" 
+                                    alt="Limites"></li>
+                                    <hr>
+                </ul>
+                <div class="pdf" >
+                    <div class="iframe">
+                        <iframe loading="lazy" src="./Apps/pdfjs/web/pdfs/Matemáticas/Limites/Limites.pdf" src="./Apps/pdfjs/web/viewer.html?file=pdfs/Matemáticas/Limites/Limites.pdf" 
+                        class="pdf" ></iframe>
+                    </div>
+                    <br>
+                        <div class="button">
+                            <button ><a href="./Apps/pdfjs/web/viewer.html?file=pdfs/Matemáticas/Limites/Limites.pdf"  target="_blank">Abrir en otra ventana</a></button> 
+                    </div>    
+                </div>
+                <br>
+                <hr><br>
+            </div>
+            <h2>Regla de L'Hôpital</h2>
+            <div class="flex">
+                <div>
+                    <p>La regla de L'Hôpital permite resolver indeterminaciones de tipo infinito entre infinito 
+                        (<sup>∞</sup>/<sub>∞</sub>) o cero entre cero (<sup>0</sup>/<sub>0</sub>). Este método consiste 
+                        en derivar la función del numerador y derivar la función del denominador, hasta que se resuelva 
+                        la indeterminación</p>
+                </div>
+                <div class="img">
+                    <img loading="lazy" class="space-img img80" src="./imagenes/mate/5to/Regla L'hopital.png" 
+                    alt="L'Hôpital">
+                </div>
+            </div>
+            <div class="pdf" >
+                <div class="iframe">
+                    <iframe loading="lazy"  src="./Apps/pdfjs/web/viewer.html?file=pdfs/Matemáticas/Limites/Lhopital.pdf" 
+                    class="pdf" ></iframe>
+                </div>
+                <br>
+                    <div class="button">
+                        <button ><a href="./Apps/pdfjs/web/viewer.html?file=pdfs/Matemáticas/Limites/Lhopital.pdf"  target="_blank">Abrir en otra ventana</a></button> 
+                </div>    
+            </div>
+            <br>
+            <hr><br>
+        </section>
+        <section id="MCI" class="standard hidden4">
+            <h2>MCI (Método de los coeficientes indeterminados)</h2>
+            <p>Este método consiste en separar una fracción compleja, en varias fracciones simples. Cabe destacar que este método se suele usar mucho
+            para resolver Integrales.</p>
+            <h3 class="margin">Pasos:</h3>
+            <ol class="margin">
+                <li><p>Verificar que el grado de P(x) sea menor que el grado de Q(x) (P(x) &lt Q(x)) </p></li>
+                <li><p>Factorizar Q(x)</p></li>
+                <li><p>Separar en tantas fracciones como número de factores tenga el Q(x)</p></li>
+                <li><p>Se suman las fracciones construidas (Las fracciones separadas se suman)</p></li>
+                <li><p>Se eliminan los denominadores de ambas fracciones</p> </li>
+                <li><p>Se construye la igualdad y se buscan los coeficientes</p></li>
+            </ol>
+            <h3 class="margin">Coeficientes</h3>
+            <div class="flex">
+                <div>
+                    <p> Los coeficientes se colocan de un grado menor que el denominador. Es decir, si el denominador es de grado 1 (x), 
+                        el coeficiente no tendría ninguna x (A). Sin embargo, si el denominador es de grado 3, por ejemplo,
+                        el coeficiente tiene que ser de grado 2 (Bx <sup>2</sup> + Cx + D)</p>
+                </div>
+            </div>
+            
+            <h3 class="margin">Casos:</h3>
+            <ul class="margin">
+                <li><p><b>Factores sin repetición:</b></p>
+                <div class="flex">
+                    <div>
+                        <p>En este caso, todos los factores de Q(x) son diferentes y simplemente hay que separarlos en fracciones sin mayor complicación</p>
+                    </div>
+                    <div class="img">
+                        <img loading="lazy" class="space-img img80" src="./imagenes/mate/5to/MCI.jpg" 
+                        alt="MCI">
+                    </div>
+                </div>
+                </li>
+                <li><p><b>Factores con repetición:</b></p>
+                    <div class="flex">
+                        <div>
+                            <p>En este caso, algunos de los factores de Q(x) se repiten. Por ende, en este caso, hace falta poner los factores repetidos de Q(x), elevados al número de veces que se repiten.
+                                Por ejemplo, si se repite 2 veces (x-1), tienes que dividirlos en (x-1) y (x-1)<sup>2</sup>. Es importante resaltar que aunque el denominador este elevado al cuadrado, no afecta el grado de coeficiente del numerador.
+                            </p>
+                        </div>
+                        <div class="img">
+                            <img loading="lazy" class="space-img img80" src="./imagenes/mate/5to/MCIrepeticion.jpg" 
+                            alt="MCI">
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            <div class="pdf-grid" >
+                <div class="iframe grid11">
+                    <iframe loading="lazy" src="./Apps/pdfjs/web/viewer.html?file=pdfs/Matemáticas/MCI/MCI.pdf" 
+                    class="pdf" ></iframe>
+                </div>
+                <div class="button grid21">
+                    <button ><a href="./Apps/pdfjs/web/viewer.html?file=pdfs/Matemáticas/MCI/MCI.pdf"  target="_blank">Abrir en otra ventana</a></button> 
+                </div>
+                <div class="iframe grid12">        
+                    <iframe loading="lazy"  src="./Apps/pdfjs/web/viewer.html?file=pdfs/Matemáticas/MCI/MCIPrueba.pdf" 
+                    ></iframe>
+                </div>
+                <div class="button grid22">
+                    <button><a href="./Apps/pdfjs/web/viewer.html?file=pdfs/Matemáticas/MCI/MCIPrueba.pdf" target="_blank">Abrir en otra ventana</a></button> 
+                </div>    
+            </div>
+            <br>
+            <hr><br>
+        </section>
+        <section id="inecuaciones" class="standard hidden4">
+            <h2>Inecuaciones</h2>
+            <div class="flex">
+                <div>
+                    <p>Es una desigualdad que se satisface para un subconjunto de números reales. Y a diferencia de las ecuaciones, las inecuaciones utilizan signos de mayor que (&gt), mayor o igual que (&#x2265;),
+                        menor que (&lt) o menor o igual que (&#x2264;). Además, las inecuaciones aceptan un rango de soluciones, es decir, 
+                        que una inecuación puede tener varias soluciones </p>
+                </div>
+                <div class="img">
+                    <img loading="lazy" class="space-img img80-450" src="https://www.aplustopper.com/wp-content/uploads/2016/12/graphing-linear-inequalities-1.jpg" 
+                    alt="Inecuaciones">
+                </div>
+            </div>
+            <h3 class="margin">Propiepades de la desigualdad</h3>
+            <ul class="margin">
+                <li><p><b>Suma y Resta</b></p>
+                    <p>Puedes sumar y restar a ambos lados de la desigualdad y se vn a seguir cumpliendo sus soluciones.
+                        Es decir, las sumas y restas no afectan el resultado de la desigualdad.
+                    </p>
+                    <div class="flex center">
+                        <div class="img">
+                            <img loading="lazy" class="space-img img80" src="./imagenes/mate/5to/PropiedadDesigualdadResta.jpg" 
+                            alt="Inecuaciones">
+                        </div>
+                        <div class="img">
+                            <img loading="lazy" class="space-img img80" src="./imagenes/mate/5to/PropiedadDesigualdadSuma.jpg" 
+                            alt="Inecuaciones">
+                        </div>
+                        
+                    </div>
+                </li>
+                <li><p><b>Multiplicación</b></p>
+                    <p>En el caso de la multiplicación, cuando multiplicas ambos lados de la desigualdad por un número <b>positivo</b>, no afecta el resultado.
+                        Sin embargo, cuando multiplicas por un número <b>negativo</b>, tienes que cambiar o voltear el signo de la inecuación, para que la desigualdad se mantenga correcta
+                    </p>
+                    <div class="flex center">
+                        <div class="img">
+                            <img loading="lazy" class="space-img img80" src="./imagenes/mate/5to/PropiedadDesigualdadMultiplicacion1.jpg" 
+                            alt="Inecuaciones">
+                        </div>
+                        <div class="img">
+                            <img loading="lazy" class="space-img img80" src="./imagenes/mate/5to/PropiedadDesigualdadMultiplicacion2.jpg" 
+                            alt="Inecuaciones">
+                        </div>
+                    </div></li>
+                <li><p><b>División</b></p>
+                <p>En el caso de la división,pasa igual que en la multiplicación, cuando divides ambos lados de la desigualdad por un número <b>positivo</b>, no afecta el resultado.
+                    Sin embargo, cuando divides por un número <b>negativo</b>, tienes que cambiar o voltear el signo de la inecuación, para que la desigualdad se mantenga correcta
+                </p>
+                <div class="flex center">
+                    <div class="img">
+                        <img loading="lazy" class="space-img img80" src="./imagenes/mate/5to/PropiedadDesigualdadDivision1.jpg" 
+                        alt="Inecuaciones">
+                    </div>
+                    <div class="img">
+                        <img loading="lazy" class="space-img img80" src="./imagenes/mate/5to/PropiedadDesigualdadDivision2.jpg" 
+                        alt="Inecuaciones">
+                    </div>
+                </li>
+            </ul>
+            <h3 class="margin">Tipos de gráficas</h3>ç
+                <ul class="margin">
+                    <li><p><b>Inecuaciones de primer grado</b></p>
+                    <div class="flex">
+                        <p>Las inecuaciones de primer grado son aquellas que solo tienen un punto de corte y por onde, aceptan soluciones desde el punto de corte
+                            hasta el infinito (ya sea +<i class="fa-solid fa-infinity"></i> o -<i class="fa-solid fa-infinity"></i>)
+                        </p>
+                        <div class="img">
+                            <img loading="lazy" class="space-img img80-350" src="./imagenes/mate/5to/InecuacionPrimerGrado.jpg" 
+                            alt="Inecuaciones">
+                        </div>
+                    </div>
+                   
+                    
+                    </li>
+                    <li><p><b>Inecuaciones de segundo grado o superior</b></p>
+                            <p>Las inecuaciones de segunda grado o superior tienen más de un punto de corte y siguen cierta propiedades.
+                                La primera propiedad es que si es la inecuación es de grado par, empieza por arriba de la recta,
+                                mientras que si es de grado impar, empieza por debajo de la recta. Luego tenemos que tener en cuenta el signo de la desigualdad,
+                                si es mayor que (&gt), las soluciones serán todas aquellas que se encuentren arriba de la recta en la gráfica, mientras que para menor que (&lt),
+                                las respuestas serán todos aquellos numeros debajo de la recta
+                            </p>
+                            <div class="flex center">
+                                <div class="img">
+                                    <img loading="lazy" class="space-img img80-350" src="./imagenes/mate/5to/InecuaciónSegundogrado.jpg" 
+                                    alt="Inecuaciones">
+                                </div>
+                                <div class="img">
+                                    <img loading="lazy" class="space-img img80-350" src="./imagenes/mate/5to/InecuaciónSegundoGrado2.jpg" 
+                                    alt="Inecuaciones">
+                                </div>
+                            </div>
+                            
+                        
+                    </div></li>
+                    <li><p><b>Inecuaciones Racionales</b></p>
+                        <div class="flex">
+                            <p>Este tipo de inecuaciones cumple la misma teoría que las de segundo grado o superior, sin embargo, este tipo de inecuaciones
+                                añade a la gráfica asíntotas, es decir, puntos dónde la función no existe. Por eso, también se añaden ciertas propiedades a este caso.
+                                Lo primero, es sumar los grados del numerador (P(x)) y del denominador (Q(x)). Si la suma da par, la función empieza por arriba de la recta,
+                                mientras que si la suma da negativa, la función empieza por debajo de la recta. Es importante tener en cuenta que siempre que la función llega a una asíntota,
+                                esta decide cambiarse a la dirección opuesta, es decir, si estaba arriba de la recta, pasa a estar debajo de la recta (o viceversa)                    
+                            </p>
+                            <div class="imgcenter">
+                                <img loading="lazy" class="space-img img80-350" src="./imagenes/mate/5to/InecuaciónRacional1.jpg" 
+                                alt="Inecuaciones Racionales">
+                            </div>
+                        </div>
+                        <div class="flex center">
+                            <div class="img">
+                                <img loading="lazy" class="space-img img80-350" src="./imagenes/mate/5to/InecuaciónRacional2.jpg" 
+                                alt="Inecuaciones Racionales">
+                            </div><div class="img">
+                                <img loading="lazy" class="space-img img80-350" src="./imagenes/mate/5to/InecuaciónRacional3.jpg" 
+                                alt="Inecuaciones Racionales">
+                            </div>
+                        </div>                
+                    </li>
+                    <li><p><b>Inecuaciones Modulares</b></p>
+                        <div class="flex">
+                            <p>Las inecuaciones modulares son aquellas desigualdades que presentan valor absoluto. Por ende, se crea un sistema de inecuaciones,
+                            uno, donde la función es positiva y otro dónde la función es negativa (y se le cambia el signo a la desigualdad)
+                            </p>
+                            <div class="img">
+                                <img loading="lazy" class="space-img img80-300" src="./imagenes/mate/5to/InecuacionModular.jpg" 
+                                alt="Inecuaciones Modulares">
+                            </div>
+                        </div>
+                        <h3 class="margin">Propiedades</h3>
+                        <ul class="margin">
+                                <p>Las funciones de valor absoluto, satisfacen la solución, tanto para la función positiva, como para 
+                                    la función negativa</p>
+                                    <div class="img">
+                                        <img loading="lazy" class="space-img img80" src="./imagenes/mate/5to/PropiedadInecuacionModular.JPG" 
+                                        alt="Propiedades Inecuaciones Modulares">
+                                    </div>
+                            </li>
+                                <p>Cuando la funcion de valor absoluto (G(x)) es menor o igual que otra función (H(x)), se forma un sistema de 2 inecuaciones,
+                                    en el cual, la solución es la intersección de ambas inecuaciones. Gráficamente representaría el área o intervalo
+                                    dónde ambas inecuaciones satisfacen la solución
+                                </p>
+                                <div class="img">
+                                    <img loading="lazy" class="space-img img80" src="./imagenes/mate/5to/PropiedadInecuacionModular2.jpg" 
+                                    alt="Propiedades Inecuaciones Modulares">
+                                </div>
+                            </li>
+                            <li>
+                                    <p>Cuando la funcion de valor absoluto (G(x)) es mayor o igual que otra función (H(x)), se forma un sistema de 2 inecuaciones,
+                                        en el cual, la solución es la unión de ambas inecuaciones. Gráficamente representaría las áreas o intervalos
+                                        de soluciones de cada inecuación </p>
+                                        <div class="img">
+                                            <img loading="lazy" class="space-img img80" src="./imagenes/mate/5to/PropiedadInecuacionModular3.jpg" 
+                                            alt="Propiedades Inecuaciones Modulares">
+                                        </div>
+                            </li>
+                            <li>
+                                <p>Cuando hay 2 funciones de valores absoluto, para resolverlas, hay que elevar cada función al cuadrado y luego buscar la solución
+                                    de la inecuación como si fuera una de grado superior                                   
+                                </p>
+                                <div class="img">
+                                    <img loading="lazy" class="space-img img80" src="./imagenes/mate/5to/PropiedadInecuacionModular4.jpg" 
+                                    alt="Propiedades Inecuaciones Modulares">
+                                </div>
+                            </li>
+                        </ul>
+
+                    </li>
+                </ul>
+                <div class="pdf-grid" >
+                    <div class="iframe grid11">
+                        <iframe loading="lazy" src="./Apps/pdfjs/web/viewer.html?file=pdfs/Matemáticas/Inecuaciones/Inecuaciones.pdf" 
+                        class="pdf" ></iframe>
+                    </div>
+                    <div class="button grid21">
+                        <button ><a href="./Apps/pdfjs/web/viewer.html?file=pdfs/Matemáticas/Inecuaciones/Inecuaciones.pdf"  target="_blank">Abrir en otra ventana</a></button> 
+                    </div>
+                    <div class="iframe grid12">        
+                        <iframe loading="lazy"  src="./Apps/pdfjs/web/viewer.html?file=pdfs/Matemáticas/Inecuaciones/InecuacionesPrueba.pdf" 
+                        ></iframe>
+                    </div>
+                    <div class="button grid22">
+                        <button><a href="./Apps/pdfjs/web/viewer.html?file=pdfs/Matemáticas/Inecuaciones/InecuacionesPrueba.pdf" target="_blank">Abrir en otra ventana</a></button> 
+                    </div>    
+                </div>
+                <br>
+                <hr><br>
+        </section>
+        <section id="GeometriaAnalitica" class="standard hidden4">
+            <h2>Geometría Analítica</h2>
+            <h3 class="margin"><b>Distancia entre 2 puntos</b></h3>
+            <div class="flex">
+                    <p>Para calcular la distancia entre 2 puntos, debes restar la coordenadas del segundo punto, con las respectivas coordenadas del 
+                        primer punto, es decir, (x<sub>2</sub> - x<sub>1</sub>) + (y<sub>2</sub> - y<sub>1</sub>). Luego, elevas cada resta de las coordenadas
+                        al cuadrado ((x<sub>2</sub> - x<sub>1</sub>)<sup>2</sup> + (y<sub>2</sub> - y<sub>1</sub>)<sup>2</sup>). Por último, sacar la raíz cuadrada,
+                        y obtienes el valor de la distancia
+                    </p>
+                    <div class="img">
+                        <img loading="lazy" class="space-img img80-350" src="https://www.geometriaanalitica.info/wp-content/uploads/2020/09/geometria-formula-distancia-entre-dos-puntos.png" 
+                        alt="Distancia entre 2 puntos">
+                    </div>
+            </div>
+            <h3 class="margin">Ecuación de la recta</h3>
+            <p>La recta tiene dos diferentee ecuaciones, la función afín y la ecuación general de la recta</p>
+            <div class="flex2">
+                <div class="img">
+                    <img loading="lazy" class="space-img img80" src="./imagenes/mate/5to/FuncionafinRecta.jpg" 
+                    alt="Función Afín de la recta">
+                </div>
+                <div class="imgcenter">
+                    <img loading="lazy" class="space-img img80" src="./imagenes/mate/5to/EcuacionGeneralRecta.jpg" 
+                    alt="Ecuación General de la recta">
+                </div>
+            </div>
+            <h3 class="margin">Ecuación punto-pendiente</h3>
+                <p>Con esta ecuación, teniendo las coordenadas de un punto y la pendiente de una función, puedes determinar la función afín de la misma.</p>
+                <div class="imgcenter">
+                    <img loading="lazy" class="space-img img80" src="./imagenes/mate/5to/EcuacionPuntoPendiente.jpg" 
+                    alt="Ecuación punto-pendiente">
+                </div>
+            <br>
+            <h3 class="margin">Punto medio de una recta</h3>
+                <p>Para calcular el punto medio de una recta, simplemente requieres 2 puntos de la misma. Posteriormente, sumas correspondientemente sus respectivas 
+                    coordenadas y luego lo divides entre 2. Esta ecuación se suele utilizar para calcular las mediatrices de un triángulo.
+                </p>
+                <div class="imgcenter">
+                    <img loading="lazy" class="space-img img80-350" src="https://www.neurochispas.com/wp-content/uploads/2021/08/formula-del-punto-medio-de-un-segmento.png" 
+                    alt="Ecuación Punto medio">
+                </div>
+            <h3 class="margin">Distancia de un punto a una recta</h3>
+                <p>Para calcular la distancia de un punto a una recta, necesitas tener las coordenadas del punto y la ecuación general de la recta (Ax+By+C=0).
+                Es importante saber que la distancia entre el punto y la recta siempre forma perpendicular. Esta ecuación tambien se usa para el cálculo de mediatrices.
+                </p>
+                <div class="imgcenter">
+                    <img loading="lazy" class="space-img img80-350" src="https://www.webquestcreator2.com/majwq/files/files_user/15811/rectas-geometra-analtica-19-728.jpg" 
+                    alt="Ecuación Punto medio">
+                </div>
+            <h3 class="margin">Condiciones de paralelismo y perpendicularidad entre rectas</h3>
+            <p>Dos rectas son paralelas cuando poseen la misma pendiente y diferente término independiente. Mientras que dos recta son 
+            perpendiculares cuando sus pendientes son recíprocas negativas (El opuesto negativo)
+            </p>
+            
+            <h3 class="margin"><b>Líneas y puntos notables del triángulo</b></h3>
+            <ul class="margin">
+                <li>
+                    <p><b>Bisectriz</b></p>
+                        <p>La bisectriz es una semirecta que divide al ángulo en dos partes iguales. El punto donde se 
+                        encuentran las bisectrices de un triángulo se llama "Incentro"</p>
+                        <div class="imgcenter">
+                            <img loading="lazy" class="space-img img80-500" src="./imagenes/mate/5to/Bisectriz.png" 
+                            alt="Bisectrices e Incentro">
+                        </div>
+                
+                </li>
+                <li>    
+                    <p><b>Mediatriz</b></p>
+                        <p>Es una línea recta que pasa perpendicularmente por el punto medio de cada lado del triángulo.
+                        El punto de corte de las mediatrices se llama "Circuncentro"
+                        </p>
+                        <div class="imgcenter">
+                            <img loading="lazy" class="space-img img80-350" src="./imagenes/mate/5to/Mediatriz.png" 
+                            alt="Mediatriz y Circuncentro">
+                        </div>
+                </li>
+                <li>
+                    <p><b>Mediana</b></p>
+                        <p>Es el segmento que une al vértice con el punto medio del lado opuesto. El punto de corte
+                             de las medianas se llama "Baricentro" y representa el centro geométrico de la figura</p>
+                             <div class="imgcenter"> 
+                                <img loading="lazy" class="space-img img80-500" src="./imagenes/mate/5to/Mediana.png" 
+                                alt="Mediana y Baricentro">
+                            </div>   
+                </li>
+                <li>
+                    <p><b>Altura</b></p>
+                        <p>Es una semirecta que parte del vértice y llega perpendicularmente al lado opuesto. El punto donde 
+                        se cortan las alturas se llama "Ortocentro".
+                        </p>
+                        <div class="imgcenter">
+                            <img loading="lazy" class="space-img img80-500" src="./imagenes/mate/5to/Altura.jpg" 
+                            alt="altura y Ortocentro">
+                        </div> 
+                </li>
+            </ul>
+            <div class="pdf" >
+                <div class="iframe">
+                    <iframe loading="lazy"  src="./Apps/pdfjs/web/viewer.html?file=pdfs/Matemáticas/GeometriaAnalitica/GeometriaAnalitica.pdf" 
+                    class="pdf" ></iframe>
+                </div>
+                <br>
+                    <div class="button">
+                        <button ><a href="./Apps/pdfjs/web/viewer.html?file=pdfs/Matemáticas/GeometriaAnalitica/GeometriaAnalitica.pdf"  target="_blank">Abrir en otra ventana</a></button> 
+                </div>    
+            </div>
+            <br>
+            <hr><br>
+        </section>
+        <section id="Conicas" class="standard hidden4">
+            <h2>Cónicas</h2>
+            <p>En total existen 4 tipos de cónicas, la circunferencia, la elipse, la hipérbole y la parabóla. Todas ellas se rigen por 
+            la misma ecuación general
+            </p>
+            <div class="flex2">
+                <div class="imgcenter">
+                    <img loading="lazy" class="space-img img80" src="./imagenes/mate/5to/EcuacionGeneralConicas.JPG" 
+                    alt="Ecuación General Cónicas">
+                </div>
+                <div class="img">
+                    <img loading="lazy" class="space-img img80-500" src="https://3.bp.blogspot.com/_aTDm0v2MFsg/TNSU7SoPahI/AAAAAAAAACU/_PGuyB9aRMI/s1600/conicas.JPG" 
+                    alt="Tipos de Cónicas">
+                </div>
+            </div>
+           <h2>Circunferencia</h2>
+           <br>
+            <h3 class="margin">Ecuación General</h3>
+            <br>
+            <div class="flex2">
+                <div class="imgcenter">
+                    <img loading="lazy" class="space-img img80" src="./imagenes/mate/5to/Circunferencia/EcuacionGeneralCircunferencia.JPG" 
+                    alt="Ecuación General Circunferencia">
+                </div>
+                <div class="img">
+                    <img loading="lazy" class="space-img img80-300" src="./imagenes/mate/5to/Circunferencia/Circunferencia.jpg" 
+                    alt="Circunferencia">
+                </div>
+            </div>
+            <h3 class="margin">Ecuación Canónica</h3>
+            <br>
+            <div class="imgcenter">
+                <img loading="lazy" class="space-img img80" src="./imagenes/mate/5to/Circunferencia/EcuacionCanonicaCircunferencia.JPG" 
+                alt="Ecuación Canónica Circunferencia">
+            </div>
+            <h3 class="margin">Conversiones Circunferencia</h3>
+            <br>
+            <div class="imgcenter">
+                <img loading="lazy" class="space-img img80" src="./imagenes/mate/5to/Circunferencia/ConversionesCircunferencia.JPG" 
+                alt="Conversiones Circunferencia">
+            </div>
+
+            <h2>Elipse</h2>
+            <br>
+            <h3 class="margin">Ecuación General</h3>
+            <br>
+            <div class="flex2">
+                <div class="imgcenter">
+                    <img loading="lazy" class="space-img img80" src="./imagenes/mate/5to/Elipse/EcuacionGeneralElipse.JPG" 
+                    alt="Ecuación General Elipse">
+                </div>
+                <div class="img">
+                    <img loading="lazy" class="space-img img80-600" src="./imagenes/mate/5to/Elipse/ejesElipse.jpg" 
+                    alt="Ejes elipse">
+                </div>
+            </div>
+            <h3 class="margin">Ecuación Canónica</h3>
+            <br>
+            <div class="imgcenter">
+                <img loading="lazy" class="space-img img80" src="./imagenes/mate/5to/Elipse/EcuacionCanonicaElipse.JPG" 
+                alt="Ecuación Canónica Elipse">
+            </div>
+            <h3 class="margin">Focos</h3>
+            <br>
+            <div class="imgcenter">
+                <img loading="lazy" class="space-img img80" src="./imagenes/mate/5to/Elipse/FocosElipse.JPG" 
+                alt="Focos Elipse">
+            </div>
+            <h3 class="margin">Distancias y lado recto</h3>
+            <br>
+            <div class="imgcenter">
+                <img loading="lazy" class="space-img img80" src="./imagenes/mate/5to/Elipse/DistanciasElipse.JPG" 
+                alt="Distancias y lado recto Elipse">
+            </div>
+            <h3 class="margin">Excentricidad</h3>
+            <br>
+            <div class="imgcenter">
+                <img loading="lazy" class="space-img img80" src="./imagenes/mate/5to/Elipse/ExcentricidadElipse.JPG" 
+                alt="Excentricidad Elipse">
+            </div>
+            <h3 class="margin">Directrices</h3>
+            <br>
+            <div class="imgcenter">
+                <img loading="lazy" class="space-img img80" src="./imagenes/mate/5to/Elipse/DirectrizElipse.JPG" 
+                alt="Directrices Elipse">
+            </div>
+
+            <h2>Hiperbole</h2>
+            <br>
+            <h3 class="margin">Ecuación General</h3>
+            <br><br>
+            <div class="flex2">
+                <div class="imgcenter">
+                    <img loading="lazy" class="space-img img80" src="./imagenes/mate/5to/Hiperbole/EcuacionGeneralHiperbole.jpg" 
+                    alt="Ecuación General Hiperbole">
+                </div>
+                <div class="img">
+                    <img loading="lazy" class="space-img img80-600" src="./imagenes/mate/5to/Hiperbole/Hiperbole.jpg" 
+                    alt="Hiperbole">
+                </div>
+            </div>
+            <h3 class="margin">Ecuación Canónica</h3>
+            <br>
+            <div class="imgcenter">
+                <img loading="lazy" class="space-img img80" src="./imagenes/mate/5to/Hiperbole/EcuacionCanonicaHiperbole.jpg" 
+                alt="Ecuación Canónica Hiperbole">
+            </div>
+            <h3 class="margin">Focos</h3>
+            <br>
+            <div class="imgcenter">
+                <img loading="lazy" class="space-img img80" src="./imagenes/mate/5to/Hiperbole/VerticesFocosHiperbole.jpg" 
+                alt="Focos Hiperbole">
+            </div>
+            <h3 class="margin">Directrices</h3>
+            <br>
+            <div class="imgcenter">
+                <img loading="lazy" class="space-img img80" src="./imagenes/mate/5to/Hiperbole/DirectricesHiperbole.jpg" 
+                alt="Directrices Hiperbole">
+            </div>
+            <h3 class="margin">Asíntotas</h3>
+            <br>
+            <div class="imgcenter">
+                <img loading="lazy" class="space-img img80" src="./imagenes/mate/5to/Hiperbole/AsintotasHiperbole.jpg" 
+                alt="Asíntotas Hiperbole">
+            </div>
+            <h3 class="margin">Excentricidad</h3>
+            <br>
+            <div class="imgcenter">
+                <img loading="lazy" class="space-img img80" src="./imagenes/mate/5to/Hiperbole/ExcentricidadLadoRectoHiperbola.jpg" 
+                alt="Excentricidad Hiperbole">
+            </div>
+
+            <h2>Parabola</h2>
+            <br>
+            <h3 class="margin">Ecuación General</h3>
+            <br><br>
+            <div class="flex2">
+                <div class="imgcenter">
+                    <img loading="lazy" class="space-img img80" src="./imagenes/mate/5to/Parabola/EcuacionGeneralParabola.JPG" 
+                    alt="Ecuación General Parabola">
+                </div>
+                <div class="img">
+                    <img loading="lazy" class="space-img img80-400" src="./imagenes/mate/5to/Parabola/Parabola.jpg" 
+                    alt="Parabola">
+                </div>
+            </div>
+            <h3 class="margin">Ecuación Canónica</h3>
+            <br>
+            <div class="imgcenter">
+                <img loading="lazy" class="space-img img80" src="./imagenes/mate/5to/Parabola/EcuacionCanonicaParabola.JPG" 
+                alt="Ecuación Canónica Parabola">
+            </div>
+            <h3 class="margin">Focos y Lado Recto</h3>
+            <br>
+            <div class="imgcenter">
+                <img loading="lazy" class="space-img img80" src="./imagenes/mate/5to/Parabola/FocosLadoRectoParabola.JPG" 
+                alt="Focos Parabola">
+            </div>
+            <h3 class="margin">Parámetro</h3>
+            <br>
+            <div class="imgcenter">
+                <img loading="lazy" class="space-img img80" src="./imagenes/mate/5to/Parabola/ParametroParabola.JPG" 
+                alt="Parámetro Parabola">
+            </div>
+            <h3 class="margin">Directriz</h3>
+            <br>
+            <div class="imgcenter">
+                <img loading="lazy" class="space-img img80" src="./imagenes/mate/5to/Parabola/DirectrizParabola.JPG" 
+                alt="Directriz Parabola">
+            </div>
+            <h3 class="margin">Otras fórmulas</h3>
+            <br>
+            <div class="imgcenter">
+                <img loading="lazy" class="space-img img80-500" src="./imagenes/mate/5to/Parabola/OtrasFormulasParabola.jpg" 
+                alt="Otras fórmulas Parabola">
+            </div>
+
+            <div class="pdf-grid" >
+                <div class="iframe grid11">
+                    <iframe loading="lazy" src="./Apps/pdfjs/web/viewer.html?file=pdfs/Matemáticas/Conicas/Conicas.pdf" 
+                    class="pdf" ></iframe>
+                </div>
+                <div class="button grid21">
+                    <button ><a href="./Apps/pdfjs/web/viewer.html?file=pdfs/Matemáticas/Conicas/Conicas.pdf"  target="_blank">Abrir en otra ventana</a></button> 
+                </div>
+                <div class="iframe grid12">        
+                    <iframe loading="lazy"  src="./Apps/pdfjs/web/viewer.html?file=pdfs/Matemáticas/Conicas/ConicasPrueba.pdf" 
+                    ></iframe>
+                </div>
+                <div class="button grid22">
+                    <button><a href="./Apps/pdfjs/web/viewer.html?file=pdfs/Matemáticas/Conicas/ConicasPrueba.pdf" target="_blank">Abrir en otra ventana</a></button> 
+                </div>    
             </div>
         </section>
+        <br><br>
+        <section id="matrices" class="standard hidden4">
+            <h2>Matrices</h2>
+            <p>Las matrices son un conjunto de números o ecuaciones matemáticas que están organizando por filas y columnas, de forma rectangular o cuadrada.
+            En pocas palabras, las matrices son tablas organizadas de datos.
+            </p>
+            <h3 class="margin">Tipos de matrices</h3>
+            <ul class="margin">
+                <li><p><b>Identidad</b></p>
+                    <div class="flex">
+                        <p>La matriz identidad es aquella que solo tiene unos (1) como diagonal principal y el resto de elementos son ceros (0), básicamente,
+                        está compuesta por una línea diagonal de unos, rodeados por ceros. Es el elemento neutro de la matrices, es decir, cualquier matriz multiplicada
+                        por la identidad, siempre da la misma matriz. También es importante saber que el determinante de la matriz identidad siempre será igual a 1,
+                        independientemente de la dimensión de la matriz. Además, la adjunta y la traspuesta de la matriz identidad, siempre da la misma matriz identidad.
+                        Normalmente se respresenta con la letra "I"
+                        </p>
+                        <div class="imgcenter">
+                            <img loading="lazy" class="space-img img80" src="./imagenes/mate/5to/Matrices/Tipos/Identidad.jpg" 
+                            alt="Matriz identidad">
+                        </div>
+                    </div>
+                </li>
+                <li><p><b>Traspuesta</b></p>
+                    <div class="flex">
+                        <p>La matriz traspuesta es aquella matriz resultante, de la conversión de filas en columnas, de una matriz original. Básicamente consiste en invertir el orden de la matriz,
+                        las columnas se convierten en filas y las filas se convierten en columnas. La matriz traspuesta se usa tanto para realizar multiplicación de matrices, cómo para hallar la matriz inversa.
+                        </p>
+                        <div class="imgcenter">
+                            <img loading="lazy" class="space-img img80" src="./imagenes/mate/5to/Matrices/Tipos/Traspuesta.jpg" 
+                            alt="Matriz traspuesta">
+                        </div>
+                    </div>
+                </li>
+                <li><p><b>Simétrica</b></p>
+                    <div class="flex">
+                        <p>La matriz simétrica es aquella matriz cuadrada (mismo número de columnas y filas) que posee la cualidad que su matriz traspuesta, es igual a la matriz original.
+                        Es decir, al trasponer la matriz, siempre obtendrás la misma matriz. Para ello deben compartir el mismo número en las esquinas de la matriz.
+                        </p>
+                        <div class="imgcenter">
+                            <img loading="lazy" class="space-img img80" src="./imagenes/mate/5to/Matrices/Tipos/Simetrica.jpg" 
+                            alt="Matriz Simétrica">
+                        </div>
+                    </div>
+                </li>
+                <li><p><b>Asimétrica</b></p>
+                    <div class="flex">
+                        <p>La matriz asimétrica o antisimétrica es aquella matriz cuadrada (mismo número de columnas y filas) que posee la cualidad que su matriz traspuesta, voltea o intercambia el signo de los elementos
+                        de la matriz original. De cierta manera, se considera una matriz espejo. Para cumplir esta cualidad, poseen los mismos elementos,igual que la matriz simétrica, sin embargo, con signos contrarios 
+                        </p>
+                        <div class="imgcenter">
+                            <img loading="lazy" class="space-img img80" src="./imagenes/mate/5to/Matrices/Tipos/Asimetrica.jpg" 
+                            alt="Matriz Asimétrica">
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            <h3 class="margin">Propiedades de las matrices</h3>
+            <ul class="margin">
+                <li><p><b>Asociativa</b></p>
+                    <p>Las matrices cumplen la propiedad asociativa, es decir, el orden de las multiplicaciones no afectará el resultado. Sin embargo,
+                        es importante recordar que no es lo mismo multiplicar una matriz "A" por una matriz "B", que multiplicar una matriz "B" por una matriz "A".
+                        En pocas palabras, hay que recordar que las matrices no son conmutativas, por ende hay que mantener el sentido de las multiplicaciones para no alterar el resultado                    </p>
+                    <div class="flex2">
+                        <div class="imgcenter">
+                            <img loading="lazy" class="space-img img80" src="./imagenes/mate/5to/Matrices/Propiedades/Asociativa.jpg" 
+                            alt="Propiedad asociativa matrices">
+                        </div>
+                        <div class="imgcenter">
+                            <img loading="lazy" class="space-img img80" src="./imagenes/mate/5to/Matrices/Propiedades/NoConmutativa.jpg" 
+                            alt="No Conmutativa matrices">
+                        </div>
+                    </div>
+                </li>
+                <li><p><b>Distributiva</b></p>
+                    <div class="flex">
+                        <p>Las matrices también cumplen la propiedad distributiva, por ende, puedes separa la 
+                            multiplicacion de una suma de matrices, en la suma de dos multiplicaciones separadas</p>
+                        <div class="imgcenter">
+                            <img loading="lazy" class="space-img img80" src="./imagenes/mate/5to/Matrices/Propiedades/Distributiva.jpg" 
+                            alt="Propiedad distributiva matrices">
+                        </div>
+                    </div>
+                </li>
+            </ul>
+                <h3 class="margin">Multiplicación de matrices</h3>
+                    <p>La multiplicación de matrices consiste en multiplicar cada fila del multiplicando, con cada columna del multiplicador. Es por ello, que el número de columnas de la primera matriz (multiplicando), 
+                        tiene que ser igual al número de filas de la segunda matriz (multiplicador). Como resultado, se obtiene una matriz con el número de filas del multiplicando y con el número de columnas de multiplicador.
+                        También es importante saber, que los números se multiplican por su orden en la fila o columna y luego se suman, es decir, el primer número de la fila multiplicaría al primer número de la columna, siguiendo ese orden, primero con primero, etc+
+                    </p>
+                    <div class="imgcenter">
+                        <img loading="lazy" class="space-img img80" src="./imagenes/mate/5to/Matrices/Metodos/MultiplicacionMatrices.jpg" 
+                        alt="Multiplicación matrices">
+                    </div>
+                <h3 class="margin">Determinantes de las matrices</h3>
+                <p>El determinante es el número que representa a una matriz, gracias al determinante podemos saber las 
+                    propiedas que puede cumplir dicha matriz y también tiene aplicaciones en Geometría y en Álgebra (especialmente en el apartado de áreas). 
+                    Para el cálculo de las determinantes , es necesario saber que solo las matrices cuadradas (mismo número de filas y columnas) tienen determinantes.
+                    Además de eso, es importante reconocer las diagonales principales y secundarias de la matriz.</p>
+                    <ul class="margin">
+                        <li><p><b>Determinantes 2x2</b></p>
+                            <div class="imgcenter">
+                                <img loading="lazy" class="space-img img80" src="./imagenes/mate/5to/Matrices/Metodos/Determinante2x2.jpg" 
+                                alt="Determinantes matrices 2x2">
+                            </div>
+                        </li>
+                        <li><p><b>Determinantes 3x3</b></p>
+                            <ul>
+                                <li class="margin"><p><b>Método Sarrus</b></p></li>
+                                <div class="imgcenter">
+                                    <img loading="lazy" class="space-img img80" src="./imagenes/mate/5to/Matrices/Metodos/Determinante3x3.jpg" 
+                                    alt="Determinantes matrices 3x3 Sarrus">
+                                </div>
+                                <li class="margin"><p><b>Método Lluvia</b></p></li> 
+                                <div class="imgcenter">
+                                    <img loading="lazy" class="space-img img80" src="./imagenes/mate/5to/Matrices/Metodos/Determinante3x3lluvia.jpg" 
+                                    alt="Determinantes matrices 3x3 Lluvia">
+                                </div>
+                            </ul>
+                        </li>
+                    </ul>
+                    <br>
+                <h2>Matriz Inversa</h2>
+                <div class="flex">
+                    <p>La matriz inversa se suele utilizar en la resolución de sistema de ecuaciones, ya que cualquier 
+                        matriz multiplicada por su inversa, se convierte en una matriz identidad</p>
+                        <div class="imgcenter">
+                            <img loading="lazy" class="space-img img80" src="./imagenes/mate/5to/Matrices/Metodos/MatrizInversa.jpg" 
+                            alt="Matriz Inversa">
+                        </div>    
+                </div>
+                <h3 class="margin">Cálculos Matriz Inversa</h3>
+                <ul class="margin">
+                    <li><p><b>Por fórmula</b></p>
+                        <p>Por definición, la matriz inversa es igual a la adjunta de la matriz traspuesta, entre el determinante de la matriz</p>
+                        <div class="imgcenter">
+                            <img loading="lazy" class="space-img img80" src="./imagenes/mate/5to/Matrices/Metodos/InversaFormula.jpg" 
+                            alt="Matriz inversa por fórmula">
+                        </div>
+                        <h3 class="margin">Matriz adjunta</h3>
+                        <ul>
+                            <li class="margin"><p><b>Adjunta Matriz 2x2</b></p></li>
+                            <div class="imgcenter">
+                                <img loading="lazy" class="space-img img80" src="./imagenes/mate/5to/Matrices/Metodos/Adjunta2x2.jpg" 
+                                alt="Adjunta Matriz 2x2">
+                             </div>
+                            <li class="margin"><p><b>Adjunta Matriz 3x3</b></p></li>
+                            <div class="imgcenter">
+                                <img loading="lazy" class="space-img img80" src="./imagenes/mate/5to/Matrices/Metodos/Adjunta.jpg" 
+                                alt="Adjunta Matriz 3x3">
+                            </div>
+                        </ul>
+                    </li>
+                    <li><p><b>Por Gauss</b></p></li>
+                    <div class="flex">
+                        <p>Para calcular la Matriz Inversa mediante el método de Gauss, lo primero que hay que hacer es jseparar la matriz original, con una matriz identidad.
+                            Posteriormente, se convierte la matriz original en la matriz identidad. De esta forma, el lado de la matriz identidad, se convertira en la matriz inversa.
+                            Se basa en el método de solución de sistemas de ecuaciones del príncipe de las matemáticas "Friedrich Gauss".
+                        </p>
+                        <div class="imgcenter">
+                            <img loading="lazy" class="space-img img80" src="./imagenes/mate/5to/Matrices/Metodos/MatrizInversaGauss.jpg" 
+                            alt="Matriz Inversa por Gauss">
+                        </div>
+                    </div>
+                    
+                </ul>
+                
+                <div class="pdf-grid" >
+                    <div class="iframe grid11">
+                        <iframe loading="lazy"  src="./Apps/pdfjs/web/viewer.html?file=pdfs/Matemáticas/Matrices/Matrices.pdf" 
+                        class="pdf" ></iframe>
+                    </div>
+                    <div class="button grid21">
+                        <button ><a href="./Apps/pdfjs/web/viewer.html?file=pdfs/Matemáticas/Matrices/Matrices.pdf"  target="_blank">Abrir en otra ventana</a></button> 
+                    </div>
+                    <div class="iframe grid12">        
+                        <iframe loading="lazy"  src="./Apps/pdfjs/web/viewer.html?file=pdfs/Matemáticas/Matrices/MatricesPrueba.pdf" 
+                        ></iframe>
+                    </div>
+                    <div class="button grid22">
+                        <button><a href="./Apps/pdfjs/web/viewer.html?file=pdfs/Matemáticas/Matrices/MatricesPrueba.pdf" target="_blank">Abrir en otra ventana</a></button> 
+                    </div>    
+                </div>
+                    
+        </section>
+        <br><br>
     </main>
     <footer>
         <div class="redes">
-            <p>Javier González</p>
-            <a href="https://www.instagram.com/javig1000/" target="_blank"><img 
-            src="https://cdn-icons-png.flaticon.com/512/174/174855.png" alt="Instagram" height="55" ></a>
-            <a href="https://twitter.com/JavitoxD3" target="_blank"><img 
-            src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Twitter-logo.svg/2491px-Twitter-logo.svg.png"
-            alt="Twitter" height="55" ></a>
-            <a href="https://www.youtube.com/channel/UCVkfPVJAieK1jgeW7NbxP0g" target="_blank"><img 
-                src="https://upload.wikimedia.org/wikipedia/commons/4/42/YouTube_icon_%282013-2017%29.png"
-                alt="Twitter" height="55" width="70"></a>
+            <div class="Javi1">
+                <p>Javier González</p>
+                <br>
+                <a href="https://www.instagram.com/javig1000/" target="_blank"><img 
+                src="https://cdn-icons-png.flaticon.com/512/174/174855.png" alt="Instagram" height="55" ></a>
+         <!--       <a href="https://twitter.com/JavitoxD3" target="_blank"><img 
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Twitter-logo.svg/2491px-Twitter-logo.svg.png"
+                alt="Twitter" height="55" ></a>
+                <a href="https://www.youtube.com/channel/UCVkfPVJAieK1jgeW7NbxP0g" target="_blank"><img 
+                    src="https://upload.wikimedia.org/wikipedia/commons/4/42/YouTube_icon_%282013-2017%29.png"
+                    alt="Twitter" height="55" width="70"></a> -->      
+            </div>
+            <div class="Luis">
+                <p>Luis Noriega</p>
+                <br>
+                <a href="https://www.instagram.com/lxuuiss/" target="_blank"><img 
+                src="https://cdn-icons-png.flaticon.com/512/174/174855.png" alt="Instagram" height="55" ></a>
+            </div>
+                
+            <div class="Merlina">
+                <p>Juliannys Verastegui</p>
+                <br>
+                <a href="https://www.instagram.com/jennaortega/" target="_blank"><img 
+                src="https://cdn-icons-png.flaticon.com/512/174/174855.png" alt="Instagram" height="55" ></a>
+
+        </div>
         </div>        
-     <p>&copy; Copyright</p>
+      <p>&copy; Copyright</p>
+
     </footer>
     <script src="jquery-3.6.1.js"></script>
     <script src="Js.js"></script>
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-M48RFKL3JC"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-M48RFKL3JC');
+</script>
 </body>
 </html>

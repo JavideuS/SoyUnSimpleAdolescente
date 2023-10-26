@@ -1,0 +1,1730 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">  
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title> Soy un simple adolescente - Física</title>
+    <link href="Style.css" rel="stylesheet" >
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel = “alternate” hreflang=“es” href=“https://soyunsimpleadolescente.com”  />
+    <link rel="icon" type="image/x-icon" href="./imagenes/diseño/Zacian.png">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous"/>
+    <script src="https://kit.fontawesome.com/35cdab4b8e.js" crossorigin="anonymous"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Arvo&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Fuzzy+Bubbles&display=swap');
+    </style>
+</head>
+
+<body class="Soy un simple adolescente">
+    <header class="header">
+        <nav class="nav-2">
+            <div class="text-img">
+                <a href="./SoyUnSimpleAdolescente.html"><img src="./imagenes/diseño/Teemo_Ok.png" 
+               Alt="Teemo feli logo" id="teemoImg"></a>
+            </div>
+            <div class="navbar">
+                <h2><a href="./Matematicas.html">Matemática</a></h2>
+                <h2><a href="./Física.html">Física</a></h2>
+             
+                <h2><a href="./Castellano.html">Castellano</a></h2>
+                <h2><a href="./Quimica.html">Química</a></h2>
+                <h2 class="sidebarButton"><i class="fa-solid fa-bars"></i></h2>
+
+            </div>   
+        </nav>
+    </header>
+
+    <main >
+        <div class="searcher-style">
+                <form id="datalist">
+                  <span class="nota"> ¿Qué tema desea buscar?</span>
+                    <input type="text" name="Topicos-mate" id=¨search¨ list="searcher" placeholder="Busca aquí..." autocomplete="off">
+                    
+                    <datalist id="searcher">
+                        <option value="Caída Libre"><a href="#CaidaLibre"></a></option>
+                        <option value="Lanzamiento Vertical"><a href="#LanzamientoVertical"></a></option>
+                        <option value="Lanzamiento Horizontal"><a href="#LanzamientoHorizontal"></a></option>
+                        <option value="Movimiento Parabolico"><a href="#MovimientoParabolico"></a></option>
+                        <option value="Fuerzas"><a href="#Fuerzas"></a></option>
+                        <option value="Leyes de Newton"><a href="#LeyesDeNewton"></a></option>
+                        <option value="Trabajo y Energía"><a href="#Trabajo"></a></option>
+                        <option value="Cantidad de Movimiento"><a href="#CantidadDeMovimiento"></a></option>
+                        <option value="Optica"><a href="#Optica"></a></option>
+                    </datalist>
+            </form>
+        </div>
+        <div id="progress">
+            <span id="progress-value"><i class="fa-solid fa-rocket fa-lg"></i></span>
+        </div>
+
+  
+        <div class="sidebar">
+            <div>
+                <div class="sidebarButton">
+                    <i class="fa-solid fa-x fa-lg"></i>
+                </div>
+                <br>
+                <div class="center">
+                    <h2>Ruleta para estudiar</h2>
+                </div>
+                <br>
+                <div id="wheel">
+                    <canvas id="canvas" width="500" height="500"></canvas>
+                    <div class="center">
+                        <button onclick="spinWheel()" id="wheelCircularButton">Spin</button>
+
+                    </div>
+                    
+                    <input type="text" id="sectionName" placeholder="Añada nombre del tema">
+                    <button onclick="addSection()" class="wheelButton">Añadir tema</button>
+                </div>
+                
+            </div>
+        </div>
+        <div class="cont">
+
+            <div class="winNotification">
+                <div class="center">
+                    <img src="./imagenes/diseño/Teemo_Ok.png" alt="Teemin">
+                </div>
+                <h2 class="text"></h2><br><br>
+                <button onclick="winNotification_Close()" >OK</button>
+            </div>
+        </div>
+        
+        <button class="contactInput" onclick="displayContact()"><i class="fa-solid fa-user fa-xl"></i></button> 
+
+        <div class="contacto">
+            <h2>Contáctanos</h2>
+            <p>Si tienes alguna duda con el contenido de la página nos puedes escribir a las siguientes direcciones:</p>
+            <div class="contactoflex">
+                <div>
+                    <h2>Luis Noriega</h2>
+                    
+                    <div class="contactogrid">
+                        <img src="./imagenes/diseño/whatsapp.png" alt="Número" height="35px" width="35px" class="one">
+                        <p class="two"><strong>+58 424-1297004</strong></p>
+                        <img src="./imagenes/diseño/correo.png" alt="Correo" height="20px" width="30px" class="three">
+                        <p class="four"><strong>lann.ve@gmail.com</strong></p>
+                    </div>
+                </div>
+                <div>
+                    <h2>Javier González</h2>
+                    <div class="contactogrid">
+                        <img src="./imagenes/diseño/whatsapp.png" alt="Número" height="35px" width="35px" class="one">
+                        <p class="two"><strong>+34 605956165</strong></p>
+                        <img src="./imagenes/diseño/correo.png" alt="Correo" height="20px" width="30px" class="three">
+                        <p class="four"><strong>javi.rm2005@gmail.com</strong></p>
+                    </div>
+                </div> 
+            </div>
+            <button onclick="closeContact()"><i class="fa-regular fa-x fa-xs"></i></button> 
+        </div>
+        
+     
+        
+       
+
+
+
+        <section id="Calculadora" class="física hidden3">
+            <h1>Calculadora</h1>
+            <br>
+            <div class="calculadora">
+                <select name="calcupdater" id="calcupdater" class="select">
+                    <option value="start" selected disabled>Seleccione el tema</option>
+                    <option value="CaidaLibre" >Caída Libre</option>
+                    <option value="LanzamientoVertical">Lanzamiento Vertical</option>
+                    <option value="LanzamientoHorizontal">Lanzamiento Horizontal</option>
+                    <option value="MovimientoParabolico">Movimiento Parabólico</option>
+                    <option value="Optica">Óptica</option>
+                </select>
+                <br>
+            </div>
+            <br>
+            <div id="CaidaLibreCalc">
+                <div class="calculadora-grid">
+                <div class="calculadora-grid1">
+                    <label for="tiempo">Tiempo (s):</label>
+                </div>
+                <div class="calculadora-grid2">
+                    <input type="number" name="tiempo" class="tiempo" autocomplete="off" >
+                </div>
+                <div class="calculadora-grid1">
+                    <label for="distanciaVertical">Distancia Vertical (m):</label>
+                </div>
+                <div class="calculadora-grid2" >
+                    <input type="number"  id="distanciaVertical" readonly >
+                </div>
+                <div class="calculadora-grid1">
+                    <label for="velocidad">Velocidad (m/s):</label>
+                </div>
+                <div class="calculadora-grid2" >
+                    <input type="number"  id="Velocidad" readonly >
+                </div>
+                    <div class="calculadora-grid7">
+                        <button class="Calculate"  >Calcular</button>
+                    </div>
+               <br>
+                </div>
+            </div>
+            <div>
+                
+            </div>
+            <div id="LanzVerticalCalc" class="multicalc img">
+                <div>
+                    <div class="calculadora-grid">
+                    <div class="calculadora-grid1">
+                        <label for="VelocidadI">Velocidad Inicial (m/s):</label>
+                    </div>
+                    <div class="calculadora-grid2">
+                        <input type="number" name="VelocidadI" class="VelocidadI" autocomplete="off" >
+                    </div>
+                    <div class="calculadora-grid1">
+                        <label for="Ymax">Altura máxima (m):</label>
+                    </div>
+                    <div class="calculadora-grid2" >
+                        <input type="number"  id="Ymax" readonly >
+                    </div>
+                    <div class="calculadora-grid1">
+                        <label for="Tmax">Tiempo máximo (s):</label>
+                    </div>
+                    <div class="calculadora-grid2" >
+                        <input type="number"  id="Tmax" readonly >
+                    </div>
+                    <div class="calculadora-grid1">
+                        <label for="Tvuelo">Tiempo de vuelo(s): (Y=0)</label>
+                    </div>
+                    <div class="calculadora-grid2" >
+                        <input type="number"  id="Tvuelo" readonly >
+                    </div>
+                        <div class="calculadora-grid7">
+                            <button class="Calculate"  >Calcular</button>
+                        </div>
+                <br>
+                    </div>
+                </div>
+                <div>
+                    <div class="calculadora-grid">
+                    <div class="calculadora-grid1">
+                        <label for="tiempo1">Tiempo (s):</label>
+                    </div>
+                    <div class="calculadora-grid2">
+                        <input type="number" name="tiempo1" class="tiempo1" autocomplete="off" >
+                    </div>
+                    <div class="calculadora-grid1">
+                        <label for="VelocidadI1">Velocidad Inicial (m/s):</label>
+                    </div>
+                    <div class="calculadora-grid2" >
+                        <input type="number" name="VelocidadI1"  class="VelocidadI1" autocomplete="off" >
+                    </div>
+                    <div class="calculadora-grid1">
+                        <label for="Vfinal">Velocidad Final (m/s):</label>
+                    </div>
+                    <div class="calculadora-grid2" >
+                        <input type="number"  id="Vfinal" readonly >
+                    </div>
+                    <div class="calculadora-grid1">
+                        <label for="AlturaI">Altura inicial (m):</label>
+                    </div>
+                    <div class="calculadora-grid2">
+                        <input type="number" name="AlturaI" class="AlturaI" autocomplete="off" >
+                    </div>
+                    <div class="calculadora-grid1">
+                        <label for="AlturaF">Altura según tiempo(m):</label>
+                    </div>
+                    <div class="calculadora-grid2">
+                        <input type="number" name="Alturaf" class="Alturaf" readonly >
+                    </div>
+                    <div class="calculadora-grid7">
+                        <button class="Calculate"  >Calcular</button>
+                    </div>
+                <br>
+                    </div>
+                </div>
+            </div>
+            <div id="LanzHorizontalCalc">
+                    <div class="calculadora">
+                        <select name="calcupdater"  class="select">
+                            <option value="start" selected disabled>¿Qué busca?</option>
+                            <option value="Tiempo">Tiempo</option>
+                            <option value="VinicialX">Velocidad inicial (x)</option>
+                            <option value="DistanciaHorizontal">Distancia (x)</option>
+                        </select>
+                    </div>
+                <div class="container">
+                    <br>
+                    <div id="distanciaHorizontalTiempo" class="multicalc">
+                        
+                        <div class="calculadora-grid">
+                            <div class="calculadora-grid1">
+                                <label for="AlturaInicial">Altura inicial (m)</label>
+                            </div>
+                            <div class="calculadora-grid2">
+                                <input type="number" name="AlturaInicial" class="AlturaInicial" autocomplete="off" >
+                            </div>
+                            <div class="calculadora-grid1">
+                                <label for="tiempo">Tiempo (s):</label>
+                            </div>
+                            <div class="calculadora-grid2" >
+                                <input type="number"  name="tiempo" class="tiempodishoriz" readonly >
+                            </div>
+                            <div class="calculadora-grid7">
+                                <button class="Calculate"  >Calcular</button>
+                            </div>
+                            <br>
+                        </div>
+
+                        <div class="calculadora-grid">
+                            <div class="calculadora-grid1">
+                                <label for="VelocidadInicialx">Velocidad inicial (m/s)</label>
+                            </div>
+                            <div class="calculadora-grid2">
+                                <input type="number" name="VelocidadInicialx" class="VelocidadInicialx" autocomplete="off" >
+                            </div>
+                            <div class="calculadora-grid1">
+                                <label for="DistanciaX">Distancia x (m)</label>
+                            </div>
+                            <div class="calculadora-grid2">
+                                <input type="number" name="DistanciaX" class="DistanciaX" autocomplete="off" >
+                            </div>
+                            <div class="calculadora-grid1">
+                                <label for="tiempo">Tiempo (s):</label>
+                            </div>
+                            <div class="calculadora-grid2" >
+                                <input type="number"  name="tiempo" class="tiempodishoriz2" readonly >
+                            </div>
+                            <div class="calculadora-grid7">
+                                <button class="Calculate"  >Calcular</button>
+                           </div>
+                            <br>
+                        </div>
+                    </div>
+                    <div id="distanciaHorizontalVelocidad">
+                        <div class="calculadora-grid">
+                            <div class="calculadora-grid1">
+                                <label for="distanciaX">Distancia x (m)</label>
+                            </div>
+                            <div class="calculadora-grid2">
+                                <input type="number" name="distanciaX" class="distanciaX" autocomplete="off" >
+                            </div>
+                            <div class="calculadora-grid1">
+                                <label for="tiempo">Tiempo (s):</label>
+                            </div>
+                            <div class="calculadora-grid2" >
+                                <input type="number"  name="tiempo" class="tiempodishoriz" autocomplete="off" >
+                            </div>
+                            <div class="calculadora-grid1">
+                                <label for="velocidadX">Velocidad (m/s)</label>
+                            </div>
+                            <div class="calculadora-grid2">
+                                <input type="number" name="velocidadX" class="velocidadX" readonly >
+                            </div>
+                            <div class="calculadora-grid7">
+                                <button class="Calculate"  >Calcular</button>
+                            </div>
+                        <br>
+                        </div>
+                    </div>
+                    <div id="distanciaHorizontalX">
+                        <div class="calculadora-grid">
+                            <div class="calculadora-grid1">
+                                <label for="velocidadX">Velocidad (m/s)</label>
+                            </div>
+                            <div class="calculadora-grid2">
+                                <input type="number" name="velocidadX" class="velocidadX" autocomplete="off" >
+                            </div>
+                            <div class="calculadora-grid1">
+                                <label for="tiempo">Tiempo (s):</label>
+                            </div>
+                            <div class="calculadora-grid2" >
+                                <input type="number"  name="tiempo" class="tiempodishoriz" autocomplete="off" >
+                            </div>
+                            <div class="calculadora-grid1">
+                                <label for="velocidadX">Distancia x (m)</label>
+                            </div>
+                            <div class="calculadora-grid2">
+                                <input type="number" name="velocidadX" class="distanciaX" readonly >
+                            </div>
+                            <div class="calculadora-grid7">
+                                <button class="Calculate"  >Calcular</button>
+                            </div>
+                            <br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="MovimientoParabolicoCalc">
+                <div class="calculadora">
+                    <select name="calcupdater"  class="select">
+                        <option value="start" selected disabled>¿Qué busca?</option>
+                        <option value="VelocidadXY">Velocidad Inicial (XY)</option>
+                        <option value="distanciaX">Distancia Horizontal</option>
+                        <option value="VfinalY">Velocidad final (Y)</option>
+                        <option value="angulo">Ángulo</option>
+                    </select>
+                    <br>
+                </div>
+
+                <div class="container">
+                    <br>
+                    <div id="VelocidadXYParabolico" >
+                            <div class="calculadora-grid">
+                                <div class="calculadora-grid1">
+                                    <label for="vInicialParabolico">Velocidad Inicial (m/s)</label>
+                                </div>
+                                <div class="calculadora-grid2">
+                                    <input type="number" name="vInicialParabolico" class="vInicialParabolico" autocomplete="off" >
+                                </div>
+                                <div class="calculadora-grid1">
+                                    <label for="angulo">Ángulo Horizontal (°)</label>
+                                </div>
+                                <div class="calculadora-grid2" >
+                                    <input type="number"  name="angulo" class="angulo" autocomplete="off" >
+                                </div>
+                                <div class="calculadora-grid1">
+                                    <label for="velocidadX">Velocidad Inicial X(m/s)</label>
+                                </div>
+                                <div class="calculadora-grid2">
+                                    <input type="number" name="velocidadX" class="velocidadX" readonly >
+                                </div>
+                                <div class="calculadora-grid1">
+                                    <label for="velocidadY">Velocidad Inicial Y(m/s)</label>
+                                </div>
+                                <div class="calculadora-grid2">
+                                    <input type="number" name="velocidadY" class="velocidadY" readonly >
+                                </div>
+                                    <div class="calculadora-grid7">
+                                        <button class="Calculate"  >Calcular</button>
+                                    </div>
+                            <br>
+                            </div>
+                    </div>
+                    <div id="distanciaXParabolico" class="multicalc"> 
+                            <div class="calculadora-grid">
+                                <div class="calculadora-grid1">
+                                    <label for="velocidadX">Velocidad X(m/s)</label>
+                                </div>
+                                <div class="calculadora-grid2">
+                                    <input type="number" name="velocidadX" class="velocidadX" autocomplete="off" >
+                                </div>
+                                <div class="calculadora-grid1">
+                                    <label for="tiempo">Tiempo de vuelo (s):</label>
+                                </div>
+                                <div class="calculadora-grid2" >
+                                    <input type="number"  name="tiempo" class="tiempoVuelo" autocomplete="off" >
+                                </div>
+                                <div class="calculadora-grid1">
+                                    <label for="distanciaX">Distancia máxima X (m)</label>
+                                </div>
+                                <div class="calculadora-grid2">
+                                    <input type="number" name="distanciaX" class="distanciaX" readonly >
+                                </div>
+                                    <div class="calculadora-grid7">
+                                        <button class="Calculate" >Calcular</button>
+                                    </div>
+                            <br>
+                        </div>
+                        <div>
+                            <div class="calculadora-grid">
+                                <div class="calculadora-grid1">
+                                    <label for="velocidadX">Velocidad X(m/s)</label>
+                                </div>
+                                <div class="calculadora-grid2">
+                                    <input type="number" name="velocidadX" class="velocidadX2" autocomplete="off" >
+                                </div>
+                                <div class="calculadora-grid1">
+                                    <label for="angulo">Ángulo (°):</label>
+                                </div>
+                                <div class="calculadora-grid2" >
+                                    <input type="number"  name="angulo" class="angulo" autocomplete="off" >
+                                </div>
+                                <div class="calculadora-grid1">
+                                    <label for="distanciaX2">Distancia x (m)</label>
+                                </div>
+                                <div class="calculadora-grid2">
+                                    <input type="number" name="distanciaX2" class="distanciaX2" readonly >
+                                </div>
+                                    <div class="calculadora-grid7">
+                                        <button class="Calculate"  >Calcular</button>
+                                    </div>
+                            <br>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="VfinalY" class="multicalc">
+                            <div class="calculadora-grid">
+                                <div class="calculadora-grid1">
+                                    <label for="velocidadY">Velocidad Inicial Y(m/s)</label>
+                                </div>
+                                <div class="calculadora-grid2">
+                                    <input type="number" name="velocidadY" class="velocidadY" autocomplete="off" >
+                                </div>
+                                <div class="calculadora-grid1">
+                                    <label for="tiempo">Tiempo (s):</label>
+                                </div>
+                                <div class="calculadora-grid2" >
+                                    <input type="number"  name="tiempo" class="tiempo" autocomplete="off" >
+                                </div>
+                                <div class="calculadora-grid1">
+                                    <label for="VfinalY">Velocidad Final Y(m/s)</label>
+                                </div>
+                                <div class="calculadora-grid2">
+                                    <input type="number" name="VfinalY" class="VfinalY" readonly >
+                                </div>
+                                    <div class="calculadora-grid7">
+                                        <button class="Calculate" >Calcular</button>
+                                    </div>
+                            <br>
+                        </div>
+                        <div>
+                            <div class="calculadora-grid">
+                                <div class="calculadora-grid1">
+                                    <label for="velocidadY">Velocidad Inicial Y(m/s)</label>
+                                </div>
+                                <div class="calculadora-grid2">
+                                    <input type="number" name="velocidadY" class="velocidadY2" autocomplete="off" >
+                                </div>
+                                <div class="calculadora-grid1">
+                                    <label for="Yinicial">Altura Inicial (m):</label>
+                                </div>
+                                <div class="calculadora-grid2" >
+                                    <input type="number"  name="Yinicial" class="Yinicial" autocomplete="off" >
+                                </div>
+                                <div class="calculadora-grid1">
+                                    <label for="Yfinal">Altura final (m):</label>
+                                </div>
+                                <div class="calculadora-grid2" >
+                                    <input type="number"  name="Yfinal" class="Yfinal" autocomplete="off" >
+                                </div>
+                                <div class="calculadora-grid1">
+                                    <label for="VfinalY2">Velocidad Final Y(m/s)</label>
+                                </div>
+                                <div class="calculadora-grid2">
+                                    <input type="number" name="VfinalY2" class="VfinalY2" readonly >
+                                </div>
+                                    <div class="calculadora-grid7">
+                                        <button class="Calculate"  >Calcular</button>
+                                    </div>
+                            <br>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="anguloParabolico">
+                        <div class="calculadora-grid">
+                            <div class="calculadora-grid1">
+                                <label for="vXParabolico">Velocidad X (m/s)</label>
+                            </div>
+                            <div class="calculadora-grid2">
+                                <input type="number" name="vXParabolico" class="vXParabolico" autocomplete="off" >
+                            </div>
+                            <div class="calculadora-grid1">
+                                <label for="vYParabolico">Velocidad final Y (m/s)</label>
+                            </div>
+                            <div class="calculadora-grid2">
+                                <input type="number" name="vYParabolico" class="vYParabolico" autocomplete="off" >
+                            </div>
+                            <div class="calculadora-grid1">
+                                <label for="angulo">Ángulo (°)</label>
+                            </div>
+                            <div class="calculadora-grid2" >
+                                <input type="number"  name="angulo" class="angulo" readonly >
+                            </div>
+                            <div class="calculadora-grid7">
+                                <button class="Calculate"  >Calcular</button>
+                            </div>
+                        <br>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+            <div id="OpticaCalc">
+                <div class="calculadora">
+                    <select name="calcupdater"  class="select">
+                        <option value="start" selected disabled>¿Qué busca?</option>
+                        <option value="indiceRefraccion">Índice de refraccion</option>
+                        <option value="Frecuencia">Frecuencia de la onda</option>
+                        <option value="Periodo">Período de la onda</option>
+                        <option value="Velocidad">Velocidad de la onda</option>
+                    </select>
+                    <br>
+                </div>
+                <div class="container">
+                    <br>
+                    <div id="indiceRefraccionOptica" >
+                        <div class="calculadora-grid">
+                            <div class="calculadora-grid1">
+                                <label for="vOnda">Velocidad de la onda (m/s)</label>
+                            </div>
+                            <div class="calculadora-grid2">
+                                <input type="number" name="vOnda" class="vOnda" autocomplete="off" >
+                            </div>
+                            <div class="calculadora-grid1">
+                                <label for="indiceRefraccion">índice de refraccion</label>
+                            </div>
+                            <div class="calculadora-grid2">
+                                <input type="number" name="indiceRefraccion" class="indiceRefraccion" readonly >
+                            </div>
+                                <div class="calculadora-grid7">
+                                    <button class="Calculate"  >Calcular</button>
+                                </div>
+                        <br>
+                        </div>
+                    </div>
+                    <div id="frecuenciaOptica">
+                        <div class="calculadora-grid">
+                            <div class="calculadora-grid1">
+                                <label for="periodoOptica">Período de la onda (s)</label>
+                            </div>
+                            <div class="calculadora-grid2">
+                                <input type="number" name="periodoOptica" class="periodoOptica" autocomplete="off" >
+                            </div>
+                            <div class="calculadora-grid1">
+                                <label for="frecuenciaOnda">Frecuencia de la onda (hz)</label>
+                            </div>
+                            <div class="calculadora-grid2">
+                                <input type="number" name="frecuenciaOnda" class="frecuenciaOnda" readonly >
+                            </div>
+                                <div class="calculadora-grid7">
+                                    <button class="Calculate"  >Calcular</button>
+                                </div>
+                        <br>
+                        </div>
+                    </div>
+                    <div id="periodoOptica" class="multicalc">
+                        <div class="calculadora-grid">
+                            <div class="calculadora-grid1">
+                                <label for="frecuenciaOnda">Frecuencia de la onda</label>
+                            </div>
+                            <div class="calculadora-grid2">
+                                <input type="number" name="frecuenciaOnda" class="frecuenciaOnda" autocomplete="off" >
+                            </div>
+                            <div class="calculadora-grid1">
+                                <label for="periodoOnda">Período de la onda (s)</label>
+                            </div>
+                            <div class="calculadora-grid2">
+                                <input type="number" name="periodoOnda" class="periodoOnda" readonly >
+                            </div>
+                                <div class="calculadora-grid7">
+                                    <button class="Calculate"  >Calcular</button>
+                                </div>
+                        <br>
+                        </div>
+                        <div class="calculadora-grid">
+                            <div class="calculadora-grid1">
+                                <label for="longitudOnda">Longitud de la onda (m)</label>
+                            </div>
+                            <div class="calculadora-grid2">
+                                <input type="number" name="longitudOnda" class="longitudOnda" autocomplete="off" >
+                            </div>
+                            <div class="calculadora-grid1">
+                                <label for="vOnda">Velocidad de la onda (m/s)</label>
+                            </div>
+                            <div class="calculadora-grid2">
+                                <input type="number" name="vOnda" class="vOnda" autocomplete="off" >
+                            </div>
+                            <div class="calculadora-grid1">
+                                <label for="periodoOnda2">Período de la onda (s)</label>
+                            </div>
+                            <div class="calculadora-grid2">
+                                <input type="number" name="periodoOnda2" class="periodoOnda2" readonly >
+                            </div>
+                                <div class="calculadora-grid7">
+                                    <button class="Calculate"  >Calcular</button>
+                                </div>
+                        <br>
+                        </div>
+                    </div>
+                    <div id="velocidadOptica" class="multicalc">
+                        <div class="calculadora-grid">
+                            <div class="calculadora-grid1">
+                                <label for="indiceRefraccion">índice de refraccion</label>
+                            </div>
+                            <div class="calculadora-grid2">
+                                <input type="number" name="indiceRefraccion" class="indiceRefraccion" autocomplete="off" >
+                            </div>
+                            <div class="calculadora-grid1">
+                                <label for="vOnda">Velocidad de la onda (m/s)</label>
+                            </div>
+                            <div class="calculadora-grid2">
+                                <input type="number" name="vOnda" class="vOnda" readonly >
+                            </div>
+                                <div class="calculadora-grid7">
+                                    <button class="Calculate"  >Calcular</button>
+                                </div>
+                        <br>
+                        </div>
+                        <div class="calculadora-grid">
+                            <div class="calculadora-grid1">
+                                <label for="longitudOnda">Longitud de la onda (m)</label>
+                            </div>
+                            <div class="calculadora-grid2">
+                                <input type="number" name="longitudOnda" class="longitudOnda" autocomplete="off" >
+                            </div>
+                            <div class="calculadora-grid1">
+                                <label for="periodoOnda">Período de la onda (s)</label>
+                            </div>
+                            <div class="calculadora-grid2">
+                                <input type="number" name="periodoOnda" class="periodoOnda" autocomplete="off" >
+                            </div>
+                            <div class="calculadora-grid1">
+                                <label for="vOnda2">Velocidad de la onda (m/s)</label>
+                            </div>
+                            <div class="calculadora-grid2">
+                                <input type="number" name="vOnda2" class="vOnda2" readonly >
+                            </div>
+                                <div class="calculadora-grid7">
+                                    <button class="Calculate"  >Calcular</button>
+                                </div>
+                        <br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    <section id="CaidaLibre" class="física hidden4" >
+        <div   class="standard">
+            <h2 >Caída Libre</h2>
+                <p>Las fórmulas generales para calcular altura y velocidad en el eje y (eje vertical):</p>
+                <div class="img">
+                    <img loading="lazy" class="space-img img80" src="./imagenes/fisica/formulasejey.png"
+                    alt="Formulas físicas para el eje y"> 
+                </div>
+                <p>Pero en el caso de <b>caída libre</b> , <b>la velocidad inicial siempre es 0</b> , entonces podemos reducir un poco las ecuaciones.</p>
+                <div class="img">
+                    <img loading="lazy" class="space-img img80" src="./imagenes/fisica/formulascaidalibre.png"
+                    alt="Formulas físicas para caida libre"> 
+                </div>
+                <p><span class="nota">&nbsp&nbsp&nbsp&nbspNOTA:</span> Todas las ecuaciones quedan negativas por la perspectiva, ya que técnicamente los objetos estarían descendiendo.</p>
+            
+                <h2 id="LanzamientoVertical">Lanzamiento Vertical</h2>
+            <p>Las fórmulas generales para lanzamiento vertical son exactamente iguales a las de caída libre, sin embargo, en lanzamiento vertical, si hay a velocidad inicial. 
+                Por ende, se basaría en la fórmulas generales</p>
+            <div class="flex2">
+                <div class="selec img">
+                    <img loading="lazy" class="space-img img80" src="./imagenes/fisica/formulasejey.png"
+                    alt="Formulas físicas para el eje y"> 
+                </div>
+                <div class="img">
+                    <img loading="lazy" class="space-img img80" src="./imagenes/fisica/indiceformulas.png"
+                    alt="Formulas físicas para el eje y">
+                </div>     
+            </div>   
+            <p><b>Datos importantes:</b></p>
+            <ul class="margin">
+                <li><p>El tiempo de vuelo es 2 veces el tiempo máximo, cuando se lanza desde el suelo(altura 0)</p></li>
+                <li><p>La velocidad(final) en la altura máxima vale 0</p></li>
+                <li><p>La gravedad(g) tiene un valor aproximado de 9,8m/s<sup>2</sup></p></li>
+                <li><p>Si la velocidad es negativa, significa que el objeto está en caída</p></li>
+            </ul>
+            <h3>Otras ecuaciones:</h3>
+            <div class="flex2">
+                <div class="img">
+                    <img loading="lazy" class="space-img img80" src="./imagenes/fisica/Otrasecuacioneslanzamientovertical.png"
+                    alt="Formulas físicas para lanzamiento vertical"> 
+                </div>
+                <div class="selec img">
+                    <img loading="lazy" class="space-img img80" src="./imagenes/fisica/indiceotrasecuacioneslanzvertical.png"
+                    alt="Formulas físicas para lanzamiento vertical"> 
+                </div>
+            </div>
+            <div class="pdf" >
+                <div class="iframe">
+                    <iframe loading="lazy" src="./Apps/pdfjs/web/viewer.html?file=pdfs/Fisica/ejercicioscaidalibre.pdf"  
+                    class="pdf"></iframe>
+                </div>
+                <br>
+                    <div class="button">
+                        <button ><a href="./Apps/pdfjs/web/viewer.html?file=pdfs/Fisica/ejercicioscaidalibre.pdf" target="_blank">Abrir en otra ventana</a> </button>
+                </div>    
+            </div>
+            <br>
+            <hr><br>
+    </section>
+    <section id="LanzamientoHorizontal" class="física hidden4">
+        <div class="standard">
+            <h2>Lanzamiento Horizontal</h2>
+            <p>En el caso de lanzamiento horizontal, aunque principalmente se priorice el eje x, también se utilizan ciertas de las fórmulas de lanzamiento vertical(el eje y).
+                De tal forma que sus ecuaciones serían:</p>
+            <div class="flex2">
+                <div class="img">
+                    <img loading="lazy" class="img80" src="./imagenes/fisica/formulaslanzhorizontal.png"
+                    alt="Formulas físicas lanzamiento horizontal"> 
+                </div>
+                <div class="selec img">
+                    <img loading="lazy" class="space-img img80" src="./imagenes/fisica/indiceformulaslanzhorizontal.png"
+                    alt="Indice formulas lanzamiento horizontal"> 
+                </div>   
+            </div>
+            <p><b>Datos importantes:</b></p>
+            <ul class="margin">
+                <li><p>La velocidad horizontal (<b>V<sub>x</sub></b>  ) es constante, es decir, siempre es igual</p></li>
+                <li><p>La velocidad inicial en el eje y siempre vale 0 (<b>V<sub>y</sub> = 0</b>)</p></li>
+                <li><p>La altura final siempre es igual a 0 (<b>Y<sub>f</sub> = 0</b>)</p></li>
+            </ul>
+            <div class="pdf" >
+                <div class="iframe">
+                    <iframe loading="lazy" src="./Apps/pdfjs/web/viewer.html?file=pdfs/Fisica/ejercicioslanzamientohorizontal.pdf"  
+                    class="pdf"></iframe>
+                </div>
+                <br>
+                <div class="button">
+                    <button><a href="./Apps/pdfjs/web/viewer.html?file=pdfs/Fisica/ejercicioslanzamientohorizontal.pdf" target="_blank">Abrir en otra ventana</a></button> 
+                </div>    
+            </div>
+            <br>
+            <hr><br>
+        </div>
+    </section>
+    <section id="MovimientoParabolico" class="física hidden4">
+        <div class="standard">
+            <h2 >Movimiento Parabólico</h2>
+            <p>El lanzamiento inclinado se origina cuando se lanza un proyectil con un ángulo de inclinación. Resulta de la superposición de dos movimientos mutuamente independientes,
+                una en la horizontal uniforme y otro en la vertical uniformemente acelerado (Lanzamiento vertical hacia arriba y caída libre)</p>
+            <p>En movimiento parabólico despreciamos la resistencia del aire y la aceleración. Es decir la <b>aceleración en eje y es igual a la gravedad</b> (Y = g) y es <b>constante</b> 
+            En pocas palabras, en <b>X</b>  se mantiene un <b>movimiento uniforme</b>  mientras que en el <b>eje y</b>  se mantiene un <b>movimiento uniformente acelerado</b><br>
+            De tal forma que en lanzamiento parabólico se usan las fórmulas tanto de lanzamiento vertical como horizontal:</p>
+            <div class="flex2">
+                <div class="img">
+                    <img loading="lazy" class="img80" src="./imagenes/fisica/formulasmovimientoparabolico.png"
+                    alt="Formulas físicas movimiento parabólico"> 
+                </div>
+                <div class="selec img">
+                    <img loading="lazy" class="space-img img80" src="./imagenes/fisica/formulasmovimientoparabolico2.png"
+                    alt="Indice formulas movimiento parabólico"> 
+                </div>   
+            </div>
+            <p>Sin embargo, para calcular la <b>velocidad inicial</b> tanto en <b>x</b> como en <b>y</b>, tenemos que tener en cuenta los ángulos </p>
+        <div class="img">
+            <img loading="lazy" class="space-img img80-450" src="./imagenes/fisica/angulosverthoriz.jpg"
+             alt="Formulas físicas para caida libre"> 
+        </div>
+        <p><b>Datos importantes:</b></p>
+            <ul class="margin">
+                <li><p>El tiempo en subir es el mismo tiempo en bajar, siempre que no se realice el lanzamiento desde una altura inicial</p></li>
+                <li><p>Tiempo de vuelo: Tiempo que permanece el proyectil en el aire</p></li>
+                <li><p>El lanzamiento inclinado se llama también movimiento parabólico porque describe una parabola</p></li>
+                <li><p>La velocidad en x(horizontal) es constante</p></li>
+                <li><p>La velocidad en y(vertical) varía a lo largo de la trayectoria</p></li>
+                <li><p>En la altura máxima, la velocidad es 0 m/s</p></li>
+                <li><p>Cuando el ángulo de inclinación es de 90&#176;, el movimiento se transforma en un lanzamiento vertical hacia arriba</p></li>
+                <li><p>La <b>distancia máxima</b>  se obtiene cuando el ángulo de inclinación es <b>45&#176;</b> </p></li>
+            </ul>
+            <div class="pdf" >
+                <div class="iframe">
+                    <iframe loading="lazy" src="./Apps/pdfjs/web/viewer.html?file=pdfs/Fisica/ejercicioslanzamientoparabolico.pdf"  
+                    class="pdf"></iframe>
+                    
+                </div>
+                <br>
+                    <div class="button">
+                        <button><a href="./Apps/pdfjs/web/viewer.html?file=pdfs/Fisica/ejercicioslanzamientoparabolico.pdf" target="_blank">Abrir en otra ventana</a></button> 
+                </div>    
+            </div>
+            <br>
+            <hr><br>
+        </div>
+    </section> 
+       <section id="Fuerzas" class="física hidden4">
+        <div class="standard">
+            <h2>Fuerza</h2>
+            <p>Es la interración entre dos cuerpos. Es una magnitud vectorial y tiene como unidad de medida los Newton(N)</p>
+            <div class="img">
+                <img loading="lazy" class="space-img img80" src="./imagenes/fisica/Newton.png"
+                alt="Newtons"> 
+            </div>
+            <h3>Fuerzas de contacto</h3>
+            <p>Fuerza que implica contacto directo entre dos cuerpos. Un ejemplo es cuando se patea un balón</p>
+            <h3>Tipos de fuerza de contacto</h3>
+            <ul class="margin">
+                <div class="flex">
+                    <div>
+                        <br>
+                        <li><h3>Fuerza normal</h3>
+                        <p>Es ejercida sobre un objeto por cualquier superficie con la que esté en contacto. La fuerza
+                        siempre actúa perpendicular a la superficie(sin importar el ángulo)</p></li>
+                    </div>
+                    <div class="img">
+                        <img loading="lazy" class="space-img img80" src="https://www.fisicapractica.com/imagenes/estatica-dinamica/normal.jpg"
+                        alt="Fuerza Normal"> 
+                    </div>
+                </div>
+                <div class="flex">
+                    <div>
+                        <br>
+                        <li><h3>Fuerza de fricción</h3>
+                        <p>Actúa paralelamente a la superficie (en dirección opuesta al deslizamiento del objeto). Es la 
+                        resistencia del suelo contra el objeto. Esta se divide en Fuerza de roce estático(el objeto no se mueve) 
+                        y Fuerza de roce dinámica(el objeto está en movimiento)</p></li>
+                    </div>
+                    <div class="img">
+                        <img loading="lazy" class="space-img img80-300" src="https://static.wixstatic.com/media/763beb_3a7238013eb94356a5c18d3a9fa420a2~mv2.png/v1/fill/w_348,h_246,al_c,q_85,enc_auto/wpnf.png"
+                        alt="Fuerza de fricción"> 
+                    </div>
+                </div>
+                <div class="flex">
+                    <div>
+                        <br>
+                        <li><h3>Fuerza de tensión</h3>
+                        <p>Es la fuerza de tirón ejercida por un cable o cuerda estirada sobre un objeto al cual se ata</p></li>
+                    </div>
+                    <div class="img">
+                        <img loading="lazy" class="space-img img80" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ88-oip_XrQ4ljNmCJyRLka4zm1fsFISalRv1zvUnv2ly2lrqeQmlr-fVo7S1xPV5qzEs&usqp=CAU"
+                        alt="Fuerza de tensión"> 
+                    </div>
+                </div>
+            </ul>
+        </div>
+        <div class="pdf" >
+            <div class="iframe">
+                <iframe loading="lazy" src="./Apps/pdfjs/web/viewer.html?file=pdfs/Fisica/ejerciciosfuerza.pdf"  
+                class="pdf"></iframe>
+            </div>
+            <br>
+           <div class="button">
+                <button><a href="./Apps/pdfjs/web/viewer.html?file=pdfs/Fisica/ejerciciosfuerza.pdf" target="_blank">Abrir en otra ventana</a></button> 
+                
+            </div>    
+        </div>
+        <br>
+        <hr>
+       </section>
+       <section id="LeyesDeNewton" class="física hidden4">
+        <div class="standard">
+            <h2>Leyes de Newton</h2>
+            <br>
+            <div class="flex">
+                <div class="h3">
+                    <h3 class="margin">Primera Ley de Newton o Ley de Inercia</h3>
+                    <p>Todo objeto se encuentra en reposo a menos que se le aplique una fuerza. Si está en movimiento
+                        no se detendrá hasta que se le aplique una fuerza externa.</p>
+                </div>
+                <div class="img">
+                    <img loading="lazy" class="space-img img80-350" src="https://www.escuelapedia.com/wp-content/uploads/La-Primera-Ley-de-Newton-Ley-Inercia.jpg"
+                      alt="Ley de Inercia"> 
+                </div>
+            </div>
+            <div class="flex">
+                <div class="h3">
+                    <h3 class="margin">Segunda Ley de Newton o Ley de la Proporcionalidad</h3>
+                    <p>A mayor masa menor será la aceleración del objeto y viceversa(a menor masa, mayor será la aceleración).
+                        La aceleración es directamente propoporcional con la fuerza e inversamente proporcional con la masa 
+                        (Mayor fuerza = Mayor aceleración; Mayor masa = Menor aceleración)</p>
+                    <div class="img">
+                        <img src="./imagenes/fisica/segundaleynewton.png" alt="Segunda ley de newton" loading="lazy" class="img80">
+                    </div>
+                </div>
+                <div class="img">
+                    <img loading="lazy" class="space-img img80-350" src="https://media.proprofs.com/images/QM/user_images/2503852/New%20Project%20(27)(220).jpg"
+                      alt="Ley de la Proporcionalidad"> 
+                </div>
+            </div>
+            <br>
+            <div class="flex">
+                <div class="h3">
+                    <h3 class="margin">Tercera Ley de Newton o Ley de acción y reacción</h3>
+                    <p>Cuando un cuerpo "A" ejerce  una fuerza sobre un cuerpo "B". a su vez el cuerpo "B" ejerce una fuerza contra el cuerpo "A" de la misma magnitud pero en sentido opuesto</p>
+                </div>
+                <div class="img">
+                    <img loading="lazy" class="space-img img80" src="http://www.physicsclassroom.com/Class/newtlaws/u2l4a12.gif"
+                alt="Ley de acción y reacción"> 
+                </div>
+            </div>
+        </div>
+        <div class="pdf-grid" >
+            <div class="iframe grid11">
+                <iframe loading="lazy" src="./Apps/pdfjs/web/viewer.html?file=pdfs/Fisica/ejerciciosleyesnewton1.pdf"  
+                class="pdf"></iframe>
+            </div>
+            <div class="button grid21">
+                <button><a href="./Apps/pdfjs/web/viewer.html?file=pdfs/Fisica/ejerciciosleyesnewton1.pdf" target="_blank">Abrir en otra ventana</a></button> 
+            </div>
+            <div class="iframe grid12">
+                <iframe loading="lazy" src="./Apps/pdfjs/web/viewer.html?file=pdfs/Fisica/ejerciciosleyesnewton2.pdf"  
+                class="pdf"></iframe>
+            </div>
+            <div class="button grid22">        
+                <button><a href="./Apps/pdfjs/web/viewer.html?file=pdfs/Fisica/ejerciciosleyesnewton2.pdf" target="_blank">Abrir en otra ventana</a></button> 
+            </div>    
+        </div>
+        <br>
+        <hr>
+       </section>
+       <section id="Trabajo" class="física hidden4">
+        <div class="standard" id="energiah3">
+            <br>
+            <h2>Trabajo - Energía</h2>
+            <p>Es la fuerza que se realiza para desplazar un cuerpo. Es una magnitud escalar y tiene como unidad de medida los Joules(J). El trabajo se denota con la letra W(work).
+            El trabajo está altamente relacionado con la energía, ya que el trabajo de la fuerza sobre un cuerpo es equivalente a la energía necesaria para desplazarlo(Teorema Trabajo-Energía)
+            </p>
+            <div class="img">
+                <img src="./imagenes/fisica/joules.png" class="space-img img80" alt="Joules" loading="lazy">
+            </div>
+            <h3 class="margin">Ecuaciones Trabajo</h3>
+            <br>
+            <div class="flex2">
+                <div class="img">
+                    <img src="./imagenes/fisica/ecuacionestrabajo.png" class="space-img img80" 
+                    alt="Trabajo fisica" loading="lazy">
+                </div>
+                <div class="selec img">
+                    <img src="./imagenes/fisica/indicetrabajo.png" class="space-img img80" 
+                    alt="Trabajo fisica" loading="lazy">
+                </div>
+            </div>
+            <h3 class="margin">Ecuaciones Energía</h3>
+            <br>
+            <div class="flex2">
+                <div class="img">
+                    <img src="./imagenes/fisica/ecuacionesenergia.png" class="space-img img80" 
+                    alt="Energia física" loading="lazy">
+                </div>
+                <div class="selec img">
+                    <img src="./imagenes/fisica/indiceenergia.png" class="space-img img80" 
+                    alt="Energia física" loading="lazy">
+                </div>
+            </div>
+            <h3 class="margin">Ecuaciones Energía Conservativa (sin roce)</h3>
+            <br>
+            <div class="flex2">
+                <div class="img">
+                    <img src="./imagenes/fisica/ecuacionesenergiaconservativa.png" class="space-img img80" 
+                    alt="Energia física" loading="lazy">
+                </div>
+                <div class="selec img">
+                    <img src="./imagenes/fisica/indiceenergiaconservativa.png" class="space-img img80" 
+                    alt="Energia física" loading="lazy">
+                </div>
+            </div>
+        </div>
+        <div class="pdf" >
+            <div class="iframe">
+                <iframe loading="lazy" src="./Apps/pdfjs/web/viewer.html?file=pdfs/Fisica/ejerciciostrabajoenergia.pdf"  
+                class="pdf"></iframe>
+                
+            </div>
+            <br>
+                <div class="button">
+                    <button><a href="./Apps/pdfjs/web/viewer.html?file=pdfs/Fisica/ejerciciostrabajoenergia.pdf" target="_blank">Abrir en otra ventana</a></button> 
+            </div>    
+        </div>
+        <br>
+        <hr><br>
+       </section>
+       <section id="CantidadDeMovimiento" class="física hidden4">
+        <div class="standard">
+            <h2>Candidad de movimiento</h2>
+            <p>La cantidad de movimiento es una magnitud física que describe el movimiento de un cuerpo. Es vectorial y tiene como unidad m/s.
+            Además, se designa con la letra P</p>
+            <div class="flex2">
+                <div class="img">
+                    <img src="./imagenes/fisica/ecuacionescantidadmovimiento.png" class="space-img img80" 
+                    alt="Momentum" loading="lazy">
+                </div>
+                <div class="selec img">
+                    <img src="./imagenes/fisica/indicecuacionescanditadmovimiento.png" class="space-img img80" 
+                    alt="Momentum" loading="lazy">
+                </div>
+            </div>
+            <br>
+            <h3 class="margin">Choque perfectamente elástico</h3>
+            <p>No hay pérdida de energía. Se conserva el momentum</p>
+            <div class="img">
+                <img src="./imagenes/fisica/choquelastico.png" class="space-img img80" 
+                alt="Choque elástico" loading="lazy">
+            </div>
+            <br>
+            <h3 class="margin">Choque inelástico</h3>
+            <p>Se deforman los objetos. Se pierde momentum</p>
+            <h3 class="margin">Choque completamente inelástico</h3>
+            <p>Tras la colisión pierden velocidad. La energía se transforma en calor o deformación</p>
+            <h3 class="margin">Ecuaciones para choque</h3>
+            <div class="flex3">
+                <div>
+                    <img src="./imagenes/fisica/ecuacioneschoque.png" class="space-img img80" 
+                    alt="Choque elástico" loading="lazy">
+                </div>
+                <div class="selec img">
+                    <img src="./imagenes/fisica/indicechoque.png" class="space-img img80" 
+                    alt="Choque elástico" loading="lazy">
+                </div>
+            </div>
+        </div>
+        <div class="pdf" >
+            <div class="iframe">
+                <iframe loading="lazy" src="./Apps/pdfjs/web/viewer.html?file=pdfs/Fisica/ejerciciosmomentum.pdf"  
+                class="pdf"></iframe>
+                
+            </div>
+            <br>
+                <div class="button">
+                    <button><a href="./Apps/pdfjs/web/viewer.html?file=pdfs/Fisica/ejerciciosmomentum.pdf" target="_blank">Abrir en otra ventana</a></button> 
+            </div>    
+        </div>
+        <br>
+        <hr><br>
+       </section>
+       <section id="Optica" class="física hidden4">
+        <div class="standard">
+            <h2>Óptica Dispersión</h2>
+            <div class="flex">
+                <div>
+                    <p>La óptica estudia la luz como una onda y trata de explicar algunos de sus fenómenos. Cómo por ejemplo, Cuando
+                    pasamos luz blanca a través de un prisma de cristales y debido a las diferentes rapidez dentro del medio, la 
+                    luz se dispersa en colores que la componen</p>
+                    <p><b>Datos importantes:</b></p>
+                    <ul class="margin">
+                        <li><p>La dispersión, es la separación de la luz en las longitudes de onda que la componenen</p></li>
+                        <li><p>La volocidad de la luz en diferente estancias varía segun las longitudes</p></li>
+                        <li><p>El índice de refraccion del aire es 1,00029(1)</p></li>
+                    </ul>
+                </div>
+                <div class="img">
+                    <img loading="lazy" class="space-img img80-400" src="http://www.hydroenv.com.mx/catalogo/images/00_Redaccion/metodos_y_procedimientos_basicos_para_hidroponia/221_la_luz_en_tus_plantas/refraccion-de-la-luz.jpg"
+                       alt="öptica Física"> 
+                </div>
+            </div>
+            <br><br>
+            <div class="flex">
+                <div>
+                <h3 class="margin">Profundidad aparente</h3>
+                    <p>La refracción es la razón de que un objeto sumergido en un líquido de mayor índice de 
+                        refracción nos parezca más cercano a la superficie de lo que realmente está</p>
+                </div>
+                <div class="img">
+                    <img loading="lazy" class="space-img img80-400" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT8k5Nc07oqHUcxNsjeJIrg5jTRaEIS9v4lkKExj75MVuxF33w2ZTxn7K3jQJCShUuRmDo&usqp=CAU"
+                     alt="Profunidad aparente Óptica"> 
+                </div>
+            </div>
+            <h3 class="margin">Ecuaciones generales de Óptica</h3>
+            <br>
+            <div class="flex3">
+                <div class="img">
+                    <img src="./imagenes/fisica/Ley de Snell.png" 
+                    alt="Ley de Snell" loading="lazy" class="img80">
+                </div>
+                <div class="selec img">
+                    <img src="./imagenes/fisica/indiceleydesnell.png" class="space-img img80" 
+                    alt="Ley de Snell" loading="lazy">
+                </div>
+            </div>
+            <br>
+            <h3 class="margin">Ley de Snell</h3>
+            <p>Es una ecuación que se utiliza para determinar el ángulo de la refracción de la luz al atravesar una superficie de separación con índice de refracción mayor al de la luz.</p>
+            <div class="flex3">
+                <div class="selec img">
+                    <img src="./imagenes/fisica/ecuacionesoptica.png" 
+                    alt="Óptica" loading="lazy" class="space-img img80">
+                </div>
+                <br>
+                <div class="img">
+                    <img src="./imagenes/fisica/indiceoptica.png" 
+                    alt="Óptica" loading="lazy" class="img80">
+                </div>
+            </div>
+            
+        </div>
+        <div class="pdf" >
+            <div class="iframe">
+                <iframe loading="lazy" src="./Apps/pdfjs/web/viewer.html?file=pdfs/Fisica/ejerciciosoptica.pdf"  
+                class="pdf"></iframe>
+                
+            </div>
+            <br>
+            <div class="button">
+                <button><a href="./Apps/pdfjs/web/viewer.html?file=pdfs/Fisica/ejerciciosoptica.pdf" target="_blank">Abrir en otra ventana</a></button> 
+            </div>    
+        </div>
+        <br>
+       </section>
+       <section id="Electroestatica" class="física hidden4">
+        <div class="standard">
+            <h2>Electroestática</h2>
+            <br>
+            <div class="flex">
+                <div>
+                    <p>La electroestática es la rama de la física que se encarga de estudiar las interacciones entre las 
+                        cargas eléctricas en reposo. Normalmente, se estudia las cargas eléctricas de los átomos, principalmente los 
+                        electrones y protones (ya que los neutrones no tienen carga).
+                    </p>
+                    <p>
+                        Por eso, es importante saber que naturalmente los electrones tienen carga negativa y que los protones tienen carga positiva,
+                        sin embargo, ambos tienen el mismo módulo, es decir, la misma cantidad de carga eléctrica, pero de diferente signo. También,
+                        hay que recordar que la unidad de medida que se utiliza para carga eléctrica son los Coulomb (C).
+                    </p>
+                </div>
+                <div class="imgcenter">
+                    <img loading="lazy" class="space-img img80-350" src="./imagenes/fisica/5to/Electroestatica/ElectroestaticaIntro.jpg"
+                       alt="Electroestática"> 
+                </div>
+            </div>
+            <h3 class="margin">Primera Ley de la Electroestática</h3>
+            <br>
+            <p>Las cargas del mismo tipo se repelen, mientras que las cargas de signos opuestos se atraen.
+            Además, solo los electrones salen del núcleo, ya que son los que orbitan más lejos del mismo. Los 
+            protones sin embargo, solo pueden salir mediante el uso de energía nuclear.</p>
+            <div class="flex2">
+                <div class="imgcenter">
+                    <img loading="lazy" class="space-img img80-500" src="./imagenes/fisica/5to/Electroestatica/LeyElectrostatica.jpg"
+                       alt="Primera ley de la Electroestática"> 
+                </div>
+                <div class="imgcenter">
+                    <img loading="lazy" class="space-img img80" src="./imagenes/fisica/5to/Electroestatica/MasaCargaParticulas.jpg"
+                       alt="Carga y Masa Partículas Subatómicas"> 
+                </div>
+            </div>
+            <h2>Ley de Coulomb</h2>
+            <p>La magnitud de la fuerza eléctrica entre 2 cargas en resposo, es directamente proporcional 
+                producto de las magnitudes de dichas cargas e inversamente proporcional al cuadrado de la 
+                distancia que las separa</p>
+                <div class="flex2">
+                    <div class="imgcenter">
+                        <img loading="lazy" class="space-img img80" src="./imagenes/fisica/5to/Electroestatica/FuerzaElectroestatica.jpg"
+                           alt="Fuerza Electroestática"> 
+                    </div>
+                    <div class="imgcenter">
+                        <img loading="lazy" class="space-img img80" src="./imagenes/fisica/5to/Electroestatica/FuerzaElectroestaticaFormulario.jpg"
+                           alt="Fuerza Electroestática Guía"> 
+                    </div>
+                </div>
+
+                <div class="pdf-grid" >
+                    <div class="iframe grid11">
+                        <iframe loading="lazy" src="./Apps/pdfjs/web/viewer.html?file=pdfs/Fisica/5to/LeydeCoulomb/LeydeCoulomb.pdf"  
+                        class="pdf"></iframe>
+                    </div>
+                    <div class="button grid21">
+                        <button><a href="./Apps/pdfjs/web/viewer.html?file=pdfs/Fisica/5to/LeydeCoulomb/LeydeCoulomb.pdf" target="_blank">Abrir en otra ventana</a></button> 
+                    </div>
+                    <div class="iframe grid12">
+                        <iframe loading="lazy" src="./Apps/pdfjs/web/viewer.html?file=pdfs/Fisica/5to/LeydeCoulomb/LeydeCoulombPrueba.pdf"  
+                        class="pdf"></iframe>
+                    </div>
+                    <div class="button grid22">        
+                        <button><a href="./Apps/pdfjs/web/viewer.html?file=pdfs/Fisica/5to/LeydeCoulomb/LeydeCoulombPrueba.pdf" target="_blank">Abrir en otra ventana</a></button> 
+                    </div>    
+                </div>
+
+                <br><hr><br>
+
+            <h2>Campo Eléctrico</h2>
+            <br>
+            <p>El Campo Eléctrico se rige por una única forma, la cual emplea la fuerza de las cargas eléctrica. 
+            Sin embargo, se requiere utilizar una carga de prueba, llamada "Q<sub>0</sub>", la cual según los conventos de la física, 
+            siempre será de signo positivo. Tambien hay otra fórmula que te permite calcular el campo eléctrico generado por una carga puntual.
+            La unidad de medida del campo eléctrico es Newton sobre Coulomb (N/C).  
+            </p>
+            <div class="flex2">
+                <div class="imgcenter">
+                    <img loading="lazy" class="space-img img80" src="./imagenes/fisica/5to/Electroestatica/CampoElectrico.jpg"
+                       alt="Campo Eléctrico"> 
+                </div>
+                <div class="imgcenter">
+                    <img loading="lazy" class="space-img img80" src="./imagenes/fisica/5to/Electroestatica/CampoElectrico2.jpg"
+                       alt="Campo Eléctrico generado por una carga particular"> 
+                </div>
+            </div>
+
+            <div class="pdf" >
+                <div class="iframe">
+                    <iframe loading="lazy" src="./Apps/pdfjs/web/viewer.html?file=pdfs/Fisica/5to/CampoElectrico/CampoElectrico.pdf"  
+                    class="pdf"></iframe>
+                </div>
+                <br>
+                <div class="button">
+                    <button><a href="./Apps/pdfjs/web/viewer.html?file=pdfs/Fisica/5to/CampoElectrico/CampoElectrico.pdf" target="_blank">Abrir en otra ventana</a></button> 
+                </div>    
+            </div>
+
+            <br><hr><br>
+    
+            <h2>Energía Potencial Eléctrico - Voltaje</h2>
+            <p>La Energía Potencial Eléctrica es la energía que posee una carga eléctrica debido a su posición 
+                con respectos a otras cargas eléctricas. Normalmente está relacional con el Potencial Electrico, también conocido como Voltaje.
+                Este tema se rige por muchas fórmulas de acuerdo a lo que se busca, es decir, hay una fórmula particular para buscar la energía Potencial,
+                otra para buscar el voltaje y otra para calcular el trabajo eléctrico. Es importante decir que se rige por la unidad de Joules sobre Coulomb (J/C)
+            </p>
+            <p>Las fórmulas de la Energía Potencial Eléctrica y del Trabajo eléctrico 
+                (ambos tienen como una unidad los Joules) son las siguientes:</p>
+            <div class="flex2">
+                <div class="imgcenter">
+                    <img loading="lazy" class="space-img img80" src="./imagenes/fisica/5to/Electroestatica/EnergiaPotencialElectrica.jpg"
+                       alt="Energía Potencial Eléctrica"> 
+                </div>
+                <div class="imgcenter">
+                    <img loading="lazy" class="space-img img80" src="./imagenes/fisica/5to/Electroestatica/EnergiaPotencialElectricaGuia.jpg"
+                       alt="Energía Potencial Eléctrica Indice"> 
+                </div>
+            </div>
+            <p>El voltaje o potencial eléctrico tiene como unidad de medida (J/C) y tiene 2 fórmulas, ya sea para calcular
+                 el potencial eléctrico en general o el de una carga puntual. Como dato curioso, la palabra Voltaje 
+                 o los voltios provienen del famoso físico Alessandro Volta</p>
+            <div class="flex2">
+                <div class="imgcenter">
+                    <img loading="lazy" class="space-img img80" src="./imagenes/fisica/5to/Electroestatica/Voltaje.jpg"
+                    alt="Voltaje "> 
+                </div>
+                <div class="imgcenter">
+                    <img loading="lazy" class="space-img img80" src="./imagenes/fisica/5to/Electroestatica/VoltajePuntual.jpg"
+                        alt="Voltaje de una carga puntual"> 
+                </div>
+            </div>
+            <h3 class="margin">Fórmulas energía eléctrica</h3>
+            <br>
+            <div class="imgcenter">
+                <img loading="lazy" class="space-img img80" src="./imagenes/fisica/5to/Electroestatica/Energía eléctrica.jpg"
+                    alt="Energía Eléctrica"> 
+            </div>
+
+            <div class="pdf" >
+                <div class="iframe">
+                    <iframe loading="lazy" src="./Apps/pdfjs/web/viewer.html?file=pdfs/Fisica/5to/PotencialElectrico/PotencialElectrico.pdf"  
+                    class="pdf"></iframe>
+                </div>
+                <br>
+                <div class="button">
+                    <button><a href="./Apps/pdfjs/web/viewer.html?file=pdfs/Fisica/5to/PotencialElectrico/PotencialElectrico.pdf" target="_blank">Abrir en otra ventana</a></button> 
+                </div>    
+            </div>
+
+            <br><hr><br>
+
+        </div>
+       </section>
+       <section id="Condensadores" class="física hidden4">
+        <div class="standard">
+            <h2>Capacidad Eléctrica - Condensadores</h2>
+            <div class="flex">
+                <p>Los condensadores son dispositivos eléctricos que sirven para almacenar carga y energía eléctrica. Estos tienen dos conductores aislados
+                    y cuando las placas están cargadas, éstas son de misma magnitud pero de signos opuestos 
+                </p>
+                <div class="imgcenter">
+                    <img loading="lazy" class="space-img img80-250" src="https://www.diarioelectronicohoy.com/imagenes/2018/03/Vishay-CMS.jpg"
+                        alt="Condensadores"> 
+                </div>
+            </div>
+            <p>Ahora bien, la Capacidad es la relación existente entre la magnitud de la carga en cualquiera 
+                de las placas y la diferencia de potencial que aparece entre ellas. Su unidad de medida es Coulomb sobre Voltio (C/V), también
+                conocidos como Faradios (F), gracias al famoso físico  Michael Faraday. También es importante saber que
+                la capacidad depende de los factores constructivos como el tamaño de las placas, disntacias entre ellas y el material de separación
+                entre las placas (dialéctrico)    
+            </p>
+            <div class="flex3">
+                <div class="imgcenter">
+                    <img loading="lazy" class="space-img img80" src="./imagenes/fisica/5to/Condensadores/Condensadores.jpg"
+                        alt="Condensadores"> 
+                </div>
+                <div class="imgcenter">
+                    <img loading="lazy" class="space-img img80" src="./imagenes/fisica/5to/Condensadores/Condensadores2.jpg"
+                        alt="Condensadores"> 
+                </div>
+            </div>
+            <h3 class="margin">Tipos de conexiones de condensadores</h3>
+            <ul class="margin">
+                <li><p><b>Conexión en paralelo</b></p>
+                    <p>Características:</p>
+                <div class="flex">
+                    <div>  
+                    <ul>
+                    <li><p>Las placas superiores e inferiores están conectadas simultáneamente al polo positivo
+                        y negativos de la batería respectivamente, debido a eso tienen el mismo potencial</p>
+                    </li>
+                    <li><p>Los voltajes individuales a través de los condensadores conectados en paralelo son los 
+                        mismos e iguales al de la fuente (Mismo módulo). Es decir, todos los 
+                        condensadores presentan el mismo voltaje
+                    </p></li>
+                    <li><p>La carga total, corresponde a la suma de la carga en cada condensador</p></li>
+                    <li><p>La capacidad equivalente siempre es mayor que cualquiera de las capacidades individuales. 
+                        Mientras más condensadores mayor será su valor
+                    </p></li>
+                    </ul>
+                    </div>
+               
+                <div class="imgcenter">
+                    <img loading="lazy" class="space-img img80-500" src="./imagenes/fisica/5to/Condensadores/CondensadorParalelo.jpg"
+                        alt="Conexión de condensadores en paralelo"> 
+                </div>
+                </div>
+                
+                </li>
+                <li><p><b>Conexión en serie</b></p>
+                
+                <div class="flex">
+                    <div>
+                        <p>Características</p>
+                        <ul>
+                            <li><p>La carga es la misma en todos los condensadores</p></li>
+                            <li><p>El voltaje total , corresponde a la suma de los voltajes en cada condensador</p></li>
+                            <li><p>A diferencia de la conexión en paralelo, la conexión en serie va perdiendo 
+                                capacidad mientras más condensadores tenga el circuito. La capacidad total representa la suma de las fracciones
+                            de la capacidad de cada condensador</p></li>
+                        </ul>
+                    </div>
+                    <div class="img">
+                        <img loading="lazy" class="space-img img80-600" src="./imagenes/fisica/5to/Condensadores/CondensadorSerie.jpg"
+                            alt="Conexión de condensadores en serie"> 
+                    </div>
+                </div>
+                
+                </li>
+            </ul>
+
+            <div class="pdf-grid" >
+                <div class="iframe grid11">
+                    <iframe loading="lazy" src="./Apps/pdfjs/web/viewer.html?file=pdfs/Fisica/5to/Condensadores/Condensadores.pdf"  
+                    class="pdf"></iframe>
+                </div>
+                <div class="button grid21">
+                    <button><a href="./Apps/pdfjs/web/viewer.html?file=pdfs/Fisica/5to/Condensadores/Condensadores.pdf" target="_blank">Abrir en otra ventana</a></button> 
+                </div>
+                <div class="iframe grid12">
+                    <iframe loading="lazy" src="./Apps/pdfjs/web/viewer.html?file=pdfs/Fisica/5to/Condensadores/CondensadoresPrueba.pdf"  
+                    class="pdf"></iframe>
+                </div>
+                <div class="button grid22">        
+                    <button><a href="./Apps/pdfjs/web/viewer.html?file=pdfs/Fisica/5to/Condensadores/CondensadoresPrueba.pdf" target="_blank">Abrir en otra ventana</a></button> 
+                </div>    
+            </div>
+
+            <br><hr><br>
+
+        </div>
+       </section>
+       <section id="LeydeOhm" class="física hidden4">
+        <div class="standard">
+            <h2>Corriente Eléctrica</h2>
+            <h2>Ley de Ohm</h2>
+
+            <p>La corriente eléctrica es el flujo de cargas (positivas o negativas) entre dos puntos de un conductor
+            que se encuentra a distintos potenciales eléctricos. Su unidad de medida es el Amperio (A) y representa el flujo
+            de carga (Coulomb) por segundo
+            </p>
+            <div class="imgcenter">
+                <img loading="lazy" class="space-img img80" src="./imagenes/fisica/5to/LeyOhm/Corriente.jpg"
+                    alt="Corriente Eléctrica"> 
+            </div>
+            <p>Es importante saber que por convención, la corriente va a contra flujo a la hora de calcular los ejercicios, es decir,
+                 va de + (más) a - (menos). En la vida real sucede al revés, los que viajan son los electrones, pero por convención,
+                se denota que la corriente viaja en contraflujo. Normalmente el voltaje es generado por una fuente de fuerza de electromotriz,
+                también conocido como F.E.M, un dispositivo capaz de mantener una diferencia de potencial entre 2 puntos</p>
+            <div class="imgcenter">
+                <img loading="lazy" class="space-img img80-350" src="./imagenes/fisica/5to/LeyOhm/Voltaje.jpg"
+                    alt="Corriente y Resistencia Eléctrica"> 
+            </div>
+            <h2>Resistencia Eléctrica</h2>
+            <p>Es toda oposición que se encuentran los electrones en su paso por un circuito eléctrico. Todo objeto tiene
+                una resistencia de electricidad, esta resistencia genera calor y presenta una pérdida de energía. La unidad
+                de medida de las resistencias son los Ohmios (&#937)
+            </p>
+            <div class="flex3">
+                <div class="imgcenter">
+                    <img loading="lazy" class="space-img img80" src="./imagenes/fisica/5to/LeyOhm/ResistenciaElectrica.jpg"
+                        alt="Resistencia Eléctrica/Ley de Ohm"> 
+                </div>
+                <div class="img">
+                    <img loading="lazy" class="space-img img80" src="./imagenes/fisica/5to/LeyOhm/ResistenciaElectricaIndice.jpg"
+                        alt="Índice Resistencia Eléctrica"> 
+                </div> 
+            </div>
+
+
+
+        </div>
+       </section>
+       <section id="PotenciaEnCorriente" class="física hidden4">
+        <div class="standard">
+            <h2>Potencia en Corriente Continua</h2>
+            <p>La potencia eléctrica es un parámetro que indica la cantidad de energía eléctrica transferida 
+                de una fuente generadora a un elemento consumido, por unidad de tiempo. La unidad de medida de 
+                la potencia son los Watts (W), lo que es equivalente a Joule sobre segundo (J/s)</p>
+            <div class="imgcenter">
+                <img loading="lazy" class="space-img img80" src="./imagenes/fisica/5to/PotenciaEnCorriente/Potencia.jpg"
+                alt="Potencia Eléctrica"> 
+            </div>    
+            <h2>Ley de Joule</h2>
+            <p>La energía eléctrica en Joules,que se transformará en calor, en una conductor de resistencia cuando 
+                es reccorido por una corriente, se viene determinado por las siguientes fórmulas:
+            </p>
+            <div class="flex3">
+                <div class="imgcenter">
+                    <img loading="lazy" class="space-img img80" src="./imagenes/fisica/5to/PotenciaEnCorriente/EnergíaPotencia.jpg"
+                    alt="Energía y Potencia Eléctrica"> 
+                </div>  
+                <div class="imgcenter">
+                    <img loading="lazy" class="space-img img80" src="./imagenes/fisica/5to/PotenciaEnCorriente/EnergíaPotenciaIndice.jpg"
+                    alt="Energía y Potencia Eléctrica"> 
+                </div> 
+            </div>
+            <h3 class="margin">Ley o Efecto Joule</h3>
+            <p>La cantidad de calor producida en un conductor en un tiempo (t), por el cual circula una corriente eléctrica
+                constante, es proporcional al cuadrado de la corriente, por el valor de la resistencia de dicho conductor. 
+                Es importante diferencia que la energía se mide en horas (h) mientras que la cantidad de calor se mide en segundos (s).
+                También cabe decir, que la cantidad de calor se puede medir tanto en Joules (J), como en calorías
+            </p>
+            <div class="imgcenter">
+                <img loading="lazy" class="space-img img80" src="./imagenes/fisica/5to/PotenciaEnCorriente/Calor.jpg"
+                alt="Cantidad de calor/ Ley de Joule"> 
+            </div> 
+            <h3 class="margin">Tipos de resistencias</h3>
+            <ul class="margin">
+                <li><p><b>Resistencias en serie</b></p></li>
+                <div class="imgcenter">
+                    <img loading="lazy" class="space-img img80-600" src="./imagenes/fisica/5to/PotenciaEnCorriente/ResistensiaEnSerie.jpg"
+                    alt="Resisntencia en Serie"> 
+                </div> 
+                <li><p><b>Resistencias en paralelo</b></p></li>
+                <div class="imgcenter">
+                    <img loading="lazy" class="space-img img80-700" src="./imagenes/fisica/5to/PotenciaEnCorriente/ResistenciaEnParalelo.jpg"
+                    alt="Resistencias en Paralelo"> 
+                </div> 
+            </ul>
+            <div class="pdf-grid" >
+                <div class="iframe grid11">
+                    <iframe loading="lazy" src="./Apps/pdfjs/web/viewer.html?file=pdfs/Fisica/5to/LeydeOhm/LeydeOhm.pdf"  
+                    class="pdf"></iframe>
+                </div>
+                <div class="button grid21">
+                    <button><a href="./Apps/pdfjs/web/viewer.html?file=pdfs/Fisica/5to/LeydeOhm/LeydeOhm.pdf" target="_blank">Abrir en otra ventana</a></button> 
+                </div>
+                <div class="iframe grid12">
+                    <iframe loading="lazy" src="./Apps/pdfjs/web/viewer.html?file=pdfs/Fisica/5to/LeydeOhm/ResistenciasPrueba.pdf"  
+                    class="pdf"></iframe>
+                </div>
+                <div class="button grid22">        
+                    <button><a href="./Apps/pdfjs/web/viewer.html?file=pdfs/Fisica/5to/LeydeOhm/ResistenciasPrueba.pdf" target="_blank">Abrir en otra ventana</a></button> 
+                </div>    
+            </div>
+
+            <br><hr><br>
+
+        </div>
+       </section>
+       <section id="LeyesKirchhoff" class="física hidden4">
+        <div class="standard">
+            <h2>Leyes de Kirchhoff - Circuitos Eléctricos</h2>
+
+            <p>Los circuitos eléctricos estan constituidos por generadores (baterías) y receptores o cargas
+            (resistores) unidos mediante conductores. Estos generadores eléctricos son dispositivos capaces 
+            de establecer una diferencia de voltaje entre 2 puntos</p>
+
+            <div class="flex">
+                <div>
+                    <ul class="margin">
+                        <li><p><b>Nodo:</b></p>
+                        <p>Punto de unión entre 2 ramas (voltaje). Requiere 3 o más ddp (diferencia de potencial)</p>
+                        </li>
+                        <li><p><b>Rama:</b></p>
+                        <p>Es cada camino entre los nodos</p>
+                        </li>
+                        <li><p><b>Malla:</b></p>
+                        <p>Trayectoria cerrada que no pasa dos veces por el mismo nodo</p>
+                        </li>
+                        <li><p>También es importante recordar, que la corriente cuando es positiva va en sentido horario. Pero,
+                            cuando es negativa, va en sentido antihorario
+                        </p></li>
+                    </ul>
+                </div>
+                <div class="imgcenter">
+                    <img loading="lazy" class="space-img img80-700" src="./imagenes/fisica/5to/LeyesdeKirchoff/CircuitosElectricos.jpg"
+                    alt="Circuitos Eléctricos"> 
+                </div>
+            </div>
+            <h3 class="margin">Primera Ley de Kirchhoff (LCK)</h3>
+            <p>La suma algebraica de las corrientes que entran y salen de un nodo debe ser igual a cero</p>
+            <div class="imgcenter">
+                <img loading="lazy" class="space-img img80" src="./imagenes/fisica/5to/LeyesdeKirchoff/PrimeraLeyKirchhoff.JPG"
+                alt="Primera Ley de Kirchhoff (LCK)"> 
+            </div>
+            <h3 class="margin">Segunda Ley de Kirchhoff (LVK)</h3>
+            <p>La suma algebraica de los voltajes de una malla es igual a cero</p>
+            <div class="imgcenter">
+                <img loading="lazy" class="space-img img80" src="./imagenes/fisica/5to/LeyesdeKirchoff/SegundaLeyKirchhoff.JPG"
+                alt="Segunda Ley de Kirchhoff (LVK)"> 
+            </div>
+
+            <div class="pdf-grid" >
+                <div class="iframe grid11">
+                    <iframe loading="lazy" src="./Apps/pdfjs/web/viewer.html?file=pdfs/Fisica/5to/LeyesdeKirchhoff/LeyesdeKirchhoff.pdf"  
+                    class="pdf"></iframe>
+                </div>
+                <div class="button grid21">
+                    <button><a href="./Apps/pdfjs/web/viewer.html?file=pdfs/Fisica/5to/LeyesdeKirchhoff/LeyesdeKirchhoff.pdf" target="_blank">Abrir en otra ventana</a></button> 
+                </div>
+                <div class="iframe grid12">
+                    <iframe loading="lazy" src="./Apps/pdfjs/web/viewer.html?file=pdfs/Fisica/5to/LeyesdeKirchhoff/LeyesdeKirchhoffPrueba.pdf"  
+                    class="pdf"></iframe>
+                </div>
+                <div class="button grid22">        
+                    <button><a href="./Apps/pdfjs/web/viewer.html?file=pdfs/Fisica/5to/LeyesdeKirchhoff/LeyesdeKirchhoffPrueba.pdf" target="_blank">Abrir en otra ventana</a></button> 
+                </div>    
+            </div>
+
+            <br><hr><br>
+
+        </div>
+       </section>
+       <section id="Electromagnetismo" class="física hidden4">
+        <div class="standard">
+            <h2>Electromagnetismo</h2>
+
+            <p>Estudia la relación entre la electricidad y el magnetismo, además describe la interacción de partículas 
+            cargadas, con campos eléctricos y magnéticos.. Es un campo magnético creado por la corriente eléctrica 
+            y el efecto de un campo magnético sobre una corriente eléctrica. La unidad de medida del campo 
+            magnético son los Tesla (T)
+            </p>
+            <p>Las fórmulas del campo magnético se rigen por la Ley de Lorentz:</p>
+            <div class="flex3">
+                <div class="imgcenter">
+                    <img loading="lazy" class="space-img img80" src="./imagenes/fisica/5to/Electromagnetismo/FuerzaMagnetica.JPG"
+                    alt="Ley de Lorentz / Fuerza magnética"> 
+                </div>
+                <div class="imgcenter">
+                    <img loading="lazy" class="space-img img80" src="./imagenes/fisica/5to/Electromagnetismo/FuerzaMagneticaIndice.JPG"
+                    alt="Ley de Lorentz / Fuerza magnética"> 
+                </div>
+            </div>
+            <br>
+            <h2>Movimiento circular uniforme de una partícula cargada dentro de un campo magnético</h2>
+            <br><br>
+            <div class="flex3">
+                <div class="imgcenter">
+                    <img loading="lazy" class="space-img img80" src="./imagenes/fisica/5to/Electromagnetismo/MovimientoCircularUniformeParticula.JPG"
+                    alt="Movimiento circular uniforme de una partícula cargada dentro de un campo magnético"> 
+                </div>
+                <div class="imgcenter">
+                    <img loading="lazy" class="space-img img80" src="./imagenes/fisica/5to/Electromagnetismo/MovimientoCircularUniformeParticulaIndice.JPG"
+                    alt="Movimiento circular uniforme de una partícula cargada dentro de un campo magnético"> 
+                </div>
+            </div>
+            <br>
+            <h2>Ley de Biot-Savart</h2>
+            <br>
+            <h3 class="margin">Campo magnético creado por una carga en movimiento</h3>
+            <br><br>
+            <div class="flex3">
+                <div class="imgcenter">
+                    <img loading="lazy" class="space-img img80" src="./imagenes/fisica/5to/Electromagnetismo/CampoMagneticoParticulaMovimiento.JPG"
+                    alt="Campo magnético creado por una carga en movimiento"> 
+                </div>
+                <div class="img">
+                    <img loading="lazy" class="space-img img80" src="./imagenes/fisica/5to/Electromagnetismo/CampoMagneticoParticulaMovimientoIndice.JPG"
+                    alt="Campo magnético creado por una carga en movimiento"> 
+                </div>
+            </div>
+            <br>
+            <h2>Ley de Ampere</h2>
+            <br>
+            <p>Esta fórmula se utiliza para calcular el campo magnético creado por una corriente rectilínea</p>
+            <div class="imgcenter">
+                <img loading="lazy" class="space-img img80" src="./imagenes/fisica/5to/Electromagnetismo/LeyAmpere.JPG"
+                alt="Ley de Ampere"> 
+            </div>
+            <h2>Campo Magnético y Fuerza Magnética</h2>
+            <p>Está formula se emplea para calcular la fuerza que ejerce un campo magnético sobre un 
+                conductor rectilínea en el cual circula corriente</p>
+            <p>Es importante tener en cuenta que la corriente tiene que ser positiva y que la corriente (I) nunca es un vector,
+                sin embargo, la longitud (que si es un vector), toma la dirección y sentido de la corriente,
+            es decir, la longitud sigue a la corriente. Otro dato a tener en cuenta, es que si las corrientes son paralelas, la fuerza 
+            es de atracción, mientras que si las corrientes son antiparalelas, la fuerza será de repulsión.
+            </p>
+            <div class="flex3">
+                <div class="imgcenter">
+                    <img loading="lazy" class="space-img img80" src="./imagenes/fisica/5to/Electromagnetismo/CampoMagneticoConductorRectilineoCorriente.JPG"
+                    alt="Fuerza que ejerce un campo magnético sobre un 
+                    conductor rectilínea en el cual circula corriente"> 
+                </div>
+                <div class="imgcenter">
+                    <img loading="lazy" class="space-img img80" src="./imagenes/fisica/5to/Electromagnetismo/CampoMagneticoConductorRectilineoCorrienteIndice.JPG"
+                    alt="Fuerza que ejerce un campo magnético sobre un 
+                    conductor rectilínea en el cual circula corriente"> 
+                </div>
+            </div>
+            <br>
+            <h2>Campo Magnético creado por un solenoide</h2>
+            <br>
+            <p>Está fórmula es la que se aplica cuando hay solenoides. Un solenoide es un 
+                hilo metálico cubierto y enrollado sobre un cilindro. Cuando pasa corriente eléctrica por un solenoide,
+                este genera un campo electromagnético. Además, cada vez que se le introduce un material al solenoide, este
+                amplifica el campo de acuerdo, de acuerdo a las características del material.</p>
+                <div class="flex3">
+                    <div class="imgcenter">
+                        <img loading="lazy" class="space-img img80" src="./imagenes/fisica/5to/Electromagnetismo/CampoMagneticoSolenoide.JPG"
+                        alt="Campo Magnético creado por un solenoide"> 
+                    </div>
+                    <div class="imgcenter">
+                        <img loading="lazy" class="space-img img80" src="./imagenes/fisica/5to/Electromagnetismo/CampoMagneticoSolenoideIndice.JPG"
+                        alt="Campo Magnético creado por un solenoide"> 
+                    </div>
+                </div>
+            
+                <div class="pdf-grid" >
+                    <div class="iframe grid11">
+                        <iframe loading="lazy" src="./Apps/pdfjs/web/viewer.html?file=pdfs/Fisica/5to/Electromagnetismo/CampoMagnetico.pdf"  
+                        class="pdf"></iframe>
+                    </div>
+                    <div class="button grid21">
+                        <button><a href="./Apps/pdfjs/web/viewer.html?file=pdfs/Fisica/5to/Electromagnetismo/CampoMagnetico.pdf" target="_blank">Abrir en otra ventana</a></button> 
+                    </div>
+                    <div class="iframe grid12">
+                        <iframe loading="lazy" src="./Apps/pdfjs/web/viewer.html?file=pdfs/Fisica/5to/Electromagnetismo/CampoMagneticoPrueba.pdf"  
+                        class="pdf"></iframe>
+                    </div>
+                    <div class="button grid22">        
+                        <button><a href="./Apps/pdfjs/web/viewer.html?file=pdfs/Fisica/5to/Electromagnetismo/CampoMagneticoPrueba.pdf" target="_blank">Abrir en otra ventana</a></button> 
+                    </div>    
+                </div>
+
+        </div>
+       </section>
+    </main>
+
+    <br>
+    <footer>
+        <div class="redes">
+            <div class="Javi1">
+                <p>Javier González</p>
+                <br>
+                <a href="https://www.instagram.com/javig1000/" target="_blank"><img 
+                src="https://cdn-icons-png.flaticon.com/512/174/174855.png" alt="Instagram" height="55" ></a>
+         <!--       <a href="https://twitter.com/JavitoxD3" target="_blank"><img 
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Twitter-logo.svg/2491px-Twitter-logo.svg.png"
+                alt="Twitter" height="55" ></a>
+                <a href="https://www.youtube.com/channel/UCVkfPVJAieK1jgeW7NbxP0g" target="_blank"><img 
+                    src="https://upload.wikimedia.org/wikipedia/commons/4/42/YouTube_icon_%282013-2017%29.png"
+                    alt="Twitter" height="55" width="70"></a> -->      
+            </div>
+            <div class="Luis">
+                <p>Luis Noriega</p>
+                <br>
+                <a href="https://www.instagram.com/lxuuiss/" target="_blank"><img 
+                src="https://cdn-icons-png.flaticon.com/512/174/174855.png" alt="Instagram" height="55" ></a>
+            </div>
+                
+            <div class="Merlina">
+                <p>Juliannys Verastegui</p>
+                <br>
+                <a href="https://www.instagram.com/jennaortega/" target="_blank"><img 
+                src="https://cdn-icons-png.flaticon.com/512/174/174855.png" alt="Instagram" height="55" ></a>
+
+        </div>
+        </div>        
+      <p>&copy; Copyright</p>
+
+    </footer>
+        <script src="jquery-3.6.1.js"></script>
+        <script src="Js.js"></script>
+        <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-M48RFKL3JC"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+    
+      gtag('config', 'G-M48RFKL3JC');
+    </script>
+    </body>
+    </html>
